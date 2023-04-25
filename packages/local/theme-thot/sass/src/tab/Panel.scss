@@ -1,0 +1,68 @@
+@include extjs-tab-panel-ui(
+  $ui: 'thot-alternative',
+
+  $ui-tab-background-color: $thot-panel-body-background-color,
+  $ui-tab-background-color-over: $thot-panel-body-background-color,
+  $ui-tab-background-color-active: $base-color,//$color-blue, // darken($thot-panel-body-background-color,10%),
+
+  $ui-tab-border-radius: 0px,
+  $ui-tab-border-width: 0px,
+  $ui-tab-border-color: $thot-color-dimmed,
+  $ui-tab-border-color-active: $base-color,
+  $ui-tab-border-color-over: $thot-important-color,
+
+  $ui-tab-color: $base-color,//$thot-header-toolbar-color,
+  $ui-tab-color-active: $color-white,
+  $ui-tab-color-over: lighten($base-color,10%),//$thot-important-color,
+
+  $ui-tab-glyph-color:$thot-header-toolbar-color,
+  $ui-tab-glyph-color-active: $color-white,
+  $ui-tab-glyph-color-over: $thot-header-toolbar-color,  
+);
+
+.x-tab-focus.x-tab-default {
+  outline: none;
+}
+.x-tab-bar-thot-alternative {
+  /*couleur de fond de la barre d'onglets*/
+  background-color: $thot-panel-body-background-color;
+  .x-tab {
+    text-transform: uppercase;
+//    font-weight: bold;
+    outline: none;
+
+    > span {
+      padding: 0 5px;
+    }
+
+    .x-tab-inner {
+      font-weight: 600;
+    }
+
+//    &:after {
+//      content: "";
+//      display: block;
+//      height: 3px;
+//      width: 100%;
+//      background: darken($thot-panel-body-background-color,10%);
+//    }
+
+  }
+
+  .x-tab.x-tab-active.x-tab-thot-alternative {
+//    background: $thot-panel-body-background-color;
+//    background: darken($thot-panel-body-background-color,5%);
+    border-color: $base-color;
+    outline: none;
+
+//    &:after {
+//      content: "";
+//      display: block;
+//      height: 3px;
+//      width: 100%;
+//      background: $base-color;
+//    }
+  }
+
+}
+

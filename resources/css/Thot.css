@@ -1,0 +1,467 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/*
+    Created on : 13 févr. 2017, 16:02:17
+    Author     : edblv
+*/
+/* .gridFilteredCol {
+        font-weight: bold;
+        color: orange;
+} */
+@import '_animate.css';
+@import '_shadow.css';
+@import '_icones.css';
+@import '_cards.css';
+@import '_ux.css';
+@import '_buttons.css';
+
+/* bordure sur panels */
+.thot-panel {
+    margin: 5px;
+}
+
+/* entête de groupe dans les grilles */
+.x-grid-group-hd {
+    background-color: #f4f4f4 !important;
+}
+
+.thot-italic {
+    font-style: italic;
+}
+
+.thot-bold {
+    font-weight: bold;
+}
+
+/* bordure verticale de la cellule pour rappel du type d'activité */
+.thot-locked::before {
+    color: #d50000;
+    position: absolute;
+    z-index: 5000;
+    font-family: 'fontawesome';
+    font-size: 1.5em;
+    content: '\f023';
+    width: 5px;
+    top: 5px;
+    left: 10px;
+}
+
+/* définition de la forme des tags affichés dans les grilles
+ * - tag pour le sopérations Qualité, Hors Prod, etc...
+ */
+.thot-tag {
+    font-size: 9px;
+    padding: 1px 2px;
+    border-radius: 3px;
+    background-position: center bottom;
+    background-repeat: no-repeat;
+    min-width: 70px;
+    text-align: center;
+    /* font-weight: 600; */
+}
+
+/* le suffixe doit correspondre à l'information OCT_CODE de la base de données */
+/* Attention, sensible à la casse */
+.thot-tag-QUAL {
+    color: #f0f0f0;
+    background-color: #487AFE;
+    /* background-color: #00ADB5; */
+}
+
+.thot-QUAL-color {
+    color: #487AFE;
+}
+
+.thot-tag-HRPR {
+    color: #f0f0f0;
+    /* color: #474747; */
+    background-color: #FFAB00;
+}
+
+.thot-HRPR-color {
+    color: #FFAB00;
+}
+
+.thot-tag-NPLN {
+    color: #f0f0f0;
+    background-color: #F06B0C;
+    /* background-color: #F8B500; */
+}
+
+.thot-tag-REG {
+    color: #f0f0f0;
+    background-color: #C38CFF;
+    /* background-color: #F8B500; */
+}
+
+.thot-NPLN-color {
+    color: #F06B0C;
+    /* color: #F8B500; */
+}
+
+.thot-tag-note {
+    margin-top: 10px;
+    color: #f0f0f0;
+    background-color: #00c853;
+}
+
+.thot-note-color {
+    color: #F8B500;
+}
+
+.thot-tag-inconsistency {
+    color: #f0f0f0;
+    background-color: #d50000;
+}
+
+.thot-inconsistency-color {
+    color: #d50000;
+}
+
+/* bordure verticale de la cellule pour rappel du type d'activité */
+.thot-tag-cell::before {
+    position: absolute;
+    z-index: 5000;
+    content: "";
+    width: 3px;
+    height: 100%;
+    top: 0;
+    left: 0;
+}
+
+.thot-tag-cell-QUAL::before {
+    background-color: #487AFE;
+}
+
+.thot-tag-cell-HRPR::before {
+    background-color: #F8D548;
+}
+
+.thot-tag-cell-NPLN::before {
+    background-color: #F06B0C;
+}
+
+.thot-tag-cell-inconsistency::before {
+    background-color: #d50000;
+}
+
+.thot-ariane-sep::before {
+    color: #848484;
+    font-family: 'fontawesome';
+    content: '\f0da';
+}
+
+.thot-dimmed-info {
+    color: #bdbdbd !important;
+}
+
+.thot-ariane-info {
+    background: #f2f2f2;
+    border-radius: 3px;
+    padding: 2Px 10px 1px;
+    margin: 3px;
+}
+
+/* étiquette pour affichage du numéro d'OF */
+.thot-maxsized-info {
+    font-size: 1.5em;
+    display: block;
+    margin-block-start: 0.2em;
+    margin-block-end: 0.2em;
+    background-color: #1766a4;
+    color: white !important;
+    letter-spacing: 1px;
+    /* color: white;
+        background-color: #d2eaff; */
+    padding: 5px;
+    border-radius: 3px;
+    text-align: center;
+    max-width: 90px;
+}
+
+/* étiquette pour affichage de l'équipement sur liste des activités */
+.thot-maxsized-eqp-info {
+    font-size: 1.5em;
+    display: block;
+    margin-block-start: 0.2em;
+    margin-block-end: 0.2em;
+    background-color: #eee;
+    color: #1766a4 !important;
+    /* letter-spacing: 1px; */
+    /* color: white;
+        background-color: #d2eaff; */
+    padding: 5px;
+    border-radius: 3px;
+    text-align: center;
+    /* max-width: 90px; */
+}
+/* carte statut activité */
+.thot-card-status-act {
+    width: 100%;
+    padding: 2px;
+    height: 36px;
+}
+
+/* carte opérateur */
+.thot-card-user {
+    width: 100%;
+    padding: 2px;
+    height: 48px;
+}
+
+.thot-card-user .img {
+    /* display: inline-block; */
+    height: 48px;
+    width: 48px;
+    background-repeat: no-repeat;
+    background-size: 104%;
+    background-position: 50%;
+    float: left;
+    border-radius: 50%;
+    border: #e0e0e0 solid 2px;
+}
+
+.usrimage {
+    height: 48px;
+    width: 48px;
+    background-repeat: no-repeat;
+    background-size: 104%;
+    background-position: 50%;
+    float: left;
+    border-radius: 50%;
+    border: #e0e0e0 solid 2px;
+}
+
+.thot-card-user .content {
+    vertical-align: top;
+    margin-left: 35px;
+    padding-left: 20px;
+    /* padding: 16px 0 0 20px; */
+}
+
+.array-grid-sell-col:before {
+    font: 18px/1 FontAwesome;
+    color: #dd6550;
+    content: "\f056";
+}
+
+/*  test - ça ne marcha pas */
+.x-form-display-field-default {
+    /* C:/Users/Public/wamp32/www/ExtJSApp/thot/ext/classic/theme-neutral/sass/var/form/field/Display.scss:40 */
+    margin-top: 0;
+    min-height: 18px;
+}
+
+.x-form-item-label-default {
+    padding-top: 0px;
+    /* C:/Users/Public/wamp32/www/ExtJSApp/thot/ext/classic/theme-neutral/sass/src/form/Labelable.scss:97 */
+}
+
+.x-form-item-label {
+    padding-top: 0px;
+    /* C:/Users/Public/wamp32/www/ExtJSApp/thot/ext/classic/theme-neutral/sass/src/form/Labelable.scss:97 */
+}
+
+
+
+/* indicateur de connexion, ajoute un ruban à droite dans la barre de men principale*/
+.thot-admin-background::before {
+    position: absolute;
+    z-index: 0;
+    content: "";
+    height: 100%;
+    width: 450px;
+    top: 0;
+    right: -10px;
+    /* border-bottom: solid 3px red; */
+    background-color: #1d81ab !important;
+    transform: skewX(25deg);
+}
+
+.thot-message-preview {
+    text-indent: 5px;
+    color: #555555;
+    margin-left: 60px;
+}
+
+/************************************************* TEST affichage statut opérateur */
+.pic {
+    float: left;
+    width: 80px;
+    text-align: center;
+}
+
+.data {
+    margin-left: 80px;
+}
+
+.flags {
+    margin-left: 80px;
+    display: table;
+}
+
+.flag {
+    width: 48px;
+    text-align: left;
+    display: table-cell
+}
+
+.alert {
+    margin-top: 12px
+}
+
+.alert-panel .x-panel-header-default {
+    background-color: #d50000;
+}
+
+.alert-panel .x-panel-header-title-default {
+    color: white;
+}
+
+p {
+    margin-block-start: 0 !important;
+    margin-block-end: 0 !important;
+    margin-inline-start: 0 !important;
+    margin-inline-end: 0 !important;
+}
+
+p>thot-sticky,
+pre[class=thot-sticky] {
+    padding: 0px 5px;
+    margin: 0 10px 0 5px;
+    border-radius: 3px;
+}
+
+.generic {
+    color: white;
+    background-color: #555555;
+}
+
+.prod {
+    color: white;
+    background-color: #4EC850;
+}
+
+.reglage {
+    color: white;
+    background-color: #C38CFF;
+}
+
+.qual {
+    color: white;
+    background-color: #487AFE;
+}
+
+.hrpr {
+    color: white;
+    /* color: #404040; */
+    background-color: #FFAB00;
+}
+
+.npln {
+    color: white;
+    background-color: #F06B0C;
+}
+
+.usr-inconsistency {
+    color: #d50000;
+    background-color: white;
+}
+
+
+/***** coloration des boutons toggle ******/
+.x-btn.x-btn-menu-active.x-btn-default-toolbar-small,
+.x-btn.x-btn-pressed.x-btn-default-toolbar-small {
+    border-color: #f5f5f5 !important;
+    background-image: none !important;
+    background-color: #c0d1d8 !important;
+    /* background-color: #0391cb !important; */
+}
+
+.x-btn.x-btn-menu-active .x-btn-plain-toolbar-small-mc,
+.x-btn.x-btn-pressed .x-btn-plain-toolbar-small-mc {
+    background-color: #0391cb !important;
+    background-image: url(images/btn/btn-plain-toolbar-small-pressed-fbg.gif);
+}
+
+/* .x-btn.x-btn-menu-active.x-btn-default-toolbar-small .x-btn-inner,
+.x-btn.x-btn-pressed.x-btn-default-toolbar-small .x-btn-inner {
+        color: #fff !important;
+} */
+
+.thot-deactivated {
+    background-color: #f2f2f2;
+    font-style: italic;
+    color: #848484;
+}
+
+/* mise en forme des lignes de grille */
+.thot-grid-deleted-entity .x-grid-cell {
+    background-color: #ff00001a;
+}
+
+.thot-grid-deleted-entity.x-grid-row-over .x-grid-cell {
+    background-color: #dfe6e9;
+}
+
+.thot-grid-modified-entity .x-grid-cell {
+    background-color: #ff85001a;
+}
+
+.thot-grid-modified-entity.x-grid-row-over .x-grid-cell {
+    background-color: #dfe6e9;
+}
+
+.thot-grid-added-entity .x-grid-cell {
+    background-color: #7bff001a;
+}
+
+.thot-grid-added-entity.x-grid-row-over .x-grid-cell {
+    background-color: #dfe6e9;
+}
+
+.thot-grid-undone-entity .x-grid-cell {
+    color: #9e9e9e;
+    background-color: #4e4e4e1a;
+}
+
+.thot-grid-undone-entity.x-grid-row-over .x-grid-cell {
+    background-color: #dfe6e9;
+}
+
+/* */
+.x-form-layout-wrap {
+    border-spacing: 5px !important;
+}
+
+.x-form-display-field-default {
+    min-height: 17px !important;
+}
+
+/* indicateur en erreur
+   utilisé pour les fieldtext des formulaires de correction d'activités
+   permet d'identifier les informations erronées
+ */
+.thot-error-indicator .x-form-item-label,
+.thot-error-indicator .x-form-display-field {
+    color: #d60909 !important;
+}
+
+
+/* permet aux objets d'un conteneur de déborder de celui-ci*/
+.x-box-inner {
+    overflow: unset ! important;
+}
+
+.menu-title {
+    font-weight: bold;
+    padding: 8px;
+    color: #1d81ab;
+}
+
+.x-autocontainer-form-item{
+    margin-bottom: 2px !important;
+}

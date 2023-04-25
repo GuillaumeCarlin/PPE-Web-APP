@@ -1,0 +1,108 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 25 mai 2016, 10:52:15
+    Author     : edblv
+*/
+
+
+/*.x-clear-trigger {*/
+	/*background-image:url(../images/16x16/clear_left.png);*/
+/*}*/
+
+/*.Dashboard {*/
+	/*background-image: url(../images/24x24/dashboard.png);*/
+	/*background-repeat: no-repeat;*/
+	/*background-position: center center;*/
+	/*width: 50px;*/
+	/*height: 30px;*/
+/*}*/
+
+/*.Activities {*/
+	/*background-image: url(../images/24x24/clock4.png);*/
+	/*background-repeat: no-repeat;*/
+	/*background-position: center center;*/
+	/*width: 50px;*/
+	/*height: 30px;*/
+/*}*/
+
+/*.History {*/
+	/*background-image: url(../images/24x24/history.png);*/
+	/*background-repeat: no-repeat;*/
+	/*background-position: center center;*/
+	/*width: 50px;*/
+	/*height: 30px;*/
+/*}*/
+
+/*.DataGrid {*/
+	/*background-image: url(../images/24x24/data_grid.png);*/
+	/*background-repeat: no-repeat;*/
+	/*background-position: center center;*/
+	/*width: 50px;*/
+	/*height: 30px;*/
+/*}*/
+
+/*.Warning {*/
+	/*background-image: url(../images/24x24/warning.png);*/
+	/*background-repeat: no-repeat;*/
+	/*background-position: center center;*/
+	/*width: 50px;*/
+	/*height: 30px;*/
+/*}*/
+
+/*.addButton {*/
+	/*background-image: url(../images/24x24/add.png) !important;*/
+/*}*/
+
+/*.blocInfos {*/
+	/*background-color: #efeff7;*/
+	/*border: 1px solid gray;*/
+	/*-webkit-border-radius: 5px;*/
+	/*-moz-border-radius: 5px;*/
+	/*border-radius: 5px;*/
+/*}*/
+
+/*.blueBtn {*/
+	/*background-color: #cecee8;*/
+	/*border: 1px solid gray;*/
+	/*-webkit-border-radius: 5px;*/
+	/*-moz-border-radius: 5px;*/
+	/*border-radius: 5px;*/
+	/*color: black;*/
+/*}*/
+
+/*.emptyText {*/
+	/*margin-top: 15px;*/
+	/*text-align: center;*/
+/*}*/
+
+/*.filAriane {*/
+	/*background-color: #cbe1c9;*/
+	/*color: navy;*/
+	/*font-size: 12px;*/
+	/*font-weight: bold;*/
+	/*height: 25px;*/
+	/*padding: 5px;*/
+/*}*/
+
+/*.greenBtn {*/
+	/*background-color: #d2f4d6;*/
+	/*border: 1px solid gray;*/
+	/*-webkit-border-radius: 5px;*/
+	/*-moz-border-radius: 5px;*/
+	/*border-radius: 5px;*/
+	/*color: black;*/
+/*}*/
+
+/*.orangeBtn {*/
+	/*background-color: #e99259;*/
+	/*border: 1px solid gray;*/
+	/*-webkit-border-radius: 5px;*/
+	/*-moz-border-radius: 5px;*/
+	/*border-radius: 5px;*/
+	/*color: black;*/
+/*}*/
+

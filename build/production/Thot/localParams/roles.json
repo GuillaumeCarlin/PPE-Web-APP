@@ -1,0 +1,53 @@
+{
+	"admin": {
+		"login": "ThotAdmin",
+		"password": "eJxTCigsMrM0MzZQAgAPKAKA"
+	},
+	"objects": {
+		"teamTab": {
+			"roles": ["sa","adm"],
+			"users": ["edblv","darfaoui","hvalot","fbrechon"]
+		},
+		"paramTab": {
+			"roles": ["sa","adm"],
+			"users": ["edblv","darfaoui","hvalot","fbrechon"]
+		},
+		"impexpTab": {
+			"roles": ["sa","adm"],
+			"users": ["edblv","darfaoui","hvalot","fbrechon"]
+		},
+		"revisionTab": {
+			"roles": ["sa","adm"],
+			"users": ["edblv","darfaoui","hvalot","fbrechon"]
+		}
+	},
+	"process": {
+		"frmfreealea": {
+			"roles": ["sa","adm"],
+			"users": ["edblv","darfaoui","hvalot","fbrechon"],
+			"usersub": {
+			    "edblv": 210,
+			    "darfaoui": 210,
+			    "hvalot": 210
+			}
+		},
+		"frmrevision": {
+			"roles": ["sa","adm"],
+			"users": ["edblv","darfaoui","hvalot","fbrechon"],
+			"usersub": {
+			    "edblv": 210,
+			    "darfaoui": 210,
+			    "hvalot": 210
+			}
+		},
+		"alertdetail": {
+			"roles": ["sa","adm"],
+			"users": ["edblv","darfaoui","hvalot","fbrechon"],
+			"usersub": {
+			    "edblv": 210,
+			    "darfaoui": 210,
+			    "hvalot": 210
+			}
+		}
+	}
+}

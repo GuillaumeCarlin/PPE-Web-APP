@@ -1,0 +1,124 @@
+/*
+ * DEFINITION DES BOUTONS/ICONES DES ATIVITES THOT
+ * - réglage            PROD + RGL
+ * - production         PROD
+ * - non planifié       NPLN
+ * - qualité            QUAL
+ * - hors production    HRPR
+ */
+.thot-activite-button-PROD,
+.thot-activite-button-NPLN,
+.thot-activite-button-HRPR,
+.thot-activite-button-QUAL,
+.thot-activite-button-REG {
+    font-family: 'FontAwesome';
+}
+
+/* DEFINITION DU CERCLE DE FOND SUR LEQUEL ON AJOUTE L'ICONE AVEC AFTER */
+.thot-activite-button-PROD:before {
+    content: "\F0C8";
+    position: relative;
+    color: #4EC850;
+    font-size: 3em;
+    left: 1px;
+    top: 8px;
+}
+
+.thot-activite-button-NPLN:before {
+    content: "\F0C8";
+    position: relative;
+    color: #F06B0C;
+    font-size: 3em;
+    left: 1px;
+    top: 8px;
+}
+
+.thot-activite-button-HRPR:before {
+    content: "\F0C8";
+    position: relative;
+    color: #FFAB00;
+    font-size: 3em;
+    left: 1px;
+    top: 8px;
+}
+
+.thot-activite-button-QUAL:before {
+    content: "\F0C8";
+    position: relative;
+    color: #487AFE;
+    font-size: 3em;
+    left: 1px;
+    top: 8px;
+}
+
+.thot-activite-button-REG:before {
+    content: "\F0C8";
+    position: relative;
+    color: #C38CFF;
+    font-size: 3em;
+    left: 1px;
+    top: 8px;
+}
+
+/* DEFINITION DES ICONES ACTION A AFFICHER SUR LE BEFORE */
+.thot-activite-button-PROD:after {
+    /*fa-cog, engrenage simple*/
+    content: "\F013";
+    position: relative;
+    color: white;
+    font-size: 1.7em;
+    left: -21px;
+    top: 3px;
+}
+
+.thot-activite-button-NPLN:after {
+    /*fa-chain-broken, engrenage simple*/
+    content: "\F127";
+    position: relative;
+    color: white;
+    font-size: 1.7em;
+    left: -22px;
+    top: 3px;
+}
+
+.thot-activite-button-HRPR:after {
+    /*fa-cog, engrenage simple*/
+    content: "\F074";
+    position: relative;
+    color: white;
+    font-size: 1.7em;
+    left: -22px;
+    top: 3px;
+}
+
+.thot-activite-button-QUAL:after {
+    /*fa-recycle, engrenage simple*/
+    content: "\f1b8";
+    position: relative;
+    color: white;
+    font-size: 1.7em;
+    left: -22px;
+    top: 3px;
+}
+
+.thot-activite-button-REG:after {
+    /*fa-wrench, engrenage simple*/
+    content: "\f0ad";
+    position: relative;
+    color: white;
+    font-size: 1.7em;
+    left: -21px;
+    top: 3px;
+}
+
+.thot-alert-sticky {
+    color: none !important;
+    font-weight: normal !important;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.thot-act-date {
+    color: black;
+}

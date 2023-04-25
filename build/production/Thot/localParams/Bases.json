@@ -1,0 +1,54 @@
+{
+    "BD_AUTH": {
+        "typebase": "MsSql2016",
+        "libbase": "Base d'authentification",
+        "host": "SVW2K8R2SQL1.PROFORM.DOM,49487",
+        "nombase": "BD_AUTH_PRF",
+        "username": "Gmpi",
+        "passe": "eJxTCnAwNS8yLFYCAAsvAlc="
+    },
+    "THOTDEVDBUSER": {
+        "typebase": "MsSql2016",
+        "libbase": "Thot dév. Proform",
+        "host": "SVW2K8R2SQL1.PROFORM.DOM,49487",
+        "nombase": "BD_THOT_1_DEV_TDV",
+        "client": "PROFORM",
+        "username": "thotdbuser",
+        "passe": "eJxTKsnIL0lJKi1OLVICAB2JBIk=",
+        "appli": true,
+        "dev": "1"
+    },
+    "THOTDEV": {
+        "typebase": "MsSql2016",
+        "libbase": "Thot dév. Proform",
+        "host": "DevPQR",
+        "nombase": "BD_THOT_1_DEV_TDV",
+        "client": "PROFORM",
+        "username": "thotdbowner",
+        "passe": "eJwrycgvcXHKL89LLTIEAB81BKI=",
+        "passeClr": "thotDBowner1",
+        "appli": true,
+        "defaut": true,
+        "dev": "1"
+    },
+    "LDAP": {
+        "typebase": "Ldap",
+        "host": "ldap://172.16.10.1",
+        "domaine": "OU=PROFORM - UTILISATEURS ET GROUPES,OU=PROFORM,DC=proform,DC=dom",
+        "chainecnx": "_SRVLdap",
+        "passe": "eJxTCnYwNi8ziDQuVgIAENEC5w=="
+    },
+    "NETWORKTHOTDEV": {
+        "typebase": "MsSql2016",
+        "libbase": "Thot dév. Proform",
+        "host": "SVW2K8R2SQL1.PROFORM.DOM,49487",
+        "nombase": "BD_THOT_1_DEV_TDV",
+        "client": "PROFORM",
+        "username": "Gmpi",
+        "passe": "eJxTCnAwNS8yLFYCAAsvAlc=",
+        "appli": true,
+        "defaut": true,
+        "dev": "1"
+    }
+
+}

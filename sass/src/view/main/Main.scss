@@ -1,0 +1,302 @@
+/* import explicite des variables */
+@import "../../../var/all.scss";
+
+/* Styles pour le menu "Navigation" de l'interface utilisateur  */
+
+@include extjs-tab-panel-ui($ui: 'thot-navigation',
+    $ui-bar-background-color: $thot-nav-background-color,
+
+    $ui-tab-background-color: transparent,
+    $ui-tab-background-color-over: $thot-nav-background-color-over,
+    $ui-tab-background-color-active: $thot-nav-background-color-active,
+
+    $ui-tab-background-gradient-active: 'none',
+
+    $ui-tab-color: $thot-nav-color,
+    $ui-tab-color-over: $thot-nav-color,
+    $ui-tab-color-active: $thot-nav-color-active,
+    $ui-tab-color-disabled: $thot-nav-color-disabled,
+
+    $ui-tab-glyph-color: $thot-nav-glyph-color, // $thot-nav-color,
+    $ui-tab-glyph-color-over: $thot-nav-glyph-color,
+    $ui-tab-glyph-color-active: $thot-nav-glyph-color-active,
+    $ui-tab-glyph-color-disabled: $thot-nav-glyph-color-disabled,
+
+    $ui-tab-border-color: $thot-nav-color,
+    $ui-tab-border-color-active: $thot-nav-color-active,
+
+    $ui-tab-outline-style-focus: 'none',
+    $ui-tab-glyph-opacity: 1,
+    $ui-tab-border-radius: 0,
+    $ui-tab-border-width: 0px 0 0 0,
+    $ui-tab-inner-border-width: 0,
+    $ui-tab-padding: 12px,
+    $ui-tab-margin: 0,
+    $ui-tab-font-size: 12px,
+    $ui-tab-font-size-over: 12px,
+    $ui-tab-font-size-active: 12px,
+    $ui-tab-line-height: 19px,
+    $ui-tab-font-weight: normal,
+    $ui-tab-font-weight-over: normal,
+    $ui-tab-font-weight-active: normal,
+    $ui-tab-icon-width: 20px,
+    $ui-tab-icon-height: 20px,
+    $ui-tab-icon-spacing: 5px,
+    $ui-bar-background-gradient: 'none',
+    $ui-bar-padding: 0,
+    $ui-strip-height: 0);
+
+/* Style pour l'entête du paneau "Navigation" */
+@include extjs-panel-ui($ui: 'thot-navigation',
+    $ui-header-color: $thot-logo-color,
+    $ui-header-glyph-color: $thot-logo-glyph-color,
+    $ui-header-glyph-opacity: 1,
+    $ui-header-font-size: 20px,
+    $ui-header-line-height: 24px,
+    $ui-header-font-weight: normal,
+    $ui-header-icon-height: 20px,
+    $ui-header-icon-width: 20px,
+    $ui-header-icon-spacing: 20px,
+    $ui-header-background-color: $thot-logo-background-color,
+    $ui-header-padding: 16px 0,
+    $ui-header-text-margin: 9px 0,
+    $ui-header-noborder-adjust: false);
+
+/* l'icône application */
+.x-title-icon-thot-navigation {
+    font-family: FontAwesome;
+    color: #fff;
+    font-size: 18px;
+    line-height: 24px;
+}
+
+/* option de navigation */
+.x-tab-icon-el-thot-navigation {
+    font-family: FontAwesome;
+    color: $thot-nav-color;
+
+    /* option active */
+    .x-tab-active & {
+        color: $thot-nav-color-active;
+    }
+}
+
+.x-panel-header-title-navigation>.x-title-text-navigation:after {
+    top: 30px;
+    right: -24px;
+}
+
+/******************
+ BARRE D'OUTILS PRINCIPALE
+ ************************/
+@include extjs-toolbar-ui($ui: 'thot-apptoolbar',
+    $background-color: $base-color,
+    $text-color: #fff !important,
+    $tool-glyph-color: #fff);
+
+/*********************************/
+
+/* le fond des grilles est affiché de la meme couleur que les cellules */
+.x-grid-view {
+    background-color: #fff; //$grid-cell-color;
+}
+
+.thot-cell-important {
+    color: $base-color; //$base-color-hue-dark;
+    font-weight: $font-weight-bold;
+}
+
+.thot-label {
+    font-weight: $font-weight-bold;
+    text-align: right;
+}
+
+.thot-bubble {
+    border-radius: 50%;
+    background-color: $thot-success-color;
+    line-height: 24px;
+    width: 24px;
+    height: 24px;
+    color: $thot-logo-color;
+    text-align: -webkit-center;
+}
+
+.thot-label-right-medium {
+    line-height: 24px;
+    text-align: right;
+}
+
+/* déclaration des icônes de l'application
+ ces classes sont utilisées principalement par les options de config Ext iconCls
+*/
+
+.thot-icon-check-small {
+    @include font-icon('\F13A'FontAwesome);
+    font-size: 1.3em;
+}
+
+.thot-alert-sticky {
+    //  background-color: $thot-warning-color;
+    color: $thot-alert-color;
+    font-weight: $font-weight-bold;
+    padding: 7px 3px 1px 50px;
+    text-align: left;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.thot-alert-sticky-info {
+    //  background-color: $thot-warning-color;
+    color: $thot-alert-color;
+    font-weight: $font-weight-bold;
+    padding: 0 10px;
+    text-align: left;
+}
+
+//
+
+.x-action-col-glyph {
+    // font-size: 24px;
+    //  line-height: 16px;
+    //  width: 20px;
+}
+
+/*******************************************************************************
+ CONFIGURATION DE LA NOTIFICATION GLISSANTE
+*******************************************************************************/
+#msg-div {
+    position: absolute;
+    margin: 0 auto;
+    left: 0;
+    right: 0;
+    // right: 10px;
+    //   left: 35%;
+    top: 10px;
+    width: 400px;
+    z-index: 50000;
+}
+
+#msg-div .msg {
+    //  background: $thot-panel-background-color;
+    background: lighten($thot-success-color, 50%); //$thot-nav-background-color;
+    margin-top: 2px;
+    padding: 10px;
+    color: $color;
+    // color: $thot-nav-color;
+    border-width: 0 0 0 15px;
+    border-style: solid;
+    border-color: $thot-success-color;
+    -webkit-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    -moz-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+#msg-div .msg-error {
+    //  background: $thot-panel-background-color;
+    background: lighten($thot-error-color, 50%); //$thot-nav-background-color;
+    margin-top: 2px;
+    padding: 10px;
+    color: $color;
+    // color: $thot-nav-color;
+    border-width: 0 0 0 15px;
+    border-style: solid;
+    border-color: $thot-error-color;
+    -webkit-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    -moz-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+#msg-div .msg-warning {
+    //  background: $thot-panel-background-color;
+    background: lighten($thot-warning-color, 50%); //#ffe0a7; //$thot-nav-background-color;
+    margin-top: 2px;
+    padding: 10px;
+    color: $color;
+    //   color: $thot-nav-color;
+    border-width: 0 0 0 15px;
+    border-style: solid;
+    border-color: $thot-alert-color;
+
+    -webkit-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    -moz-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+#msg-div .msg h3 {
+    margin: 0 0 8px;
+    font-weight: bold;
+    font-size: 15px;
+}
+
+#msg-div .msg p {
+    margin: 0;
+}
+
+/******************************************************************************/
+.thot-bold-label {
+    //color: $thot-important-color; // ou
+    color: $base-color-hue-dark;
+    //  font-size: 12px;
+    font-weight: $font-weight-bold;
+}
+
+/******************************************************************************/
+/* colorisation entete de panneau selon le contenu
+ ajout d'un trait de couleur au dessus de l'entete du panneau*/
+// .thot-class-panel {
+//   @include thot-shadow(1px, 1px, 3px, 0px, darken($thot-panel-background-color,15%) )
+// }
+
+// .thot-class-panel:before {
+//   width:100%;
+//   position:absolute;
+//   z-index: 5000;
+//   height:3px;
+//   content:"";
+//   top:0;
+//   left:0
+// }
+
+// .thot-class-panel {
+//   &.thot-activity:before{
+//     background: $thot-activity-color;
+//   }
+//   &.thot-history:before{
+//     background: $thot-history-color;
+//   }
+//   &.thot-alert:before{
+//     background: $thot-alert-color;
+//   }
+//   &.thot-random:before{
+//     background: $thot-random-color;
+//   }
+// }
+
+/******************************************************************************/
+/* mise en forme des labels indicateurs */
+.thot-label-indicateur {
+    border-bottom: 2px solid;
+    //  border-radius:50px;
+    line-height: 16px;
+
+    &.thot-standard {
+        border-color: #606060;
+    }
+
+    &.thot-activity {
+        border-color: $thot-activity-color;
+    }
+
+    &.thot-random {
+        border-color: $thot-random-color;
+    }
+
+    &.thot-error {
+        border-color: $thot-error-color;
+    }
+
+    &.thot-success {
+        border-color: $thot-success-color;
+    }
+}

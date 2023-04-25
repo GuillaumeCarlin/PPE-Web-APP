@@ -1,0 +1,84 @@
+// description des classes CSS personnalisées spécifiques
+// ce fichier doit être importé dans le fichier Component.scss
+
+.thot-enlight {
+  background-color: #fffcc2;
+  text-align: center;
+}
+
+.filAriane {
+  background-color: $color-white;
+  color: $base-color;
+  font-size: 12px;
+  height: 24px;
+  padding: 5px;
+  border-width: 0 0 1px 0;
+  border-style:  solid ;
+  border-color: $thot-color-dimmed;
+  padding-left: 15px;
+}
+
+*.icon-green {color: green}
+*.icon-red {color: red}
+.x-tree-noicon .x-tree-icon-leaf {display: none !important;}
+
+// définition des badges
+@mixin badge-square {
+  font-family: 'Noto sans', 'Open Sans', 'Helvetica Neue', helvetica, arial, sans-serif;
+  content:attr(data-count);
+  position: absolute;
+  top:0.25rem;
+  left:2.75rem;
+  text-align: center;
+}
+
+@mixin badge-normalSize {
+  height:1rem;
+  width:1rem;
+  line-height: 1rem;;
+  font-size: .8rem;
+}
+
+@mixin badge-mediumSize {
+  height:1rem;
+  width:1rem;
+  line-height: 1rem;;
+  font-size: .8rem;
+}
+
+.badge:after{
+  @include badge-square;
+  @include badge-mediumSize;
+  color: $color-white;
+  background: $thot-important-color;
+  border-radius:3px;
+}
+
+.badge-error:after{
+  @include badge-square;
+  @include badge-mediumSize;
+  color: $color-white;
+  background: $thot-error-color;
+  border-radius:3px;
+}
+
+.badge-success:after{
+  @include badge-square;
+  @include badge-mediumSize;
+  color: $color-white;
+  background: $thot-success-color;
+  border-radius:3px;
+}
+
+.badge-circle:after{
+  @include badge-square;
+  @include badge-mediumSize;
+  color: $color-white;
+  background: $thot-important-color;
+  border-radius: 50%;
+}
+
+.thot-label-headerbar {
+    color: #fff;
+    font-weight: 600;
+}

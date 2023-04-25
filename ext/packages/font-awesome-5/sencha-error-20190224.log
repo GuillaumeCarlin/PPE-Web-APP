@@ -1,0 +1,284 @@
+Sencha Cmd 6.6.0.13 - Crash report
+================================================
+An error occurred while executing the following command: package build
+
+Diagnostic information:
+=======================
+                        app.sass.dynamic : true                                              
+                    buildenvironment.dir : C:\Users\Public\wamp32\www\ExtJSApp\thot\ext\packages\font-awesome-5
+               buildenvironment.load.dir : C:\Users\Public\wamp32\www\ExtJSApp\thot\ext\packages\font-awesome-5
+                          cmd.config.dir : C:\Users\Public\Sencha\Cmd\6.6.0.13               
+                                 cmd.dir : C:\Users\Public\Sencha\Cmd\6.6.0.13               
+                    cmd.framework.minver : 5.5.0                                             
+                   cmd.framework.version : 99.99                                             
+              cmd.merge.tool.args.araxis : -wait -merge -3 -a1 {base} {user} {generated} {out}
+              cmd.merge.tool.args.kdiff3 : {base} {user} {generated} -o {out}                
+             cmd.merge.tool.args.p4merge : {base} {user} {generated} {out}                   
+           cmd.merge.tool.args.smartsync : {user} {generated} {base}                         
+          cmd.merge.tool.args.sourcegear : --merge --result={out} {user} {base} {generated}  
+            cmd.merge.tool.args.tortoise : -base:{base} -theirs:{generated} -mine:{user} -merged:{out}
+                              cmd.minver : 3.0.0.0                                           
+                            cmd.platform : windows                                           
+                     cmd.unicode.escapes : C:\Users\Public\Sencha\Cmd\6.6.0.13/unicode-escapes.json
+                             cmd.version : 6.6.0.13                                          
+                            cmd.web.port : 1841                                              
+                     config.skipDownload : false                                             
+                      config.skipInherit : true                                              
+                                 ext.dir : C:\Users\Public\wamp32\www\ExtJSApp\thot\ext      
+                        ext.license.name : commercial                                        
+                     framework.build.dir : ${package.output.base}                            
+                     framework.classpath : C:\Users\Public\wamp32\www\ExtJSApp\thot\ext\packages\font-awesome-5/src
+                    framework.cmd.minver : 6.0.1.75                                          
+                   framework.cmd.version : 6.0.1.75                                          
+                 framework.compatVersion : 6.0.0                                             
+                    framework.config.dir : C:\Users\Public\Sencha\Cmd\6.6.0.13\plugins\ext\current
+                       framework.creator : Sencha                                            
+           framework.detailedDescription : Sencha Ext JS JavaScript Framework                
+                           framework.dir : C:\Users\Public\wamp32\www\ExtJSApp\thot\ext      
+                  framework.example.apps : admin-dashboard,executive-dashboard,kitchensink,classic/charts-kitchensink,classic/desktop,classic/ticket-app,classic/portal,classic/simple-tasks,classic/responsive-app,classic/aria,modern/addressbook,modern/blackberry,modern/energy,modern/stockapp,modern/states,modern/geocongress,modern/oreilly
+                framework.example.apps.0 : admin-dashboard                                   
+                framework.example.apps.1 : executive-dashboard                               
+               framework.example.apps.10 : modern/addressbook                                
+               framework.example.apps.11 : modern/blackberry                                 
+               framework.example.apps.12 : modern/energy                                     
+               framework.example.apps.13 : modern/stockapp                                   
+               framework.example.apps.14 : modern/states                                     
+               framework.example.apps.15 : modern/geocongress                                
+               framework.example.apps.16 : modern/oreilly                                    
+                framework.example.apps.2 : kitchensink                                       
+                framework.example.apps.3 : classic/charts-kitchensink                        
+                framework.example.apps.4 : classic/desktop                                   
+                framework.example.apps.5 : classic/ticket-app                                
+                framework.example.apps.6 : classic/portal                                    
+                framework.example.apps.7 : classic/simple-tasks                              
+                framework.example.apps.8 : classic/responsive-app                            
+                framework.example.apps.9 : classic/aria                                      
+           framework.example.apps.length : 17                                                
+                  framework.example.path : examples,templates                                
+                framework.example.path.0 : examples                                          
+                framework.example.path.1 : templates                                         
+           framework.example.path.length : 2                                                 
+                        framework.format : 1                                                 
+                          framework.isV5 : true                                              
+                          framework.isV6 : true                                              
+                          framework.name : ext                                               
+                     framework.namespace : Ext                                               
+                        framework.output : C:\Users\Public\wamp32\www\ExtJSApp\thot\ext\packages\font-awesome-5/build
+                     framework.overrides : C:\Users\Public\wamp32\www\ExtJSApp\thot\ext\packages\font-awesome-5/overrides
+                  framework.packages.dir : C:\Users\Public\wamp32\www\ExtJSApp\thot\ext/packages/,C:\Users\Public\wamp32\www\ExtJSApp\thot\ext/classic
+                framework.resource.paths : resources                                         
+              framework.resource.paths.0 : resources                                         
+         framework.resource.paths.length : 1                                                 
+                      framework.sass.etc : C:\Users\Public\wamp32\www\ExtJSApp\thot\ext\packages\font-awesome-5/sass/etc/all.scss
+                  framework.sass.fashion : true                                              
+                framework.sass.namespace : Ext                                               
+                      framework.sass.src : C:\Users\Public\wamp32\www\ExtJSApp\thot\ext\packages\font-awesome-5/sass/src
+                      framework.sass.var : C:\Users\Public\wamp32\www\ExtJSApp\thot\ext\packages\font-awesome-5/sass/var
+                       framework.subpkgs : classic/classic,modern/modern,packages/charts,packages/amf,packages/soap,packages/ux,packages/legacy,packages/font-awesome,packages/font-pictos,packages/font-ext
+                     framework.subpkgs.0 : classic/classic                                   
+                     framework.subpkgs.1 : modern/modern                                     
+                     framework.subpkgs.2 : packages/charts                                   
+                     framework.subpkgs.3 : packages/amf                                      
+                     framework.subpkgs.4 : packages/soap                                     
+                     framework.subpkgs.5 : packages/ux                                       
+                     framework.subpkgs.6 : packages/legacy                                   
+                     framework.subpkgs.7 : packages/font-awesome                             
+                     framework.subpkgs.8 : packages/font-pictos                              
+                     framework.subpkgs.9 : packages/font-ext                                 
+                framework.subpkgs.length : 10                                                
+                       framework.summary : Ext JS                                            
+                          framework.type : framework                                         
+                       framework.version : 6.0.1.250                                         
+                       inspector.address : http://localhost:1839/                            
+                      package.base.names :                                                   
+                   package.base.packages :                                                   
+                       package.classpath : C:\Users\Public\wamp32\www\ExtJSApp\thot\ext\packages\font-awesome-5/src
+                   package.compatVersion : 4.3.0                                             
+                      package.config.dir : C:\Users\Public\Sencha\Cmd\6.6.0.13\ant\build\package
+                         package.creator : Sencha                                            
+             package.detailedDescription : Sencha Cmd package wrapper for Font Awesome (http://fortawesome.github.io/Font-Awesome/)
+                             package.dir : C:\Users\Public\wamp32\www\ExtJSApp\thot\ext\packages\font-awesome-5
+                          package.format : 1                                                 
+                       package.framework : ext                                               
+                           package.local : true                                              
+                            package.name : font-awesome-5                                    
+                       package.namespace : Ext                                               
+                          package.output : C:\Users\Public\wamp32\www\ExtJSApp\thot\ext/build/packages/font-awesome-5
+                       package.overrides : C:\Users\Public\wamp32\www\ExtJSApp\thot\ext\packages\font-awesome-5/overrides
+                  package.requires.names : ext,core,classic,theme-base,theme-neutral,theme-neptune
+               package.requires.packages : C:\Users\Public\wamp32\www\ExtJSApp\thot\ext,C:\Users\Public\wamp32\www\ExtJSApp\thot\ext\packages\core,C:\Users\Public\wamp32\www\ExtJSApp\thot\ext\classic\classic,C:\Users\Public\wamp32\www\ExtJSApp\thot\ext\classic\theme-base,C:\Users\Public\wamp32\www\ExtJSApp\thot\ext\classic\theme-neutral,C:\Users\Public\wamp32\www\ExtJSApp\thot\ext\classic\theme-neptune
+                  package.resource.paths :                                                   
+                    package.sass.dynamic : true                                              
+                        package.sass.etc : C:\Users\Public\wamp32\www\ExtJSApp\thot\ext\packages\font-awesome-5/sass/etc/all.scss
+                    package.sass.fashion : true                                              
+                  package.sass.namespace : Ext                                               
+                        package.sass.src : C:\Users\Public\wamp32\www\ExtJSApp\thot\ext\packages\font-awesome-5/sass/src,C:\Users\Public\wamp32\www\ExtJSApp\thot\ext\packages\font-awesome-5/sass/src/all.scss
+                      package.sass.src.0 : C:\Users\Public\wamp32\www\ExtJSApp\thot\ext\packages\font-awesome-5/sass/src
+                      package.sass.src.1 : C:\Users\Public\wamp32\www\ExtJSApp\thot\ext\packages\font-awesome-5/sass/src/all.scss
+                 package.sass.src.length : 2                                                 
+                        package.sass.var : C:\Users\Public\wamp32\www\ExtJSApp\thot\ext\packages\font-awesome-5/sass/var
+                          package.slicer : null                                              
+                         package.summary : Package wrapper for Font Awesome                  
+                           package.theme : theme-neptune                                     
+                         package.toolkit : classic                                           
+                            package.type : code                                              
+                         package.version : 6.0.1.250                                         
+                          repo.local.dir : C:\Users\Public\Sencha\Cmd\repo                   
+                       shared.sencha.dir : true                                              
+        system.java.net.useSystemProxies : true                                              
+                              theme.name : theme-neptune                                     
+                            toolkit.name : classic                                           
+                     workspace.build.dir : C:\Users\Public\wamp32\www\ExtJSApp\thot\ext/build
+                    workspace.config.dir : C:\Users\Public\wamp32\www\ExtJSApp\thot\ext\.sencha\workspace
+                           workspace.dir : C:\Users\Public\wamp32\www\ExtJSApp\thot\ext      
+                  workspace.packages.dir : C:\Users\Public\wamp32\www\ExtJSApp\thot\ext/packages
+                 workspace.subpkg.prefix : C:\Users\Public\wamp32\www\ExtJSApp\thot\ext/build/classic
+
+Exception information:
+=======================
+C:\Users\Public\Sencha\Cmd\6.6.0.13\plugins\package.plugin.xml:160: The following error occurred while executing this line:
+C:\Users\Public\wamp32\www\ExtJSApp\thot\ext\packages\font-awesome-5\build.xml:8: Cannot find C:\Users\Public\wamp32\www\ExtJSApp\thot\ext\packages\font-awesome-5\.sencha\package\build-impl.xml imported from C:\Users\Public\wamp32\www\ExtJSApp\thot\ext\packages\font-awesome-5\build.xml
+     at com.sencha.ant.AntScript.execute(AntScript.java:121)
+     at com.sencha.command.plugin.PluginManager.execute(PluginManager.java:104)
+     at com.sencha.command.plugin.PluginManager.executeReverseFirst(PluginManager.java:145)
+     at com.sencha.command.environment.BuildEnvironment.execute(BuildEnvironment.java:309)
+     at com.sencha.command.environment.AppOrPackageEnvironment.execute(AppOrPackageEnvironment.java:729)
+     at com.sencha.command.pkg.BuildCommand.execute(BuildCommand.java:170)
+     at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+     at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+     at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+     at java.lang.reflect.Method.invoke(Unknown Source)
+     at com.sencha.util.MethodInvoker$Arguments.invoke(MethodInvoker.java:175)
+     at com.sencha.cli.Command.dispatch(Command.java:43)
+     at com.sencha.cli.Commands.dispatch(Commands.java:64)
+     at com.sencha.cli.Commands.dispatch(Commands.java:64)
+     at com.sencha.command.Sencha.dispatch(Sencha.java:80)
+     at com.sencha.command.Sencha.main(Sencha.java:147)
+     at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+     at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+     at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+     at java.lang.reflect.Method.invoke(Unknown Source)
+     at com.exe4j.runtime.LauncherEngine.launch(LauncherEngine.java:65)
+     at com.exe4j.runtime.WinLauncher.main(WinLauncher.java:101)
+     at com.install4j.runtime.launcher.WinLauncher.main(WinLauncher.java:26)
+   Caused by: The following error occurred while executing this line:
+C:\Users\Public\wamp32\www\ExtJSApp\thot\ext\packages\font-awesome-5\build.xml:8: Cannot find C:\Users\Public\wamp32\www\ExtJSApp\thot\ext\packages\font-awesome-5\.sencha\package\build-impl.xml imported from C:\Users\Public\wamp32\www\ExtJSApp\thot\ext\packages\font-awesome-5\build.xml
+     at org.apache.tools.ant.ProjectHelper.addLocationToBuildException(ProjectHelper.java:551)
+     at org.apache.tools.ant.taskdefs.Ant.execute(Ant.java:395)
+     at org.apache.tools.ant.UnknownElement.execute(UnknownElement.java:291)
+     at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+     at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+     at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+     at java.lang.reflect.Method.invoke(Unknown Source)
+     at org.apache.tools.ant.dispatch.DispatchUtils.execute(DispatchUtils.java:106)
+     at org.apache.tools.ant.Task.perform(Task.java:348)
+     at org.apache.tools.ant.taskdefs.Sequential.execute(Sequential.java:68)
+     at net.sf.antcontrib.logic.IfTask.execute(IfTask.java:217)
+     at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+     at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+     at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+     at java.lang.reflect.Method.invoke(Unknown Source)
+     at org.apache.tools.ant.dispatch.DispatchUtils.execute(DispatchUtils.java:106)
+     at org.apache.tools.ant.TaskAdapter.execute(TaskAdapter.java:154)
+     at org.apache.tools.ant.UnknownElement.execute(UnknownElement.java:291)
+     at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+     at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+     at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+     at java.lang.reflect.Method.invoke(Unknown Source)
+     at org.apache.tools.ant.dispatch.DispatchUtils.execute(DispatchUtils.java:106)
+     at org.apache.tools.ant.Task.perform(Task.java:348)
+     at org.apache.tools.ant.Target.execute(Target.java:392)
+     at org.apache.tools.ant.Target.performTasks(Target.java:413)
+     at org.apache.tools.ant.Project.executeSortedTargets(Project.java:1399)
+     at org.apache.tools.ant.Project.executeTarget(Project.java:1368)
+     at org.apache.tools.ant.helper.DefaultExecutor.executeTargets(DefaultExecutor.java:41)
+     at org.apache.tools.ant.Project.executeTargets(Project.java:1251)
+     at com.sencha.ant.AntScript.execute(AntScript.java:117)
+     at com.sencha.command.plugin.PluginManager.execute(PluginManager.java:104)
+     at com.sencha.command.plugin.PluginManager.executeReverseFirst(PluginManager.java:145)
+     at com.sencha.command.environment.BuildEnvironment.execute(BuildEnvironment.java:309)
+     at com.sencha.command.environment.AppOrPackageEnvironment.execute(AppOrPackageEnvironment.java:729)
+     at com.sencha.command.pkg.BuildCommand.execute(BuildCommand.java:170)
+     at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+     at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+     at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+     at java.lang.reflect.Method.invoke(Unknown Source)
+     at com.sencha.util.MethodInvoker$Arguments.invoke(MethodInvoker.java:175)
+     at com.sencha.cli.Command.dispatch(Command.java:43)
+     at com.sencha.cli.Commands.dispatch(Commands.java:64)
+     at com.sencha.cli.Commands.dispatch(Commands.java:64)
+     at com.sencha.command.Sencha.dispatch(Sencha.java:80)
+     at com.sencha.command.Sencha.main(Sencha.java:147)
+     at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+     at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+     at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+     at java.lang.reflect.Method.invoke(Unknown Source)
+     at com.exe4j.runtime.LauncherEngine.launch(LauncherEngine.java:65)
+     at com.exe4j.runtime.WinLauncher.main(WinLauncher.java:101)
+     at com.install4j.runtime.launcher.WinLauncher.main(WinLauncher.java:26)
+   Caused by: Cannot find C:\Users\Public\wamp32\www\ExtJSApp\thot\ext\packages\font-awesome-5\.sencha\package\build-impl.xml imported from C:\Users\Public\wamp32\www\ExtJSApp\thot\ext\packages\font-awesome-5\build.xml
+     at org.apache.tools.ant.taskdefs.ImportTask.importResource(ImportTask.java:182)
+     at org.apache.tools.ant.taskdefs.ImportTask.execute(ImportTask.java:163)
+     at org.apache.tools.ant.UnknownElement.execute(UnknownElement.java:291)
+     at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+     at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+     at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+     at java.lang.reflect.Method.invoke(Unknown Source)
+     at org.apache.tools.ant.dispatch.DispatchUtils.execute(DispatchUtils.java:106)
+     at org.apache.tools.ant.Task.perform(Task.java:348)
+     at org.apache.tools.ant.Target.execute(Target.java:392)
+     at org.apache.tools.ant.helper.ProjectHelper2.parse(ProjectHelper2.java:180)
+     at org.apache.tools.ant.ProjectHelper.configureProject(ProjectHelper.java:82)
+     at org.apache.tools.ant.taskdefs.Ant.execute(Ant.java:393)
+     at org.apache.tools.ant.UnknownElement.execute(UnknownElement.java:291)
+     at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+     at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+     at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+     at java.lang.reflect.Method.invoke(Unknown Source)
+     at org.apache.tools.ant.dispatch.DispatchUtils.execute(DispatchUtils.java:106)
+     at org.apache.tools.ant.Task.perform(Task.java:348)
+     at org.apache.tools.ant.taskdefs.Sequential.execute(Sequential.java:68)
+     at net.sf.antcontrib.logic.IfTask.execute(IfTask.java:217)
+     at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+     at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+     at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+     at java.lang.reflect.Method.invoke(Unknown Source)
+     at org.apache.tools.ant.dispatch.DispatchUtils.execute(DispatchUtils.java:106)
+     at org.apache.tools.ant.TaskAdapter.execute(TaskAdapter.java:154)
+     at org.apache.tools.ant.UnknownElement.execute(UnknownElement.java:291)
+     at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+     at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+     at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+     at java.lang.reflect.Method.invoke(Unknown Source)
+     at org.apache.tools.ant.dispatch.DispatchUtils.execute(DispatchUtils.java:106)
+     at org.apache.tools.ant.Task.perform(Task.java:348)
+     at org.apache.tools.ant.Target.execute(Target.java:392)
+     at org.apache.tools.ant.Target.performTasks(Target.java:413)
+     at org.apache.tools.ant.Project.executeSortedTargets(Project.java:1399)
+     at org.apache.tools.ant.Project.executeTarget(Project.java:1368)
+     at org.apache.tools.ant.helper.DefaultExecutor.executeTargets(DefaultExecutor.java:41)
+     at org.apache.tools.ant.Project.executeTargets(Project.java:1251)
+     at com.sencha.ant.AntScript.execute(AntScript.java:117)
+     at com.sencha.command.plugin.PluginManager.execute(PluginManager.java:104)
+     at com.sencha.command.plugin.PluginManager.executeReverseFirst(PluginManager.java:145)
+     at com.sencha.command.environment.BuildEnvironment.execute(BuildEnvironment.java:309)
+     at com.sencha.command.environment.AppOrPackageEnvironment.execute(AppOrPackageEnvironment.java:729)
+     at com.sencha.command.pkg.BuildCommand.execute(BuildCommand.java:170)
+     at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+     at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+     at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+     at java.lang.reflect.Method.invoke(Unknown Source)
+     at com.sencha.util.MethodInvoker$Arguments.invoke(MethodInvoker.java:175)
+     at com.sencha.cli.Command.dispatch(Command.java:43)
+     at com.sencha.cli.Commands.dispatch(Commands.java:64)
+     at com.sencha.cli.Commands.dispatch(Commands.java:64)
+     at com.sencha.command.Sencha.dispatch(Sencha.java:80)
+     at com.sencha.command.Sencha.main(Sencha.java:147)
+     at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+     at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+     at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+     at java.lang.reflect.Method.invoke(Unknown Source)
+     at com.exe4j.runtime.LauncherEngine.launch(LauncherEngine.java:65)
+     at com.exe4j.runtime.WinLauncher.main(WinLauncher.java:101)
+     at com.install4j.runtime.launcher.WinLauncher.main(WinLauncher.java:26)
+

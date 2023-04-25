@@ -1,0 +1,12 @@
+[24-Nov-2016 17:08:02 Europe/Berlin] array (
+  'host' => 'SVW2K8R2SQL1\\DEV',
+  'dba' => 'BD_THOT_DEV_THD',
+  'user' => 'gmpi',
+  'password' => 'P@57r1s',
+)
+[24-Nov-2016 17:18:21 Europe/Berlin] array (
+  'host' => 'SVW2K8R2SQL1\\DEV',
+  'dba' => 'BD_THOT_DEV_THD',
+  'user' => 'gmpi',
+  'password' => 'P@57r1s',
+)

@@ -1,0 +1,62 @@
+// /**
+//  * @class Ext.tab.Tab
+//  */
+
+// /**
+//  * @var {color}
+//  * The base color of Tabs
+//  */
+$tabbar-base-color: #fff;//dynamic($base-color);
+
+// /**
+//  * @var {color}
+//  * The base color of hovered Tabs
+//  */
+$tab-base-color-over: transparent;
+
+// /**
+//  * @var {color}
+//  * The text color of Tabs
+//  */
+$tab-color: #666;
+
+// /**
+//  * @var {color}
+//  * The text color of hovered Tabs
+//  */
+$tab-color-over: lighten($base-color,10%);
+
+// /**
+//  * @var {number/list}
+//  * The border-width of Tabs
+//  */
+
+$tab-border-width: 0 0 3px 0;
+
+// /**
+//  * @var {color}
+//  * The border-color of Tabs
+//  */
+$tab-border-color: transparent;
+
+// /**
+//  * @var {color}
+//  * The border-color of hovered Tabs
+//  */
+$tab-border-color-over: lighten($base-color,10%);
+
+// /**
+//  * @var {color}
+//  * The border-color of the active Tab
+//  */
+$tab-border-color-active: dynamic($base-color);
+
+/**
+ * couleur du trait de séparation des onglets et de la zone d'affichage
+ */
+$tabbar-strip-background-color: #d1d1d1;
+
+/**
+ * hauteur du trait de séparation des onglets et de la zone d'affichage
+ */
+$tabbar-strip-height: 1px;

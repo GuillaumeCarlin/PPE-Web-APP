@@ -1,0 +1,29 @@
+{
+    "THOT": {
+        "typebase": "MsSql2016",
+        "libbase": "Thot développement",
+        "host": "prt-w10-hvt\\DEV",
+        "nombase": "BD_THOT_THT",
+        "client": "PROFORM",
+        "username": "thotdbowner",
+        "passe": "eJwrycgvcXHKL89LLTIEAB81BKI=",
+        "passe-clair" : "thotDBowner1",
+        "appli": true,
+        "defaut": true,
+        "dev": "1"
+    },
+    "LDAP": {
+        "typebase": "Ldap",
+        "host": "ldap://172.16.10.1",
+        "domaine": "OU=PROFORM - UTILISATEURS ET GROUPES,OU=PROFORM,DC=proform,DC=dom",
+        "chainecnx": "_SRVLdap",
+        "passe": "eJxTCnYwNi8ziDQuVgIAENEC5w=="
+    },
+    "LDAP-GPSACORP": {
+        "typebase": "Ldap",
+        "host": "ldap://192.168.254.11",
+        "domaine": "OU=PROFORM - UTILISATEURS ET GROUPES,OU=PROFORM,DC=ad,DC=gpsacorp,DC=com",
+        "chainecnx": "_SRVLdap",
+        "passe": "eJxTCnYwNi8ziDQuVgIAENEC5w=="
+    }
+}

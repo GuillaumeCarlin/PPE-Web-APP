@@ -1,0 +1,243 @@
+{
+    "admin": {
+        "description": "Compte administrateur",
+        "login": "ThotAdmin",
+        "password": "eJxTCigsMrM0MzZQAgAPKAKA"
+    },
+    "objects": {
+        "teamTab": {
+            "description": "Statut équipe",
+            "roles": [
+                "sa",
+                "adm",
+                "rss"
+            ],
+            "users": [
+                "fbrechon",
+                "pberard",
+                "ThotAdmin"
+            ]
+        },
+        "paramTab": {
+            "description": "Gestion des paramètres de l'application",
+            "roles": [
+                "sa",
+                "adm"
+            ],
+            "users": [
+                "fbrechon",
+                "pberard",
+                "jalmeida",
+                "ndridi",
+                "ThotAdmin"
+            ]
+        },
+        "configTab": {
+            "description": "Configuration de l'application",
+            "roles": [
+                "sa",
+                "adm"
+            ],
+            "users": [
+                "fbrechon",
+                "pberard",
+                "ThotAdmin"
+            ]
+        },
+        "impexpTab": {
+            "description": "Gestion des imports/exports de données",
+            "roles": [
+                "sa",
+                "adm"
+            ],
+            "users": [
+                "fbrechon",
+                "pberard",
+                "jalmeida",
+                "ndridi",
+                "ThotAdmin"
+            ]
+        },
+        "revisionTab": {
+            "description": "Historique/Correction des activités",
+            "roles": [
+                "sa",
+                "adm",
+                "rss"
+            ],
+            "users": [
+                "ThotAdmin",
+                "jalmeida",
+                "pberard",
+                "fbrechon",
+                "lchantre",
+                "pciavarella",
+                "acontassot",
+                "xdegoutte",
+                "fdias",
+                "ndridi",
+                "dgoutagny",
+                "cgranjon",
+                "lgrillon",
+                "yhamon",
+                "vmonteiro",
+                "lpetrilli",
+                "ypioteyry",
+                "dthevenon",
+                "hvalot"
+            ]
+        },
+        "adminOfToolbar": {
+            "roles": [
+                "sa",
+                "adm"
+            ],
+            "users": [
+                "fbrechon",
+                "jalmeida",
+                "ndridi",
+                "ThotAdmin"
+            ]
+        }
+    },
+    "process": {
+        "frmfreealea": {
+            "description": "Outils de gestion des aléas libres",
+            "roles": [
+                "sa",
+                "adm"
+            ],
+            "users": [
+                "fbrechon",
+                "pberard",
+                "ThotAdmin"
+            ],
+            "usersub": {
+                "hvalot": 210
+            }
+        },
+        "frmrevision": {
+            "description": "Correction des activités de production du contexte historique",
+            "roles": [
+                "sa",
+                "adm"
+            ],
+            "users": [
+                "fbrechon",
+                "jalmeida",
+                "ndridi",
+                "ThotAdmin"
+            ],
+            "usersub": {
+                "hvalot": 210
+            }
+        },
+        "frmrevisionqualite": {
+            "description": "Correction des activités qualité du contexte historique",
+            "roles": [
+                "sa",
+                "adm"
+            ],
+            "users": [
+                "fbrechon",
+                "jalmeida",
+                "ndridi",
+                "ThotAdmin"
+            ],
+            "usersub": {
+                "hvalot": 210,
+                "ThotAdmin": 210
+            }
+        },
+        "frmrevisionhorsprod": {
+            "description": "Correction des activités hors production du contexte historique",
+            "roles": [
+                "sa",
+                "adm"
+            ],
+            "users": [
+                "fbrechon",
+                "jalmeida",
+                "ndridi",
+                "ThotAdmin"
+            ],
+            "usersub": {
+                "hvalot": 210
+            }
+        },
+        "frmrevisionnonplanifie": {
+            "description": "Correction des activités non planifiées du contexte historique",
+            "roles": [
+                "sa",
+                "adm"
+            ],
+            "users": [
+                "fbrechon",
+                "jalmeida",
+                "ndridi",
+                "ThotAdmin"
+            ],
+            "usersub": {
+                "hvalot": 210
+            }
+        },
+        "frmrevisionreglage": {
+            "description": "Correction des activités de réglage du contexte historique",
+            "roles": [
+                "sa",
+                "adm"
+            ],
+            "users": [
+                "fbrechon",
+                "jalmeida",
+                "ndridi",
+                "ThotAdmin"
+            ],
+            "usersub": {
+                "hvalot": 210
+            }
+        },
+        "alertdetail": {
+            "description": "Outils de gestion des alertes du contexte alertes",
+            "roles": [
+                "sa",
+                "adm",
+                "rss"
+            ],
+            "users": [
+                "fbrechon",
+                "pberard",
+                "ThotAdmin"
+            ],
+            "usersub": {
+                "hvalot": 210
+            }
+        },
+        "search": {
+            "description": "Outils de gestion des opérations du contexte recherche",
+            "roles": [
+                "sa",
+                "adm"
+            ],
+            "users": [
+                "fbrechon",
+                "ndridi",
+                "jalmeida",
+                "ThotAdmin"
+            ]
+        },
+        "actrevision": {
+            "description": "Outils de création/correction des activités du contexte historique",
+            "roles": [
+                "sa",
+                "adm"
+            ],
+            "users": [
+                "fbrechon",
+                "jalmeida",
+                "ndridi",
+                "ThotAdmin"
+            ]
+        }
+    }
+}

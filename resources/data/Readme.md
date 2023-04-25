@@ -1,0 +1,1 @@
+ce dossier contient les fichiers JSON contenant les libellés utilisés dans l'application

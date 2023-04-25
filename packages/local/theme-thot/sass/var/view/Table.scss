@@ -1,0 +1,16 @@
+/* couleur de fond des lignes impaires */
+$grid-row-cell-alt-background-color: $grid-row-cell-background-color;//darken($thot-panel-body-background-color,5%);
+
+/* couleur du surlignage */
+//$grid-row-cell-over-background-color: lighten($base-color,68%);
+/**
+ * @var {color}
+ * The text color of the selected row
+ */
+//$grid-row-cell-selected-color: dynamic($grid-row-cell-color);
+
+/**
+ * @var {color}
+ * The background-color of the selected row
+ */
+//$grid-row-cell-selected-background-color: dynamic(#d1ffe2);

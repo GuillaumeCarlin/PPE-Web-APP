@@ -1,0 +1,67 @@
+/*
+ * This is is imported by virtue of "sass.var" in "app.json".
+ */
+
+$color-blue: #167abc;
+$color-soft-cyan: #03b4d5;
+$color-soft-blue: #2eadf5;
+$color-soft-green: #9cc96b;
+$color-soft-orange: #ffc107;
+$color-soft-red: #e44959;
+$color-soft-purple: #925e8b;
+$color-gray: #949495;
+$color-green: #16b603;
+$color-white:#fff;
+$color-black: #404040;
+
+
+$thot-important-color: #0288d1;
+
+$enable-font-awesome: dynamic(true);
+
+/* couleur principale du thÃƒÂ¨me
+ selon palette Google https://material.google.com/style/color.html#color-color-palette
+ Light Blue*/
+$base-color-hue-light:#29B6F6; //nuance 400
+$base-color-hue-dark:#01579B; //nuance 900
+$accent-color:#00B0FF; //nuance A400
+
+/* couleur des panels */
+$thot-panel-background-color: dynamic(#fff); // couleur de fond des panels
+$thot-panel-border-color:darken($thot-panel-background-color, 10%); //dynamic(#bdbdbd);
+$thot-panel-body-background-color:dynamic(#FFF);
+
+/* couleurs de la zone logo */
+$thot-logo-background-color: dynamic($base-color); // couleur de fond de la zone logo
+$thot-logo-color: #ffffff; // couleur de texte de la zone logo
+$thot-logo-glyph-color: #ffffff; // couleur de glyphe de la zone logo
+
+/* couleurs de fond de l'espace de travail */
+$thot-main-background-color: #e6e6e6;
+
+/* couleurs des boutons action principales */
+$thot-action-color: $accent-color; //$thot-nav-background-color-active;//dynamic(#02e6bb);
+$thot-action-text-color: #fff;
+
+/* couleurs des boutons de la barre d'outils principale */
+$thot-header-toolbar-color:#fff; // texte du bouton
+$thot-header-toolbar-glyph-color: #fff; // icone du bouton
+
+/* couleurs des entÃƒÂªtes de panel de l'interface */
+$thot-panel-header-background: #ffffff;
+$thot-panel-header-color:$base-color; //dynamic(#000);
+
+/* couleurs standardisÃƒÂ©es pour les messages et informations*/
+/* couleurs standard pour les actions et messages */
+$thot-error-color:#d50000;
+$thot-warning-color:#ffab00;
+$thot-success-color:#00c853;
+$thot-color-dimmed: #c9c5ca;
+
+/* codes couleurs spÃƒÂ©cifiques */
+$thot-activity-color: $color-soft-green;
+$thot-history-color: $color-soft-purple;
+$thot-alert-color: $thot-warning-color;
+$thot-random-color: $color-soft-orange;
+
+$thot-nav-color-active: dynamic(#d8d8d8);    // couleur du texte du menu latÃ¯Â¿Â½ral, actif

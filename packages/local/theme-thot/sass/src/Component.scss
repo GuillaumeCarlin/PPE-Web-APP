@@ -1,0 +1,23 @@
+/*******************************************************************************
+ DEFINITION DES ICONES DE L'APPLICATION, voir fichier _icon.scss
+*******************************************************************************/
+@import "_icon.scss";
+@import "_animate.scss";
+@import "_custom.scss";
+
+/*******************************************************************************
+ MIXINS GENERAUX
+*******************************************************************************/
+@mixin thot-shadow-level($level) {
+  -moz-box-shadow: 0px 0px ($level*4)px 0px #9b9b9b;
+  -webkit-box-shadow: 0px 0px ($level*4)px 0px #9b9b9b;
+  -o-box-shadow: 0px 0px ($level*4)px 0px #9b9b9b;
+  box-shadow: 0px 0px ($level*4)px 0px #9b9b9b;
+}
+
+@mixin thot-shadow($x, $y, $blur, $spread, $color) {
+  -moz-box-shadow: $x $y $blur $spread $color;
+  -webkit-box-shadow: $x $y $blur $spread $color;
+  -o-box-shadow: $x $y $blur $spread $color;
+  box-shadow: $x $y $blur $spread $color;
+}

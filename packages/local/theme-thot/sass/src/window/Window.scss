@@ -1,0 +1,29 @@
+/**/
+$panel-base-color:#d4d4d4;
+$panel-body-background-color: #fff;
+$panel-frame-background-color: #fafafa;
+$panel-frame-border-width: 1px;
+$panel-frame-padding: 0px 0px 0px 0px;
+$panel-header-background-color: #fff;
+// $panel-header-color: $base-color;
+$panel-header-color: $color-black;
+$panel-header-inner-border-color: #fff;
+$panel-header-padding: 6px 15px 7px 15px;
+$window-border-color:#d9d9d9;
+$window-header-background-color: #fff;
+$window-header-border-width: 0px;
+$window-header-line-height: 32px;
+$window-header-font-size:18px;
+$window-header-font-weight:500;
+//$tool-glyph-color: $base-color;
+$tool-glyph-color: $color-black;
+$window-border-radius: 3px;
+
+/* Ajout de l'ombre */
+.x-window{
+//   @include thot-shadow(0px, 25px, 55px, 0px, rgba(0,0,0,0.7));
+  -moz-box-shadow: 15px 15px 55px 0px rgba(0,0,0,0.3), -15px 25px 55px 0px rgba(0,0,0,0.29);
+  -webkit-box-shadow: 15px 15px 55px 0px rgba(0,0,0,0.3), -15px 25px 55px 0px rgba(0,0,0,0.29);
+  -o-box-shadow: 15px 15px 55px 0px rgba(0,0,0,0.3), -15px 25px 55px 0px rgba(0,0,0,0.29);
+  box-shadow: 15px 15px 55px 0px rgba(0,0,0,0.3), -15px 25px 55px 0px rgba(0,0,0,0.29);
+}

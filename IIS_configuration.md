@@ -1,0 +1,3 @@
+- installer le rôle IIS sur le serveur
+- installer le package PHP 7 avec pilotes SQL Server depuis la cosole de gestion IIS
+- accorder les droits sur le dossier de l'application au groupe IIS_USER

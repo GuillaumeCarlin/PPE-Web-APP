@@ -1,0 +1,12 @@
+{
+	"server": {
+		"protocole": "wss://",
+		"addr": "localhost",
+		"allowedorig": [
+			"127.0.0.1",
+			"localhost"
+		],
+		"port": 8443
+	},
+	"checkcnxinterval": 600000
+}

@@ -1,0 +1,377 @@
+/* icones spécifiques de l'application */
+
+.thot-eqp-remplacant {
+    /* indicateuteur, l'équipement est un remplacant d'un autre */
+    color: #848484;
+    font-family: 'fontawesome';
+    content: '\f079';
+    /*fa-retweet*/
+}
+
+.thot-icon-wrench-small {
+    font-family: FontAwesome;
+    line-height: 1;
+    color: #2eadf5;
+    font-size: 1em;
+}
+
+.thot-icon-wrench-small:before {
+    content: '\f0ad';
+}
+
+.thot-icon-wrench-medium {
+    font-family: FontAwesome;
+    line-height: 1;
+    color: #C38CFF;
+    font-size: 1.5em;
+}
+
+.thot-icon-wrench-medium:before {
+    content: '\f0ad';
+}
+
+.thot-icon-wrench-large {
+    font-family: FontAwesome;
+    line-height: 1;
+    /* color: #2eadf5; */
+    font-size: 2em;
+}
+
+.thot-icon-wrench-large:before {
+    content: '\f0ad';
+}
+
+.icon-wsok:before {
+    position: absolute;
+    font-family: FontAwesome;
+    content: '\f058';
+    font-size: 1em;
+    z-index: 999;
+    top: 3px;
+    left: 6px;
+    color: greenyellow;
+}
+
+.icon-wsnok:before {
+    position: absolute;
+    font-family: FontAwesome;
+    content: '\f057';
+    font-size: 1em;
+    z-index: 999;
+    top: 3px;
+    left: 6px;
+    color: orange;
+}
+
+.thot-icon-prmnok-medium {
+    font-family: FontAwesome;
+    line-height: 1;
+    font-size: 1.5em;
+}
+
+.thot-icon-prmnok-medium:before {
+    content: '\f071';
+}
+
+/* Icones du rapport d'avancement */
+.thot-icon-todo-medium {
+    /* opération non commencée, à faire */
+    font-family: FontAwesome;
+    line-height: 1;
+    font-size: 1.5em;
+}
+
+.thot-icon-todo-medium:before {
+    /*fa-circle-o*/
+    content: '\f10c';
+}
+
+.thot-icon-started-medium {
+    /* opération commencée */
+    font-family: FontAwesome;
+    line-height: 1;
+    font-size: 1.5em;
+}
+
+.thot-icon-started-medium:before {
+    /*fa-play-circle-o */
+    content: '\f01d';
+}
+
+.thot-icon-done-medium {
+    /* opération terminée */
+    font-family: FontAwesome;
+    line-height: 1;
+    font-size: 1.5em;
+}
+
+.thot-icon-done-medium:before {
+    /*fa-check-circle-o */
+    content: '\f05d';
+}
+
+.thot-icon-undone-medium {
+    /* opération non réalisée */
+    font-family: FontAwesome;
+    line-height: 1;
+    font-size: 1.5em;
+}
+
+.thot-icon-undone-medium:before {
+    /*fa-times-circle-o */
+    content: '\f05c';
+}
+
+/**************************/
+.thot-act-running-medium {
+    font-family: FontAwesome;
+    font-size: 1.5em;
+    color: #00c853;
+}
+
+.thot-act-running-medium:before {
+    content: '\f144'
+}
+
+.thot-icon-usr-inactif {
+    font-family: FontAwesome;
+    font-size: 1em;
+    color: orange;
+}
+
+.thot-icon-usr-inactif:before {
+    content: '\f235';
+}
+
+.thot-icon-usr-inactif-medium {
+    font-family: FontAwesome;
+    font-size: 1.5em;
+    color: orange;
+}
+
+.thot-icon-usr-inactif-medium:before {
+    content: '\f235';
+}
+
+/* indicateurs de type d'activité */
+.thot-icon-HRPR-medium::before {
+    /* fa-random */
+    content: '\f074';
+}
+
+.thot-icon-HRPR-medium {
+    font-family: FontAwesome;
+    line-height: 1;
+    color: #FFAB00;
+    font-size: 1.5em;
+}
+
+.thot-icon-NPLN-medium::before {
+    /* fa-chain-broken */
+    content: '\f127';
+}
+
+.thot-icon-NPLN-medium {
+    font-family: FontAwesome;
+    line-height: 1;
+    color: #F06B0C;
+    font-size: 1.5em;
+}
+
+.thot-icon-QUAL-medium::before {
+    /* fa-recycle */
+    content: '\f1b8';
+}
+
+.thot-icon-QUAL-medium {
+    font-family: FontAwesome;
+    line-height: 1;
+    color: #487AFE;
+    font-size: 1.5em;
+}
+
+.thot-icon-REG-medium::before {
+    /* fa-wrench */
+    content: '\f0ad';
+}
+
+.thot-icon-REG-medium {
+    font-family: FontAwesome;
+    line-height: 1;
+    color: #C38CFF;
+    font-size: 1.5em;
+}
+
+.thot-icon-info-medium::before {
+    /* fa-info-circle */
+    content: '\f05a';
+}
+
+.thot-icon-info-medium {
+    font-family: FontAwesome;
+    line-height: 1;
+    color: #188fda;
+    font-size: 1.5em;
+}
+
+/*********************************/
+/*                               */
+/* Surcharge de la couleur des   */
+/* icones des actions column     */
+/*                               */
+/*********************************/
+
+.x-action-col-icon {
+    color: #025b80 !important;
+}
+
+/*********************************/
+/*                               */
+/* Icones indicateurs de statut  */
+/*                               */
+/*********************************/
+
+/* objet supprimé */
+.thot-icon-deleted-medium {
+    font-family: FontAwesome;
+    line-height: 1;
+    color: #e62222;
+    font-size: 1.5em;
+}
+
+.thot-icon-deleted-medium::before {
+    /* fa-trash */
+    content: '\f1f8';
+}
+
+/* objet supprimé */
+.thot-icon-edited-medium {
+    font-family: FontAwesome;
+    line-height: 1;
+    color: #ffab00;
+    font-size: 1.5em;
+}
+
+.thot-icon-edited-medium::before {
+    /* fa-pencil */
+    content: '\F040';
+}
+
+/* objet ajouté en mode correction */
+.thot-icon-added-medium {
+    font-family: FontAwesome;
+    line-height: 1;
+    color: #18d100;
+    font-size: 1.5em;
+}
+
+.thot-icon-added-medium::before {
+    /* fa-pencil */
+    content: '\F040';
+}
+
+.thot-icon-added-medium::after {
+    /* fa-plus-circle, stack icon */
+    content: '\F055';
+    position: absolute;
+    font-size: 0.7em;
+    bottom: 2px;
+    right: 4px;
+}
+
+/*********************************/
+/*                               */
+/* Icones d'action de la grille  */
+/*                               */
+/*********************************/
+
+/* éditer l'activité */
+.x-grid-row:hover .thot-icon-edit {
+    display: inline-block;
+    height: 16px;
+    width: 24px;
+}
+
+.x-grid-row:hover .thot-icon-edit:before {
+    /* fa-pencil-square-o */
+    content: '\f044';
+    /* color: #2eadf5; */
+}
+
+/* supprimer la dernière correction de l'activité */
+.x-grid-row:hover .thot-icon-eraseedit {
+    display: inline-block;
+    height: 16px;
+    width: 24px;
+}
+
+.x-grid-row:hover .thot-icon-eraseedit:before {
+    /* fa-pencil-square-o */
+    content: '\f12d';
+    /* color: #2eadf5; */
+}
+
+/* Supprimer l'activité */
+.x-grid-row:hover .thot-icon-delete {
+    display: inline-block;
+    height: 16px;
+    width: 24px;
+}
+
+.x-grid-row:hover .thot-icon-delete:before {
+    /* fa-trash-o */
+    content: "\f014";
+    /* color: #e62222; */
+}
+
+/* restaurer l'activité */
+.x-grid-row:hover .thot-icon-undelete {
+    display: inline-block;
+    height: 16px;
+    width: 24px;
+}
+
+.x-grid-row:hover .thot-icon-undelete:before {
+    /* fa-undo */
+    content: "\f0e2";
+    /* color: #009419; */
+}
+
+/* marquer un message lu */
+.x-grid-row:hover .thot-icon-seen {
+    display: inline-block;
+    height: 16px;
+    width: 24px;
+}
+
+.x-grid-row:hover .thot-icon-seen:before {
+    /* fa-eye */
+    content: '\f06e';
+    /* color: #03c20c; */
+}
+
+/* marquer un message non-lu */
+.x-grid-row:hover .thot-icon-unseen {
+    display: inline-block;
+    height: 16px;
+    width: 24px;
+}
+
+.x-grid-row:hover .thot-icon-unseen:before {
+    /* fa-eye-slash */
+    content: '\f070';
+    /* color: #03c20c; */
+}
+
+/* archiver un message */
+.x-grid-row:hover .thot-icon-archive {
+    display: inline-block;
+    height: 16px;
+    width: 24px;
+}
+
+.x-grid-row:hover .thot-icon-archive:before {
+    /* fa-archive */
+    content: '\f187';
+    /* color: #424242; */
+}

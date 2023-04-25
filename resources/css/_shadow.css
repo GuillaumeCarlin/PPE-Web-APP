@@ -1,0 +1,19 @@
+/* définition des ombres spécifiques */
+.left-light-shadow {
+    z-index: 9999;
+    box-shadow: rgba(0, 0, 0, 0.16) -3px 3px 6px,
+        rgba(0, 0, 0, 0.23) -3px 3px 6px;
+}
+
+.left-long-shadow {
+    z-index: 9999;
+    box-shadow: 15px 15px 55px 0px rgba(0, 0, 0, 0.3),
+        -15px 25px 55px 0px rgba(0, 0, 0, 0.29);
+}
+
+/* effet de flou sur les menus */
+.x-menu-body-default {
+    background: #ffffffa3 !important;
+    backdrop-filter: blur(12px) !important;
+    -webkit-backdrop-filter: blur(12px) !important;
+}

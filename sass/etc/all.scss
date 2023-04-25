@@ -1,0 +1,25 @@
+/*
+ * This is is imported by virtue of "sass.etc" in "app.json".
+ */
+
+/* mise en forme pour le splashscreen de chargement */
+#splash {
+  /*centrage vertical*/
+  margin-top:50vh;
+  transform:translateY(-50%);
+  /*centrage horizontal*/
+  margin-left:auto;
+  margin-right:auto;
+  width:300px;
+  /*configuration affichage*/
+  text-align: center;
+  font-family: 'Noto sans', 'Open Sans', 'Helvetica Neue', helvetica, arial, sans-serif;
+  color:#01579B;
+  font-size: 72px;
+  font-weight:700;
+}
+#splash .loader{
+  color:#ff4081;
+}
+
+/* fin */

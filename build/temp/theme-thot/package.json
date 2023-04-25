@@ -1,0 +1,56 @@
+{
+  "name": "theme-thot",
+  "namespace": "Ext",
+  "format": "1",
+  "version": "1.0.0",
+  "creator": "PQR / Hervé Valot",
+  "summary": "Theme Thot",
+  "detailedDescription": "Theme visuel spécifique pour l\u0027application Thot",
+  "type": "theme",
+  "extend": "theme-triton",
+  "slicer": {
+    "js": [
+      {
+        "path": "${package.dir}/sass/example/custom.js",
+        "isWidgetManifest": true
+      }
+    ]
+  },
+  "toolkit": "classic",
+  "output": "${package.dir}/build",
+  "sass": {
+    "namespace": "Ext",
+    "etc": [
+      "${package.dir}/sass/etc/all.scss",
+      "${package.dir}/sass/etc/sencha-themer-defaults.scss"
+    ],
+    "var": [
+      "${package.dir}/sass/var",
+      "${package.dir}/sass/var/sencha-themer-defaults.scss",
+      "${package.dir}/sass/var/themer-ui-variables.scss"
+    ],
+    "src": [
+      "${package.dir}/sass/src",
+      "${package.dir}/sass/src/sencha-themer-defaults.scss"
+    ],
+    "generated": {
+      "var": "sass/save.scss",
+      "src": "sass/save"
+    }
+  },
+  "classpath": [
+    "${package.dir}/src"
+  ],
+  "overrides": [
+    "${package.dir}/overrides"
+  ],
+  "example": {
+    "path": [
+      "${package.dir}/examples"
+    ]
+  },
+  "framework": "ext",
+  "themer": {
+    "version": "1.3.1.65"
+  }
+}

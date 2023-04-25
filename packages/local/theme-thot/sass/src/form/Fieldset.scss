@@ -1,0 +1,38 @@
+/* forcer l'alignement des labels de fieldset à droite */
+.x-form-item-label{
+  text-align: right;
+}
+
+/* par contre la valeur associée au label est alignée à gauche */
+.x-form-display-field{
+  text-align: left;
+}
+
+/* personnalisation */
+@include extjs-fieldset-ui(
+  $ui: 'thot-fieldset-nostyle',
+  $ui-border-width: 0px
+);
+
+.x-fieldset-thot-fieldset-nostyle {
+  background-color: transparent;
+}
+
+@include extjs-fieldset-ui(
+    $ui: 'thot-field-compact',
+    // $form-field-height: 24px,
+    // $form-field-padding: 4px 10px 10px 10px,
+);
+
+@include extjs-display-field-ui(
+    $ui: 'thot-field-compact',
+    $ui-field-height: 17px,
+    $ui-line-height: 17px
+);
+
+.x-form-display-field-thot-field-compact {
+  min-height: 17px;
+  font: 500 11px/17px 'Noto sans', 'Open Sans', 'Helvetica Neue', helvetica, arial, sans-serif;
+  color: #000;
+  margin-top: 0px;
+}

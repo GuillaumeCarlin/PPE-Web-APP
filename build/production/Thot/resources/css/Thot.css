@@ -1,0 +1,82 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 13 févr. 2017, 16:02:17
+    Author     : edblv
+*/
+.gridFilteredCol {
+	font-weight: bold;
+	color: orange;
+}
+
+/* entête de groupe dans les grilles */
+.x-grid-group-hd {
+    background-color: #E0E0E0 !important;
+}
+
+/* définition de la forme des tags affichés dans les grilles
+ * - tag pour le sopérations Qualité, Hors Prod, etc...
+ */
+.thot-tag {
+    padding: 2px 5px;
+    border-radius: 3px;
+    background-position: center bottom;
+    background-repeat: no-repeat;
+    min-width: 70px;
+    text-align: center;
+    font-weight: 600;
+}
+/* le suffixe doit correspondre à l'information OCT_CODE de la base de données */
+/* Attention, sensible à la casse */
+.thot-tag-QUAL {
+    color: #f0f0f0;
+    background-color: #00ADB5;
+}
+.thot-tag-HRPR {
+    color: #f0f0f0; 
+    background-color: #FC3C3C;
+}
+.thot-tag-NPLN {
+    color: #242424;
+    background-color: #F8B500;
+}
+/* bordure verticale de la cellule pour rappel du type d'activité */
+.thot-tag-cell::before{
+    position: absolute;
+    z-index: 5000;
+    content: "";
+    width: 5px;
+    height: 100%;
+    top: 0;
+    left: 0;
+}
+.thot-tag-cell-QUAL::before {
+    background-color: #00ADB5;
+}
+.thot-tag-cell-HRPR::before {
+    background-color: #FC3C3C;
+}
+.thot-tag-cell-NPLN::before {
+    background-color: #F8B500;
+}
+
+.thot-ariane-sep::before {
+    color: #848484;
+    font-family: 'fontawesome';
+    content: '\f0da';
+}
+
+.thot-dimmed-info {
+    color: #bdbdbd !important;
+}
+
+.thot-ariane-info {
+    background: #f2f2f2;
+    border-radius: 3px;
+    padding: 2Px 10px 1px;
+    margin: 3px;
+}
+

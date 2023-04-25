@@ -1,0 +1,118 @@
+/* Conteneur principal de la carte */
+.thot-activity-main-card {
+    display: inline-block;
+    margin: 10px 0 0 10px;
+    width: 360px;
+}
+
+/* divtable qui contient les cellules des données */
+.thot-activity-card-table {
+    display: table;
+    width: 100%;
+    background: #eeeeee;
+    border: 1px solid #025b80;
+}
+
+.thot-activity-card-tablebody {
+    display: table-row-group;
+}
+
+.thot-activity-card-row {
+    display: table-row;
+}
+
+.thot-activity-card-row.header {
+    background: #025b80;
+    font-size: 1.5em;
+    color: white;
+    text-transform: uppercase;
+}
+
+.thot-activity-card-cell.ofnumber {
+    text-align: right;
+    letter-spacing: 1px;
+    font-weight: bold;
+}
+
+.thot-activity-card-cell {
+    display: table-cell;
+    padding: 5px;
+    vertical-align: top;
+}
+
+.thot-activity-card-cell.rightcol {
+    width: 80px;
+    text-align: center;
+}
+
+.thot-activity-main-card:hover {
+    /* background: #DFE6E9; */
+    -webkit-box-shadow: 0px 2px 5px 0px rgba(128, 128, 128, 0.75);
+    -moz-box-shadow: 0px 2px 5px 0px rgba(128, 128, 128, 0.75);
+    box-shadow: 0px 2px 5px 0px rgba(128, 128, 128, 0.75);
+    transform: scale(1.01);
+    transition-duration: 200ms;
+}
+
+.thot-activity-main-card:focus .thot-activity-card-table {
+    background: #ffefbb;
+}
+
+/**
+ * CARTE UTILISATEUR
+ */
+
+.user-card-main {
+    background-color: #f2f2f2;
+    width: 250px;
+    height: 58px;
+    display: inline-block;
+    margin: 0 0 5px 5px;
+}
+
+.user-card-main-over {
+    background-color: #E0E6E9;
+}
+
+.user-card-main-selected {
+    background-color: #FCEFBA;
+}
+
+.user-card-main-inactive {
+    opacity: 0.7;
+    cursor: not-allowed;
+    position: inherit;
+    top: 0px;
+    left: 5px;
+    height: 58px;
+    width: 250px;
+    background-color: #fff;
+    z-index: 999;
+}
+
+.user-card-main-image {
+    float: left;
+    display: inline;
+    height: 48px;
+    width: 48px;
+    margin: 5px;
+    background-repeat: no-repeat;
+    background-size: 104%;
+    background-position: 50%;
+    border-radius: 50%;
+    border: #e0e0e0 solid 2px;
+}
+
+.user-card-main-info {
+    float: left;
+    display: inline;
+    margin: 5px;
+}
+
+.user-card-main-status {
+    float: right;
+    display: inline;
+    position: relative;
+    margin: 5px;
+    z-index: 9999;
+}

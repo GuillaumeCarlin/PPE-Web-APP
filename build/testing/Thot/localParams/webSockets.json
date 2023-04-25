@@ -1,0 +1,10 @@
+{
+	"server": {
+		"addr": "172.16.10.65",
+		"allowedorig": [
+			"localhost",
+			"172.16.10.65"
+		],
+		"port": 8181
+	}
+}

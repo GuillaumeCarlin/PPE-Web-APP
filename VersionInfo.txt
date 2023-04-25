@@ -1,0 +1,13 @@
+Path: .
+Working Copy Root Path: C:\Users\hvalot\Documents\Projets\Thot-Prod
+URL: http://svw2k8r2iscrum.proform.dom:81/svn/Thot/tags/Dev/R2.8.1_589
+Relative URL: ^/tags/Dev/R2.8.1_589
+Repository Root: http://svw2k8r2iscrum.proform.dom:81/svn/Thot
+Repository UUID: 4c0c531a-bc0b-7649-95b9-236159a4944d
+Revision: 590
+Node Kind: directory
+Schedule: normal
+Last Changed Author: hvalot@PROFORM
+Last Changed Rev: 590
+Last Changed Date: 2022-01-18 09:18:59 +0100 (mar., 18 janv. 2022)
+

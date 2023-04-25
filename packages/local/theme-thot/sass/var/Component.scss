@@ -1,0 +1,37 @@
+/* import des variables personnalisées*/
+@import "_config.scss";
+
+/* gestion des fonts */
+$enable-font-smoothing: true;
+$font-family: dynamic('Noto sans', 'Open Sans', 'Helvetica Neue', helvetica, arial, sans-serif);
+$font-size: 11px;
+
+
+/* poids de la police dans toute l'interface */
+$font-weight:dynamic(500);
+
+$font-weight-normal: dynamic(500);
+$font-weight-bold: dynamic(600);
+$font-size-big: dynamic(100%);
+
+
+$body-background-color: $thot-panel-background-color;
+$base-highlight-color: dynamic(mix(#fff, $base-color, 20%));
+$base-light-color: dynamic(mix(#fff, $base-color, 60%));
+$base-dark-color: dynamic(mix(#000, $base-color, 20%));
+
+/*$neutral-color: dynamic(#d0d0d0);*/
+$neutral-color: dynamic(#bdbdbd);
+
+$neutral-light-color: dynamic(mix(#fff, $neutral-color, 80%));
+$neutral-highlight-color: dynamic(mix(#fff, $neutral-color, 60%));
+$neutral-medium-dark-color: dynamic(mix(#000, $neutral-color, 15.2%));
+$neutral-dark-color: dynamic(mix(#000, $neutral-color, 30.4%));
+$color: dynamic(#000);
+
+$highlight-color: dynamic(#606060);
+$light-color: dynamic(#f0f0f0);
+
+
+// supprimer la bordure de sélection dans les menus et grilles
+$grid-row-cell-focus-border-width:0px;

@@ -1,0 +1,709 @@
+/* définition des icônes de l'application */
+
+/*******************************************************************************
+ DEFINITION DES CLASSES DE COULEUR POUR LES ICONES
+*******************************************************************************/
+.icon-red {
+    color: $thot-warning-color;
+}
+
+.icon-green {
+    color: $thot-success-color;
+}
+
+.icon-error {
+    color: $thot-error-color;
+}
+
+.icon-dimmed {
+    color: $thot-color-dimmed;
+}
+
+.icon-important {
+    color: $thot-important-color
+}
+
+.icon-warning {
+    color: $thot-warning-color !important
+}
+
+/*******************************************************************************
+ DEFINITION DES TAILLES DE FONT POUR LES ICONES
+*******************************************************************************/
+@mixin font-size-small {
+    font-size: 1em;
+}
+
+@mixin font-size-medium {
+    font-size: 1.5em;
+}
+
+@mixin font-size-large {
+    font-size: 2em;
+}
+
+/*******************************************************************************
+ DEFINITION DES ICONES DE L'APPLICATION A PARTIR DE FONTAWESOME
+*******************************************************************************/
+@mixin thot-icon-logedin {
+    @include font-icon('\F090'FontAwesome);
+    color: $thot-success-color;
+}
+
+//fa-sign-in
+@mixin thot-icon-logedout {
+    @include font-icon('\F08B'FontAwesome);
+    color: $thot-warning-color;
+}
+
+//fa-sign-out
+@mixin thot-icon-inconsistency {
+    @include font-icon('\F071'FontAwesome);
+    color: $thot-error-color;
+}
+
+//fa-exclamation-triangle
+@mixin thot-icon-stop {
+    @include font-icon('\F28D'FontAwesome);
+    color: $thot-error-color;
+}
+
+//fa-pause-circle
+@mixin thot-icon-action-succes {
+    @include font-icon('\F05D'FontAwesome);
+    color: $thot-success-color;
+}
+
+//fa-check-circle-o
+@mixin thot-icon-next {
+    @include font-icon ('\F138'FontAwesome);
+}
+
+//fa-chevron-right-circle
+@mixin thot-icon-previous {
+    @include font-icon ('\F137'FontAwesome);
+}
+
+//fa-chevron-left-circle
+@mixin thot-icon-validate {
+    @include font-icon ('\F058'FontAwesome);
+}
+
+//fa-check-circle
+@mixin thot-icon-cancel {
+    @include font-icon('\F057'FontAwesome)
+}
+
+//fa-times-circle
+@mixin thot-icon-charged {
+    @include font-icon('\F0AE'FontAwesome)
+}
+
+//fa-tasks
+@mixin thot-icon-activity {
+    @include font-icon ('\F0AD'FontAwesome)
+}
+
+//fa-wrench
+@mixin thot-icon-download {
+    @include font-icon ('\F019'FontAwesome)
+}
+
+//fa-download
+@mixin thot-icon-upload {
+    @include font-icon ('\F093'FontAwesome)
+}
+
+//fa-upload
+@mixin thot-icon-refresh {
+    @include font-icon ('\F021'FontAwesome)
+}
+
+//fa-refresh
+@mixin thot-icon-write {
+    @include font-icon ('\F044'FontAwesome)
+}
+
+//fa-pencil-square-o
+@mixin thot-icon-begin {
+    @include font-icon ('\F048'FontAwesome)
+}
+
+//fa-step-backward
+@mixin thot-icon-end {
+    @include font-icon ('\F051'FontAwesome)
+}
+
+//fa-step-forward
+@mixin thot-icon-hashtag {
+    @include font-icon ('\F292'FontAwesome)
+}
+
+//fa-hashtag
+@mixin thot-icon-question {
+    @include font-icon ('\F128'FontAwesome)
+}
+
+//fa-question
+@mixin thot-icon-modifiedbyuser {
+    @include font-icon ('\f14b'FontAwesome)
+}
+
+//fa-pencil
+@mixin thot-icon-simultane {
+    @include font-icon ('\F1E0'FontAwesome)
+}
+
+//fa-share-alt
+@mixin thot-icon-alea {
+    @include font-icon ('\F074'FontAwesome)
+}
+
+//fa-random
+@mixin thot-icon-stacked-circle {
+    @include font-icon ('\F1DB'Fontawesome)
+}
+
+//fa-circle-thin
+@mixin thot-icon-programme {
+    @include font-icon ('\F017'FontAwesome)
+}
+
+//fa-
+@mixin thot-icon-alternative {
+    @include font-icon ('\F126'FontAwesome)
+}
+
+//fa-code-fork
+@mixin thot-icon-working {
+    @include font-icon ('\F144'Fontawesome)
+}
+
+// fa-exchange
+@mixin thot-icon-replace {
+    @include font-icon ('\F0EC'Fontawesome)
+}
+
+// fa-ban
+@mixin thot-icon-ban {
+    @include font-icon ('\F05E'Fontawesome)
+}
+
+// fa-recycle
+@mixin thot-icon-quality {
+    @include font-icon ('\F1B8'FontAwesome)
+}
+
+// fa-chain-broken
+@mixin thot-icon-unplaned {
+    @include font-icon('\F127'FontAwesome)
+}
+
+// fa-users
+@mixin thot-icon-collab {
+    @include font-icon('\F0C0'FontAwesome)
+}
+
+// fa-home
+@mixin thot-icon-home {
+    @include font-icon('\F015'FontAwesome);
+    color: $color-soft-blue;
+}
+
+// fa-clock-o
+@mixin thot-icon-clock {
+    @include font-icon('\F017'FontAwesome);
+    color: $color-soft-blue;
+}
+
+// fa-wrench
+@mixin thot-icon-wrench {
+    @include font-icon('\f0ad'FontAwesome);
+    color: $color-soft-blue;
+}
+
+//fa-play-circle
+
+/*******************************************************************************
+ DEFINITION DES CLASSES D'ICONES A UTILISER DANS L'APPLICATION
+ ******************************************************************************/
+
+/* navigation dans les formulaires de type Card
+ * Suivant  : thot-icon-next
+ * Précédent: thot-icon-previous
+ * Terminé  : thot-icon-validate
+ * Annuler  : thot-icon-cancel
+ */
+.thot-icon-next {
+    @include thot-icon-next();
+}
+
+.thot-icon-previous {
+    @include thot-icon-previous();
+}
+
+.thot-icon-validate {
+    @include thot-icon-validate();
+}
+
+.thot-icon-cancel {
+    @include thot-icon-cancel();
+}
+
+.thot-icon-next-medium {
+    @include thot-icon-next();
+    @include font-size-medium();
+}
+
+.thot-icon-previous-medium {
+    @include thot-icon-previous();
+    @include font-size-medium();
+}
+
+.thot-icon-validate-medium {
+    @include thot-icon-validate();
+    @include font-size-medium();
+}
+
+.thot-icon-cancel-medium {
+    @include thot-icon-cancel();
+    @include font-size-medium();
+}
+
+.thot-icon-next-large {
+    @include thot-icon-next();
+    @include font-size-large()
+}
+
+.thot-icon-previous-large {
+    @include thot-icon-previous();
+    @include font-size-large();
+}
+
+.thot-icon-validate-large {
+    @include thot-icon-validate();
+    @include font-size-large();
+}
+
+.thot-icon-cancel-large {
+    @include thot-icon-cancel();
+    @include font-size-large();
+}
+
+/* présence opérations sur un équipement (ressource)
+ *
+ */
+.thot-icon-charged-medium {
+    @include thot-icon-charged();
+    @include font-size-medium();
+}
+
+.thot-icon-activity-medium {
+    @include thot-icon-activity();
+    @include font-size-medium();
+}
+
+.thot-icon-import-medium {
+    @include thot-icon-download();
+    @include font-size-medium();
+}
+
+/* action en cours, doit être complété par 'fa-spin fa-fw' lorsqu'il est utilisé*/
+.thot-icon-spin-medium {
+    @include thot-icon-refresh();
+    @include font-size-medium();
+}
+
+.thot-icon-action-succes-medium {
+    @include thot-icon-action-succes;
+    @include font-size-medium();
+}
+
+.thot-icon-logedin-medium {
+    @include thot-icon-logedin();
+    @include font-size-medium();
+}
+
+.thot-icon-logedout-medium {
+    @include thot-icon-logedout();
+    @include font-size-medium();
+}
+
+.thot-icon-logedin-small {
+    @include thot-icon-logedin();
+    @include font-size-small();
+}
+
+.thot-icon-logedout-small {
+    @include thot-icon-logedout();
+    @include font-size-small();
+}
+
+.thot-icon-inconsistency-medium {
+    @include thot-icon-inconsistency();
+    @include font-size-medium();
+}
+
+.thot-icon-logedin-large {
+    @include thot-icon-logedin();
+    @include font-size-large();
+}
+
+.thot-icon-logedout-large {
+    @include thot-icon-logedout();
+    @include font-size-large();
+}
+
+.thot-icon-inconsistency-large {
+    @include thot-icon-inconsistency();
+    @include font-size-large();
+}
+
+.thot-icon-stop-large {
+    @include thot-icon-stop();
+    @include font-size-large();
+}
+
+.thot-icon-stop-medium {
+    @include thot-icon-stop();
+    @include font-size-medium();
+}
+
+.thot-icon-collab {
+    @include thot-icon-collab()
+}
+
+.thot-icon-collab-medium {
+    @include thot-icon-collab();
+    @include font-size-medium();
+}
+
+.thot-icon-collab-large {
+    @include thot-icon-collab();
+    @include font-size-large();
+}
+
+.thot-icon-clock-medium {
+    @include thot-icon-clock();
+    @include font-size-medium();
+}
+
+.thot-icon-home-medium {
+    @include thot-icon-home();
+    @include font-size-medium();
+}
+
+.thot-icon-wrench-small {
+    @include thot-icon-wrench();
+    @include font-size-small();
+}
+
+.thot-icon-wrench-medium {
+    @include thot-icon-wrench();
+    @include font-size-medium();
+}
+
+.thot-icon-wrench-large {
+    @include thot-icon-wrench();
+    @include font-size-large();
+}
+
+/******************************************************************************/
+/* affichages du statut des activités
+ * mise en forme utilisée dans la grille activités
+ * utilisation de la police fontawesome pour l'identification visuelle
+*/
+.thot-act-running {
+    //fa-play-circle
+    @include font-icon('\F144'FontAwesome);
+    font-size: 3em;
+    color: $thot-success-color;
+    //   background-position: center center;
+    //   background-repeat: no-repeat;
+    text-align: left;
+    padding-left: 10px;
+}
+
+.thot-act-paused {
+    //fa-pause-circle
+    @include font-icon('\F28B'FontAwesome);
+    font-size: 3em;
+    color: $thot-warning-color;
+    //   background-position: center center;
+    //   background-repeat: no-repeat;
+    text-align: left;
+    padding-left: 10px;
+    line-height: 32px;
+    float: left;
+}
+
+.thot-act-quality {
+    //fa-recycle
+    @include font-icon('\F1B8'FontAwesome);
+    font-size: 3em;
+    color: $thot-warning-color;
+    //   background-position: center center;
+    //   background-repeat: no-repeat;
+    text-align: left;
+    padding-left: 10px;
+    line-height: 32px;
+    float: left;
+}
+
+
+/******************************************************************************/
+/* indicateurs visuels, rédigé le, début le, fin le, etc...                   */
+.thot-icon-unplaned {
+    @include thot-icon-unplaned;
+}
+
+.thot-icon-unplaned-medium {
+    @include thot-icon-unplaned;
+    @include font-size-medium
+}
+
+.thot-icon-unplaned-large {
+    @include thot-icon-unplaned;
+    @include font-size-large
+}
+
+.thot-icon-quality {
+    @include thot-icon-quality;
+}
+
+.thot-icon-quality-medium {
+    @include thot-icon-quality;
+    @include font-size-medium
+}
+
+.thot-icon-quality-large {
+    @include thot-icon-quality;
+    @include font-size-large
+}
+
+.thot-icon-working {
+    @include thot-icon-working
+}
+
+.thot-icon-working-medium {
+    @include thot-icon-working;
+    @include font-size-medium
+}
+
+.thot-icon-working-large {
+    @include thot-icon-working;
+    @include font-size-large
+}
+
+.thot-icon-replace {
+    @include thot-icon-replace
+}
+
+.thot-icon-replace-medium {
+    @include thot-icon-replace;
+    @include font-size-medium
+}
+
+.thot-icon-replace-large {
+    @include thot-icon-replace;
+    @include font-size-large
+}
+
+.thot-icon-write {
+    @include thot-icon-write
+}
+
+.thot-icon-write-medium {
+    @include thot-icon-write;
+    @include font-size-medium
+}
+
+.thot-icon-write-large {
+    @include thot-icon-write;
+    @include font-size-large
+}
+
+.thot-icon-begin {
+    @include thot-icon-begin
+}
+
+.thot-icon-begin-medium {
+    @include thot-icon-begin;
+    @include font-size-medium
+}
+
+.thot-icon-begin-large {
+    @include thot-icon-begin;
+    @include font-size-large
+}
+
+.thot-icon-end {
+    @include thot-icon-end
+}
+
+.thot-icon-end-medium {
+    @include thot-icon-end;
+    @include font-size-medium
+}
+
+.thot-icon-end-large {
+    @include thot-icon-end;
+    @include font-size-large
+}
+
+.thot-icon-hashtag {
+    @include thot-icon-hashtag
+}
+
+.thot-icon-hashtag-medium {
+    @include thot-icon-hashtag;
+    @include font-size-medium
+}
+
+.thot-icon-hashtag-large {
+    @include thot-icon-hashtag;
+    @include font-size-large
+}
+
+.thot-icon-question {
+    @include thot-icon-question
+}
+
+.thot-icon-question-medium {
+    @include thot-icon-question;
+    @include font-size-medium
+}
+
+.thot-icon-question-large {
+    @include thot-icon-question;
+    @include font-size-large
+}
+
+.thot-icon-modifiedbyuser {
+    @include thot-icon-modifiedbyuser
+}
+
+.thot-icon-modifiedbyuser-medium {
+    @include thot-icon-modifiedbyuser;
+    @include font-size-medium
+}
+
+.thot-icon-modifiedbyuser-large {
+    @include thot-icon-modifiedbyuser;
+    @include font-size-large
+}
+
+.thot-icon-simultane {
+    @include thot-icon-simultane
+}
+
+.thot-icon-simultane-medium {
+    @include thot-icon-simultane;
+    @include font-size-medium
+}
+
+.thot-icon-simultane-large {
+    @include thot-icon-simultane;
+    @include font-size-large
+}
+
+.thot-icon-alternative {
+    @include thot-icon-alternative
+}
+
+.thot-icon-alternative-medium {
+    @include thot-icon-alternative;
+    @include font-size-medium
+}
+
+.thot-icon-alternative-large {
+    @include thot-icon-alternative;
+    @include font-size-large
+}
+
+.thot-icon-alea {
+    @include thot-icon-alea
+}
+
+.thot-icon-alea-medium {
+    @include thot-icon-alea;
+    @include font-size-medium
+}
+
+.thot-icon-alea-large {
+    @include thot-icon-alea;
+    @include font-size-large
+}
+
+.thot-icon-programme {
+    @include thot-icon-programme
+}
+
+.thot-icon-programme-medium {
+    @include thot-icon-programme;
+    @include font-size-medium
+}
+
+.thot-icon-programme-large {
+    @include thot-icon-programme;
+    @include font-size-large
+}
+
+.thot-icon-ban {
+    @include thot-icon-ban;
+}
+
+.thot-icon-ban-medium {
+    @include thot-icon-ban;
+    @include font-size-medium
+}
+
+.thot-icon-ban-large {
+    @include thot-icon-ban;
+    @include font-size-large
+}
+
+.badge-ban:after {
+    @include thot-icon-ban;
+    @include font-size-medium;
+    position: absolute;
+    top: 0.75rem;
+    left: 0.25rem;
+    text-align: center;
+}
+
+.badge-collab:after {
+    // badge pour indication activité en mode collaboratif
+    @include thot-icon-collab;
+    @include font-size-medium();
+    position: absolute;
+    bottom: 0.25rem;
+    left: 2.75rem;
+    text-align: center;
+    content: "\F0C0";
+    color: $thot-error-color;
+}
+
+.thot-color-dimmed {
+    color: $thot-color-dimmed;
+}
+
+.thot-color-success {
+    color: $thot-success-color;
+}
+
+
+// icones empilées, à revoir, problème de positionnement relatif et de hauteur de ligne
+.thot-icon-alea-circle:before {
+    content: "\F1DB";
+    @include thot-icon-alea;
+    position: absolute;
+    font-size: 1.7em
+}
+
+.thot-icon-alea-circle:after {
+    content: "\F074";
+    @include thot-icon-stacked-circle;
+    position: absolute;
+    font-size: 1em
+}

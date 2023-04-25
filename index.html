@@ -1,0 +1,149 @@
+<!DOCTYPE HTML>
+<html manifest="">
+
+<head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <link rel="stylesheet" type="text/css" href="./resources/css/Thot.css" />
+
+    <!-- interdire la mise en cache de l'application !-->
+    <meta http-equiv="pragma" content="no-cache" />
+
+    <!-- interdire la traduction de l'application !-->
+    <meta name="google" value="notranslate" />
+
+    <title>Thot</title>
+    <link href='favico.ico' rel='shortcut icon' />
+
+    <script type="text/javascript">
+        // cette fonction affiche le loader avant tout traitement
+        // pour faire patienter l'utilisateur devant autre chose
+        // qu'un écran blanc !
+        document.write(
+            '<div id="splash" class="animated fadeIn flip"><a>TH<i class="fa fa-circle-o-notch fa-spin fa-fw loader"></i>T</a><div style="font-size:15px">Chargement ...</div></div>'
+        )
+    </script>
+
+    <script type="text/javascript">
+        var Ext = Ext || {}; // Ext namespace won't be defined yet...
+
+        // This function is called by the Microloader after it has performed basic
+        // device detection. The results are provided in the "tags" object. You can
+        // use these tags here or even add custom tags. These can be used by platform
+        // filters in your manifest or by platformConfig expressions in your app.
+        //
+        Ext.beforeLoad = function (tags) {
+            var s = location.search, // the query string (ex "?foo=1&bar")
+                profile;
+
+            // For testing look for "?classic" or "?modern" in the URL to override
+            // device detection default.
+            //
+            if (s.match(/\bclassic\b/)) {
+                profile = 'classic';
+            } else if (s.match(/\bmodern\b/)) {
+                profile = 'modern';
+            } else {
+                profile = tags.desktop ? 'classic' : 'modern';
+                //profile = tags.phone ? 'modern' : 'classic';
+            }
+
+            //				Ext.manifest = 'raspberry';	//profile; // this name must match a build profile name
+            Ext.manifest = 'desktop'; //profile; // this name must match a build profile name
+
+            // This function is called once the manifest is available but before
+            // any data is pulled from it.
+            //
+            //return function (manifest) {
+            // peek at / modify the manifest object
+            //};
+        };
+    </script>
+
+    <script>
+        var bRefresh = false;
+
+        document.addEventListener("keydown", function (e) {
+            if (e.keyCode == 116) {
+                //Touche F5
+                bRefresh = true;
+            }
+        });
+
+        /**
+         * Intercepte la fermeture de l'application et demande confirmation à l'utilisateur
+         * pour éviter la sortie accidentelle de l'application
+         * en localhost (DEV) pas de confirmation requise
+         */
+        // NOTE: HVT 2021-04-05 12:16:15, à commenter, inutile dans notre cas et empêche le rechargement déclenché par Websocket
+        // window.addEventListener("beforeunload", function (e) {
+        //     var confirmationMessage = "Fermeture de l'application";
+        //     var iNamePos = window.location.href.indexOf('localhost');
+        //     var iAddrPos = window.location.href.indexOf('127.0.0.1');
+
+        //     if (iNamePos > 0 || iAddrPos > 0) {
+        //         //---- Si on est en localhost, on peut quitter sans message
+        //         return true;
+        //     }
+
+        //     (e || window.event).returnValue = confirmationMessage; //Gecko + IE
+        //     return confirmationMessage; //Webkit, Safari, Chrome
+        // });
+
+        window.addEventListener("unload", function (e) {
+            var xmlHttp;
+            var sCnxParams = sessionStorage.getItem("cnxParams");
+            var oContext = JSON.parse(sCnxParams);
+            var appName = oContext.name;
+
+            try {
+                // Firefox, Opera 8.0+, Safari
+                xmlHttp = new XMLHttpRequest();
+            } catch (e) {
+                // Internet Explorer
+                try {
+                    xmlHttp = new ActiveXObject("Msxml2.XMLHTTP");
+                } catch (e) {
+                    try {
+                        xmlHttp = new ActiveXObject("Microsoft.XMLHTTP");
+                    } catch (e) {
+                        alert("Your browser does not support AJAX!");
+                        return false;
+                    }
+                }
+            }
+
+            xmlHttp.onreadystatechange = function () {
+                if (xmlHttp.readyState == 4 && (xmlHttp.status == 200 || xmlHttp.status == 0)) {
+                    //document.myForm.time.value=xmlHttp.responseText;
+                    Ext.util.Cookies.clear(appName);
+                }
+            };
+
+            xmlHttp.open("GET", "./server/commun/Commun.php?action=killsess&appName=" + appName, false);
+            xmlHttp.send(null);
+            if (!bRefresh) {} else {}
+            bRefresh = false;
+        });
+    </script>
+
+    <!-- The line below must be kept intact for Sencha Cmd to build your application -->
+    <script id="microloader" data-app="5090c64c-c04f-4ae2-9b95-336f19566fbf" type="text/javascript" src="bootstrap.js">
+    </script>
+
+</head>
+
+<body>
+    <noscript>
+        <div style="text-align: center; font-family: 'noto sans'">
+            <h1>THOT</h1>
+            <h2>JavaScript est désactivé</h2>
+            <a>Activez JavaScript et actualisez la page</a>
+        </div>
+
+    </noscript>
+
+</body>
+
+</html>

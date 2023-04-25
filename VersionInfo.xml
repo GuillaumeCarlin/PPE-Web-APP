@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<info>
+<entry
+   kind="dir"
+   path="."
+   revision="590">
+<url>http://svw2k8r2iscrum.proform.dom:81/svn/Thot/tags/Dev/R2.8.1_589</url>
+<relative-url>^/tags/Dev/R2.8.1_589</relative-url>
+<repository>
+<root>http://svw2k8r2iscrum.proform.dom:81/svn/Thot</root>
+<uuid>4c0c531a-bc0b-7649-95b9-236159a4944d</uuid>
+</repository>
+<wc-info>
+<wcroot-abspath>C:/Users/hvalot/Documents/Projets/Thot-Prod</wcroot-abspath>
+<schedule>normal</schedule>
+<depth>infinity</depth>
+</wc-info>
+<commit
+   revision="590">
+<author>hvalot@PROFORM</author>
+<date>2022-01-18T08:18:59.377959Z</date>
+</commit>
+</entry>
+</info>

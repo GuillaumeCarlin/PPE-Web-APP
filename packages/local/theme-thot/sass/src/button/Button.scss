@@ -1,0 +1,204 @@
+/* bouton d'interface colorisé */
+@include extjs-button-small-ui($ui: 'cancel',
+    $background-color: transparent,
+    $border-color: transparent,
+    $color: $thot-error-color,
+    $glyph-color: $thot-error-color,
+    $border-color-over: $thot-error-color,
+    $border-color-pressed: $thot-error-color,
+    $border-color-focus: transparent);
+
+@include extjs-button-medium-ui($ui: 'cancel',
+    $background-color: transparent,
+    $border-color: transparent,
+    $color: $thot-error-color,
+    $glyph-color: $thot-error-color,
+    $border-color-over: $thot-error-color,
+    $border-color-pressed: $thot-error-color,
+    $border-color-focus: transparent);
+@include extjs-button-large-ui($ui: 'cancel',
+    $background-color: transparent,
+    $border-color: transparent,
+    $color: $thot-error-color,
+    $glyph-color: $thot-error-color,
+    $border-color-over: $thot-error-color,
+    $border-color-pressed: $thot-error-color,
+    $border-color-focus: transparent);
+
+/* bouton d'interface colorisé */
+@include extjs-button-small-ui($ui: 'succes',
+    $background-color: $thot-success-color,
+    $border-color: $thot-success-color,
+    $color: $light-color,
+    $glyph-color: $light-color);
+@include extjs-button-medium-ui($ui: 'succes',
+    $background-color: $thot-success-color,
+    $border-color: $thot-success-color,
+    $color: $light-color,
+    $glyph-color: $light-color);
+@include extjs-button-large-ui($ui: 'succes',
+    $background-color: $thot-success-color,
+    $border-color: $thot-success-color,
+    $color: $light-color,
+    $glyph-color: $light-color);
+
+/* bouton d'interface colorisé */
+@include extjs-button-small-ui($ui: 'alert',
+    $background-color: $thot-warning-color,
+    $border-color: $thot-warning-color,
+    $color: #fff,
+    //   $color: $thot-nav-color-active,
+    $glyph-color: $thot-nav-color-active);
+@include extjs-button-medium-ui($ui: 'alert',
+    $background-color: $thot-warning-color,
+    $border-color: $thot-warning-color,
+    $color: #fff,
+    //   $color: $thot-nav-color-active,
+    $glyph-color: $thot-nav-color-active);
+@include extjs-button-large-ui($ui: 'alert',
+    $background-color: $thot-warning-color,
+    $border-color: $thot-warning-color,
+    $color: #fff,
+    //   $color: $thot-nav-color-active,
+    $glyph-color: $thot-nav-color-active);
+
+/* boutons de la barre d'outils principale*/
+@include extjs-button-small-ui($ui: 'thot-header',
+    $color: $thot-header-toolbar-color,
+    //$glyph-color:$thot-header-toolbar-glyph-color,
+    $background-color: transparent,
+    $border-width: 0);
+@include extjs-button-small-ui($ui: 'thot-header-alert',
+    $color: $thot-alert-color,
+    $glyph-color: $thot-alert-color,
+    $background-color: transparent,
+    $border-width: 0);
+
+@include extjs-button-medium-ui($ui: 'thot-header',
+    $color: $thot-header-toolbar-color,
+    //$glyph-color: $thot-header-toolbar-glyph-color,
+    $background-color: transparent,
+    $border-width: 0);
+@include extjs-button-large-ui($ui: 'thot-header',
+    $color: $thot-header-toolbar-color,
+    // $glyph-color: $thot-header-toolbar-glyph-color,
+    $background-color: transparent,
+    $border-width: 0);
+
+/*******************************************************************************
+ BOUTONS ACTION, arrondis
+*******************************************************************************/
+/* bouton d'interface action */
+@include extjs-button-small-ui($ui: 'thot-action',
+    $background-color: $base-color,
+    $border-width: 0px,
+    $border-color: none, //darken($base-color,10%),
+    $color: $thot-action-text-color,
+    $glyph-color: $thot-action-text-color);
+@include extjs-button-medium-ui($ui: 'thot-action',
+    $background-color: $base-color,
+    $border-width: 0px,
+    $border-color: none, //darken($base-color,10%),
+    $color: $thot-action-text-color,
+    $glyph-color: $thot-action-text-color);
+@include extjs-button-large-ui($ui: 'thot-action',
+    $background-color: $base-color,
+    $border-width: 0px,
+    $border-color: none, //darken($base-color,10%),
+    $color: $thot-action-text-color,
+    $glyph-color: $thot-action-text-color);
+
+/* définition de l'ombre sur les boutons de type action */
+@mixin btn-action-shadow {
+    //  -webkit-box-shadow: -1px 2px 8px 1px darken($thot-panel-background-color, 30%);
+    -webkit-box-shadow: 0px 2px 3px 0px darken($thot-panel-background-color, 30%);
+    -moz-box-shadow: 0px 2px 3px 0px darken($thot-panel-background-color, 30%);
+    box-shadow: 0px 2px 3px 0px darken($thot-panel-background-color, 30%);
+}
+
+.x-btn-thot-action-large,
+.x-btn-thot-action-medium,
+.x-btn-thot-action-small {
+    -ms-border-radius: 50px;
+    -moz-border-radius: 50px;
+    -webkit-border-radius: 50px;
+    border-radius: 50px;
+    text-transform: uppercase;
+    // @include btn-action-shadow()
+}
+
+/* effet sur les boutons
+ transition en 0.5s de la couleur standard à la couleur surbrillance
+*/
+.x-btn-thot-action-small,
+.x-btn-thot-action-medium,
+.x-btn-thot-action-large {
+    &:hover {
+        background-color: lighten($base-color, 7%); //$thot-action-color; /* couleur à la fin de l'animation*/
+        -webkit-transition: background-color 0.5s ease-out;
+        -moz-transition: background-color 0.5s ease-out;
+        -ms-transition: background-color 0.5s ease-out;
+        -o-transition: background-color 0.5s ease-out;
+        transition: background-color 0.5s ease-out;
+    }
+}
+
+/***** FIN BOUTONS ACTION *****************************************************/
+
+/*******************************************************************************
+ BOUTON reglage, arrondi
+*******************************************************************************/
+/* bouton d'interface action */
+@include extjs-button-small-ui($ui: 'thot-action',
+    $background-color: $base-color,
+    $border-width: 0px,
+    $border-color: none, //darken($base-color,10%),
+    $color: $thot-action-text-color,
+    $glyph-color: $thot-action-text-color);
+@include extjs-button-medium-ui($ui: 'thot-action',
+    $background-color: $base-color,
+    $border-width: 0px,
+    $border-color: none, //darken($base-color,10%),
+    $color: $thot-action-text-color,
+    $glyph-color: $thot-action-text-color);
+@include extjs-button-large-ui($ui: 'thot-action',
+    $background-color: $base-color,
+    $border-width: 0px,
+    $border-color: none, //darken($base-color,10%),
+    $color: $thot-action-text-color,
+    $glyph-color: $thot-action-text-color);
+
+/* définition de l'ombre sur les boutons de type action */
+@mixin btn-action-shadow {
+    //  -webkit-box-shadow: -1px 2px 8px 1px darken($thot-panel-background-color, 30%);
+    -webkit-box-shadow: 0px 2px 3px 0px darken($thot-panel-background-color, 30%);
+    -moz-box-shadow: 0px 2px 3px 0px darken($thot-panel-background-color, 30%);
+    box-shadow: 0px 2px 3px 0px darken($thot-panel-background-color, 30%);
+}
+
+.x-btn-thot-action-large,
+.x-btn-thot-action-medium,
+.x-btn-thot-action-small {
+    -ms-border-radius: 50px;
+    -moz-border-radius: 50px;
+    -webkit-border-radius: 50px;
+    border-radius: 50px;
+    text-transform: uppercase;
+    // @include btn-action-shadow()
+}
+
+/* effet sur les boutons
+ transition en 0.5s de la couleur standard à la couleur surbrillance
+*/
+.x-btn-thot-action-small,
+.x-btn-thot-action-medium,
+.x-btn-thot-action-large {
+    &:hover {
+        background-color: lighten($base-color, 7%); //$thot-action-color; /* couleur à la fin de l'animation*/
+        -webkit-transition: background-color 0.5s ease-out;
+        -moz-transition: background-color 0.5s ease-out;
+        -ms-transition: background-color 0.5s ease-out;
+        -o-transition: background-color 0.5s ease-out;
+        transition: background-color 0.5s ease-out;
+    }
+}

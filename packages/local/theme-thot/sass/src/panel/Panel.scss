@@ -1,0 +1,72 @@
+/* mise en forme spécifique pour les panels principaux de l'interface */
+
+/* panneau principal de travail de l'application */
+@include extjs-panel-ui (
+    $ui :'thot-main',
+    $ui-header-line-height: 16px,
+    $ui-header-padding: 5px,
+    $ui-header-color: $thot-panel-header-color,
+    $ui-tool-glyph-color: $thot-panel-header-color,
+    $ui-header-font-weight: $font-weight-bold,
+    $ui-body-background-color: $thot-main-background-color,
+    // $ui-header-background-color: rgb(168, 216, 238),// $thot-panel-header-background,
+);
+
+/* panneau de contenu spécifique */
+@include extjs-panel-ui(
+    $ui: 'thot-panel',
+    $ui-header-line-height: 16px,
+    $ui-header-padding: 5px,
+    $ui-body-background-color: $thot-main-background-color,
+    $ui-header-background-color: $thot-panel-header-background,
+    $ui-header-color: $thot-panel-header-color,
+    $ui-tool-glyph-color: $thot-panel-header-color,
+    $ui-header-font-weight: $font-weight-bold
+);
+
+/* panneau contenu dans un autre panneau, sans bordure*/
+@include extjs-panel-ui(
+    $ui: 'thot-panel-noborder',
+    $ui-header-line-height: 16px,
+    $ui-header-padding: 5px,
+    $ui-header-background-color: $thot-panel-header-background,
+    $ui-header-color: $thot-panel-header-color,
+    $ui-tool-glyph-color: $thot-panel-header-color,
+    $ui-body-background-color: $thot-panel-body-background-color,
+    $ui-header-font-weight: $font-weight-bold
+);
+
+/* panneau contenu dans un autre panneau, sans bordure*/
+@include extjs-panel-ui($ui: 'thot-panel-border',
+//  $ui-header-line-height: 16px,
+//  $ui-header-padding: 5px,
+//  $ui-header-background-color: $thot-panel-header-background,
+//  $ui-header-color: $thot-panel-header-color,
+//  $ui-tool-glyph-color: $thot-panel-header-color,
+//  $ui-body-background-color: $thot-panel-body-background-color,
+//  $ui-header-font-weight: $font-weight-bold,
+$ui-body-border-width: 2px //$ui-body-border-color: $thot-nav-background-color
+);
+
+/* panneau développé */
+.x-panel-thot-panel {
+    margin: 10px;
+    border: $thot-panel-border-color 1px solid;
+    border-radius: 3px;
+    //  @include thot-shadow-level(1); //utilisation du mixin pour ajouter de l'ombre
+}
+
+/* entête du panneau replié */
+.x-panel-header-thot-panel {
+    border: none;
+}
+
+/* panneau sans bordure, lorsqu'utilisé dans un autre panneau */
+.x-panel-thot-panel-noborder {
+    margin: 10px;
+    border: $thot-panel-border-color 0px solid;
+}
+
+.x-panel-thot-panel-border {
+    border: 2px solid $thot-panel-border-color;
+}
