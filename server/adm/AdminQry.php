@@ -33,7 +33,7 @@ $aAdmin = [
     'getalllist_fpg'            => 'exec s_ressource.P_R_GET_ALL_FPG_FPS',
 
     'modify_fps_user'           => 'exec s_ressource.P_C_FPS_USR_INSERT_DELETE',
-    'modify_fps_eqt'            => 'exec s_ressource.P_C_FPS_EQT_INSERT_DELETE @Type = %1$s, @RscId = %2$s, @FpsId = %3$s',
-    'modify_fps_fps'            => 'exec s_ressource.P_C_FPS_FPS_INSERT_DELETE @Type = %1$s',
+    'modify_fps_eqt'            => 'exec s_ressource.P_C_FPS_EQT_INSERT_DELETE @Type = \'%1$s\', @RscId = %2$s, @FpsId = %3$s',
+    'modify_fps_fps'            => 'exec s_ressource.P_C_FPS_FPS_INSERT_DELETE @Type = \'%1$s\'',
 
 ];

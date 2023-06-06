@@ -2,19 +2,19 @@
     "BD_AUTH": {
         "typebase": "MsSql2016",
         "libbase": "Base d'authentification",
-        "host": "SVW2K8R2SQL1.PROFORM.DOM,49487",
-        "nombase": "BD_AUTH_PRF",
-        "username": "Gmpi",
-        "passe": "eJxTCnAwNS8yLFYCAAsvAlc="
+        "host": "10.30.103.67",
+        "nombase": "BD_THOT_THT",
+        "username": "sa",
+        "passe": "123456789+aze"
     },
     "THOTDEVDBUSER": {
         "typebase": "MsSql2016",
         "libbase": "Thot dév. Proform",
-        "host": "SVW2K8R2SQL1.PROFORM.DOM,49487",
-        "nombase": "BD_THOT_1_DEV_TDV",
+        "host": "10.30.103.67",
+        "nombase": "BD_THOT_THT",
         "client": "PROFORM",
-        "username": "thotdbuser",
-        "passe": "eJxTKsnIL0lJKi1OLVICAB2JBIk=",
+        "username": "sa",
+        "passe": "123456789+aze",
         "appli": true,
         "dev": "1"
     },
@@ -25,7 +25,7 @@
         "nombase": "BD_THOT_1_DEV_TDV",
         "client": "PROFORM",
         "username": "thotdbowner",
-        "passe": "eJwrycgvcXHKL89LLTIEAB81BKI=",
+        "passe": "123456789+aze",
         "passeClr": "thotDBowner1",
         "appli": true,
         "defaut": true,
@@ -50,5 +50,4 @@
         "defaut": true,
         "dev": "1"
     }
-
 }

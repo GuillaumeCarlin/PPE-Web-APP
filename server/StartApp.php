@@ -1,4 +1,5 @@
 <?php
+//Test
 //---- Déclaration des variables
 $Comptage = false;
 $aVariables = array();

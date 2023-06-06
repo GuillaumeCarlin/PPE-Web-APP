@@ -11,7 +11,7 @@ Ext.define('Thot.view.stat.CmpSheetEquipe', {
         'Ext.grid.column.Action',
         'Ext.ProgressBarWidget',
         'Ext.slider.Widget',
-        'Ext.sparkline.*'    
+        'Ext.sparkline.*'
     ],
     controller: 'stat-cmpsheetequipe',
     height: 181,
@@ -45,36 +45,36 @@ Ext.define('Thot.view.stat.CmpSheetEquipe', {
                     return sCSS;
                 },
             },
-                columns: {
-                   defaults: {
+            columns: {
+                defaults: {
                     sortable: true,
                     hideable: false,
                     resizable: false,
                     draggable: false,
                     align: 'right',
                     width: 180
-                   },
-                items:[
-                {
-                    text: 'Equipe',
-                    dataIndex: 'equipe',
-                    align: 'left',
                 },
-                {
-                    text: 'Temps Exigible',
-                    dataIndex: 'tempsexigibleequipe',
+                items: [
+                    {
+                        text: 'Equipe',
+                        dataIndex: 'EQUIPE',
+                        align: 'left',
+                    },
+                    {
+                        text: 'Temps Exigible',
+                        dataIndex: 'TempsExigibleEquipe',
 
-                },
-                {
-                    text: 'Temps Pointé',
-                    dataIndex: 'temppointeequipe',
-                },
-                {
-                    text: 'Écart absolu',
-                    dataIndex: 'ecartabsoluequipe',
-                }
-            ]
-                },
+                    },
+                    {
+                        text: 'Temps Pointé',
+                        dataIndex: 'TempPointeEquipe',
+                    },
+                    {
+                        text: 'Écart absolu',
+                        dataIndex: 'EcartAbsoluEquipe',
+                    }
+                ]
+            },
         }],
     }
 });

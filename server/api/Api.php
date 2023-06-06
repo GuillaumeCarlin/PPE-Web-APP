@@ -1,23 +1,31 @@
 <?php
-include_once '..\commun\SessionClass.php';
-require($oSession->ParentPath . "server/variablesEtFiltres.php");
-
-
-
-$bDebug = false;
-$aDebugAction = [];
-if ($bDebug) {
-    error_log("========================" . basename(__FILE__) . ' : ' . $action . "=====================");
-    error_log("_POST : " . var_export($_POST, true));
-    error_log("_GET : " . var_export($_GET, true));
+$CnxDb = new PDO('sqlsrv:Server=10.30.103.67;Database=BD_THOT_THT', 'sa', '123456789+aze');
+$CnxDb->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+function TestQry($Requete, $CnxDb){
+    $oResult = $CnxDb->prepare($Requete); 
+    $oResult->execute(); 
+    $aListe = $oResult->fetchAll(PDO::FETCH_ASSOC);
+    return $aListe;
 }
-$Bdd = new GestBdd($oSession->AppBase);
+
+
+if (isset($_GET['action'])) {
+    $action = $_GET['action'];
+}elseif (isset($_POST['action'])) {
+    $action = $_POST['action'];
+}
+
+include_once '../variablesEtFiltres.php';
+
+
+
+//$Bdd = new GestBdd($oSession->AppBase);
 
 include("ApiQry.php");
 switch ($action) {
     case 'LstAPK':
-        $aListe = $Bdd->QryToArray($aAPIQry['listapk']);
-        $bSucces = $Bdd->aExecReq['success'];
+        $aListe = TestQry($aAPIQry['listapk'], $CnxDb);
+        $bSucces = "success";
         break;
         
     case 'Update':
@@ -31,8 +39,9 @@ switch ($action) {
         }else{
             $Key = $_POST['key'];
         }
-        $aListe = $Bdd->QryToArray(sprintf($aAPIQry['updateKey'], $Bdd->FormatSql($_POST['rsc_id'], 'C'), $Bdd->FormatSql($Key, 'C')));
-        $bSucces = $Bdd->aExecReq['success'];
+        $Requete = sprintf($aAPIQry['updateKey'], $_POST['rsc_id'], $Key);
+        $aListe = TestQry($Requete , $CnxDb);
+        $bSucces = "success";
         break;
     
     case 'Insert':
@@ -46,17 +55,18 @@ switch ($action) {
         }else{
             $Key = $_POST['key'];
         }
-        $aListe = $Bdd->QryToArray(sprintf($aAPIQry['insertKey'], $Bdd->FormatSql($_POST['rsc_id'], 'C'), $Bdd->FormatSql($Key, 'C')));
-        $bSucces = $Bdd->aExecReq['success'];
+
+        $aListe = TestQry(sprintf($aAPIQry['insertKey'], $_POST['rsc_id'], $Key), $CnxDb);
+        $bSucces = "success";
         break;
 
     case 'listRscSansKey':
         if(isset($aSpecFilter['app'])){
-            $aListe = $Bdd->QryToArray($aAPIQry['listRscSansKey'] . ' @App = ' . $aSpecFilter['app']);
+            $aListe = TestQry($aAPIQry['listRscSansKey'] . ' @App = ' . $aSpecFilter['app'], $CnxDb);
         }else {
-            $aListe = $Bdd->QryToArray($aAPIQry['listRscSansKey']);
+            $aListe = TestQry($aAPIQry['listRscSansKey'], $CnxDb);
         }
-        $bSucces = $Bdd->aExecReq['success'];
+        $bSucces = "success";
         break;
 }
 

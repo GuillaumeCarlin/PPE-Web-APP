@@ -23,7 +23,7 @@ class Key
     
     function __construct(){
         include_once '..\server\commun\SessionClass.php';
-        $this->Bdd = new GestBdd($oSession->AppBase);;
+        //$this->Bdd = new GestBdd($oSession->AppBase);;
 
         $this->Qry =[
             'getAllKey' => 'EXEC s_systeme.TE_SELECT_ALL_APIKEY_APK',

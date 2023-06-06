@@ -10,7 +10,7 @@ Ext.define("Thot.view.api.ContainerAPIController", {
         oLstAPKStore.load();
     },
 
-    onGridsRefresh: function () {},
+    onGridsRefresh: function () { },
 
     ListeAPKRefresh: function (aFilter) {
         var oForm = this.getView();
@@ -21,8 +21,8 @@ Ext.define("Thot.view.api.ContainerAPIController", {
 
     onOperationClick: function (oGrid, oRecord, eOpts) {
         var oForm = this.getView();
-        oForm.query("#Rsc_ID")[0].setValue(oRecord.data.rsc_id);
-        oForm.query("#CodeAPK")[0].setValue(oRecord.data.apk_code);
+        oForm.query("#Rsc_ID")[0].setValue(oRecord.data.RSC_ID);
+        oForm.query("#CodeAPK")[0].setValue(oRecord.data.APK_CODE);
         oForm.query("#btnUpdateRapide")[0].setDisabled(false);
         oForm.query("#CodeAPK")[0].setDisabled(false);
     },
@@ -30,8 +30,8 @@ Ext.define("Thot.view.api.ContainerAPIController", {
     Update: function () {
         var oForm = this.getView();
         var Test = oForm.query("#ListeAPK")[0].getSelection()[0];
-        var Boolapp = Test.get("boolapp");
-        var Id = Test.get("rsc_id");
+        var Boolapp = Test.get("BoolApp");
+        var Id = Test.get("RSC_ID");
         var Key = oForm.query("#CodeAPK")[0].getValue();
         Ext.Ajax.request({
             url: "server/api/Api.php",
@@ -42,8 +42,8 @@ Ext.define("Thot.view.api.ContainerAPIController", {
                 rsc_id: Id,
                 key: Key
             },
-            success: function () {},
-            failure: function () {},
+            success: function () { },
+            failure: function () { },
             callback: function (opt, success, oResponse) {
                 var oBack = Ext.decode(oResponse.responseText);
 
@@ -72,8 +72,8 @@ Ext.define("Thot.view.api.ContainerAPIController", {
     UpdateRapide: function () {
         var oForm = this.getView();
         var Test = oForm.query("#ListeAPK")[0].getSelection()[0];
-        var Boolapp = Test.get("boolapp");
-        var Id = Test.get("rsc_id");
+        var Boolapp = Test.get("BoolApp");
+        var Id = Test.get("RSC_ID");
 
         Ext.Ajax.request({
             url: "server/api/Api.php",
@@ -83,8 +83,8 @@ Ext.define("Thot.view.api.ContainerAPIController", {
                 boolapp: Boolapp,
                 rsc_id: Id
             },
-            success: function () {},
-            failure: function () {},
+            success: function () { },
+            failure: function () { },
             callback: function (opt, success, oResponse) {
                 var oBack = Ext.decode(oResponse.responseText);
                 if (oBack.success) {

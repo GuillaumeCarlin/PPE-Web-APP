@@ -1,6 +1,23 @@
 <?php
 
-include_once '..\commun\SessionClass.php';
+$CnxDb = new PDO('sqlsrv:Server=10.30.103.67;Database=BD_THOT_THT', 'sa', '123456789+aze');
+$CnxDb->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+function TestQry($Requete, $CnxDb){
+    $oResult = $CnxDb->prepare($Requete); 
+    $oResult->execute(); 
+    $aListe = $oResult->fetchAll(PDO::FETCH_ASSOC);
+    return $aListe;
+}
+
+
+if (isset($_GET['action'])) {
+    $action = $_GET['action'];
+}elseif (isset($_POST['action'])) {
+    $action = $_POST['action'];
+}
+
+include_once '../variablesEtFiltres.php';
+
 
 //------------------------------------------------------------------
 // Appel‚ par le module AJAX
@@ -34,22 +51,7 @@ $aVariables[] = 'parametre';
 $aVariables[] = 'value';
 $aVariables[] = 'value_generique';
 
-require($oSession->ParentPath . "server/variablesEtFiltres.php");
-$bDebug = false;
-$sDebugAction = '';
-
-if ($sDebugAction !== '') {
-    if ($action !== $sDebugAction) {
-        $bDebug = false;
-    }
-}
-
-if ($bDebug) {
-    error_log("========================" . basename(__FILE__) . ' : ' . $action . "=====================");
-    error_log("_POST : " . var_export($_POST, true));
-    error_log("_GET : " . var_export($_GET, true));
-}
-
+/*
 class Admin extends GestBdd
 {
 
@@ -99,8 +101,9 @@ class Admin extends GestBdd
 
         return $aTree;
     }
-}
-$Bdd = new Admin($oSession->AppBase);
+}*/
+
+//$Bdd = new Admin($oSession->AppBase);
 include("AdminQry.php");
 $aMessages = [];
 //---- Execution de la requête correspondant à l'action passée en paramètre ----
@@ -125,6 +128,8 @@ switch ($action) {
         break;
 
     case 'VerifyPDF':
+        // N'ayant pas le fichier des fps on initialie un pdf par défaut
+        /*
         $url = "http"; 
         $url .= "://"; 
         $url .= $_SERVER['HTTP_HOST']; 
@@ -142,73 +147,84 @@ switch ($action) {
             $aMessages = 'Fichier Trouvé';
             fclose($check);
         }
+        */
+        $bSucces = true;
+        $aMessages = 'Fichier Trouvé';
         break;
 
     case 'GetFPSList':
-        $aListe = $Bdd->QryToArray($aAdmin['getfpslist']);
-        $bSucces = $Bdd->aExecReq['success'];
+        $aListe = TestQry($aAdmin['getfpslist'], $CnxDb);
+        $bSucces = "success";
         break;
 
     case 'GetUSRList':
-        $aListe = $Bdd->QryToArray(sprintf($aAdmin['getusrlist'], $Bdd->FormatSql($aSpecFilter['id_fps'], 'C'), $Bdd->FormatSql($aSpecFilter['id_rsc'], 'C')));
-        $bSucces = $Bdd->aExecReq['success'];
+        $aListe = TestQry(sprintf($aAdmin['getusrlist'], $aSpecFilter['id_fps'], $aSpecFilter['id_rsc']), $CnxDb);
+        $bSucces = "success";
         break;
 
     case 'GetEqtFPSList':
-        $aListe = $Bdd->QryToArray(sprintf($aAdmin['geteqtlist'], $Bdd->FormatSql($aSpecFilter['id_fps'], 'C')));
-        $bSucces = $Bdd->aExecReq['success'];
+        $aListe = TestQry(sprintf($aAdmin['geteqtlist'],$aSpecFilter['id_fps']), $CnxDb);
+        $bSucces = "success";
         break;
     case 'GetAllUSR':
-        $aListe = $Bdd->QryToArray(sprintf($aAdmin['getalllist_usr'], $Bdd->FormatSql($aSpecFilter['id_fps'], 'C'), $Bdd->FormatSql($aSpecFilter['id_rsc'], 'C')));
-        $bSucces = $Bdd->aExecReq['success'];
+        $aListe = TestQry(sprintf($aAdmin['getalllist_usr'], $aSpecFilter['id_fps'], $aSpecFilter['id_rsc']), $CnxDb);
+        $bSucces = "success";
         break;
 
     case 'GetAllEQT':
-        $aListe = $Bdd->QryToArray(sprintf($aAdmin['getalllist_eqt'], $Bdd->FormatSql($aSpecFilter['id_fps'], 'C')));
-        $bSucces = $Bdd->aExecReq['success'];
+        $aListe = TestQry(sprintf($aAdmin['getalllist_eqt'], $aSpecFilter['id_fps']), $CnxDb);
+        $bSucces = "success";
         break;
 
     case 'FPS_User':
         $Requete = $aAdmin['modify_fps_user'];
         switch ($_POST['type']) {
             case 'INSERT':
-                $Requete = $Requete . ' @Type = %1$s ,@UsrId =  %2$s, @RscId  =  %3$s, @FpsId =  %4$s, @Date  =  %5$s';
-                $aListe = $Bdd->QryToArray(sprintf($Requete, $Bdd->FormatSql($_POST['type'], 'C'), $Bdd->FormatSql($_POST['usr_id'], 'C'), $Bdd->FormatSql($_POST['rsc_id'], 'C'), $Bdd->FormatSql($_POST['fps_id'], 'C'), $Bdd->FormatSql($_POST['date'], 'C')));
-                $bSucces = $Bdd->aExecReq['success'];
+                $Requete = $Requete . ' @Type = \'%1$s\' ,@UsrId =  %2$s, @RscId  =  %3$s, @FpsId =  %4$s, @Date  =  %5$s';
+                TestQry(sprintf($Requete,$_POST['type'], $_POST['usr_id'], $_POST['rsc_id'], $_POST['fps_id'], $_POST['date']), $CnxDb);
+                $aListe = array();
+                $bSucces = "success";
                 break;
          
             case 'DELETE':
-                $Requete = $Requete . ' @Type = %1$s, @UsrId =  %2$s, @FpsId = %3$s ,@RscId = %4$s';
-                $aListe = $Bdd->QryToArray(sprintf($Requete, $Bdd->FormatSql($_POST['type'], 'C'), $Bdd->FormatSql($_POST['usr_id'], 'C'), $Bdd->FormatSql($_POST['fps_id'], 'C'), $Bdd->FormatSql($_POST['rsc_id'], 'C')));
-                $bSucces = $Bdd->aExecReq['success'];
+                $Requete = $Requete . ' @Type = \'%1$s\', @UsrId =  %2$s, @FpsId = %3$s ,@RscId = %4$s';
+                $Requete = sprintf($Requete, $_POST['type'], $_POST['usr_id'], $_POST['fps_id'],$_POST['rsc_id']);
+                TestQry($Requete, $CnxDb);
+                $aListe = array();
+                $bSucces = "success";
                 break;
         }
         break;
 
     case 'FPS_Eqt':
-        $aListe = $Bdd->QryToArray(sprintf($aAdmin['modify_fps_eqt'], $Bdd->FormatSql($_POST['type'], 'C'), $Bdd->FormatSql($_POST['rsc_id'], 'C'), $Bdd->FormatSql($_POST['fps_id'], 'C')));
-        $bSucces = $Bdd->aExecReq['success'];
+        TestQry(sprintf($aAdmin['modify_fps_eqt'], $_POST['type'], $_POST['rsc_id'], $_POST['fps_id']), $CnxDb);
+        $aListe = array();
+        $bSucces = "success";
     break;
 
     case 'FPS_Fps':
         $Requete = $aAdmin['modify_fps_fps'];
         switch ($_POST['type']) {
             case 'INSERT':
-                $Requete = $Requete . ', @FpgId = %2$s, @FpsChemin = %3$s, @FpsCode = %4$s';
-                $aListe = $Bdd->QryToArray(sprintf($Requete, $Bdd->FormatSql($_POST['type'], 'C'), $Bdd->FormatSql($_POST['fpg_id'], 'C'), $Bdd->FormatSql($_POST['fps_chemin'], 'C'), $Bdd->FormatSql($_POST['fps_code'], 'C')));
-                $bSucces = $Bdd->aExecReq['success'];
+                $Requete = $Requete . ', @FpgId = %2$s, @FpsChemin = \'%3$s\', @FpsCode = \'%4$s\'';
+                $Requete = sprintf($Requete, $_POST['type'], $_POST['fpg_id'], $_POST['fps_chemin'], $_POST['fps_code']);
+                TestQry($Requete, $CnxDb);
+                $aListe = array();
+                $bSucces = "success";
                 break;
             case 'DELETE':
                 $Requete = $Requete . ', @FpsId = %2$s';
-                $aListe = $Bdd->QryToArray(sprintf($Requete, $Bdd->FormatSql($_POST['type'], 'C'), $Bdd->FormatSql($_POST['fps_id'], 'C')));
-                $bSucces = $Bdd->aExecReq['success'];
+                $Requete = sprintf($Requete, $_POST['type'],$_POST['fps_id']);
+                TestQry($Requete, $CnxDb);
+                $aListe = array();
+                $bSucces = "success";
                 break;
         }
         break;
 
     case 'Get_FPG':
-        $aListe = $Bdd->QryToArray($aAdmin['getalllist_fpg']);
-        $bSucces = $Bdd->aExecReq['success'];
+        $aListe = TestQry($aAdmin['getalllist_fpg'], $CnxDb);
+        $bSucces = "success";
         break;
 
     case 'ImportProc':

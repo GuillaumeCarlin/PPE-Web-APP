@@ -1,24 +1,24 @@
 Ext.define('Thot.view.api.FormNewKey', {
-	extend: 'Ext.panel.Panel',
-	xtype: 'newkey',
+    extend: 'Ext.panel.Panel',
+    xtype: 'newkey',
     ui: 'thot-main',
-	requires: [
+    requires: [
         'Thot.view.api.FormNewKeyController'
-	],
-	controller: 'api-formnewkey',
-	listeners: {
-		afterrender: 'onAfterRender'
-	},
-	layout: {
-		type: 'vbox',
-		align: 'stretch'
-	},
-	bodyPadding: 5,
-	defaults: {
-		width: 300,
-		labelWidth: 100
-	},
-	items: [
+    ],
+    controller: 'api-formnewkey',
+    listeners: {
+        afterrender: 'onAfterRender'
+    },
+    layout: {
+        type: 'vbox',
+        align: 'stretch'
+    },
+    bodyPadding: 5,
+    defaults: {
+        width: 300,
+        labelWidth: 100
+    },
+    items: [
         {
             xtype: 'container',
             itemId: 'ContainerCheck',
@@ -27,45 +27,43 @@ Ext.define('Thot.view.api.FormNewKey', {
             },
             margin: '0 0 0 0',
             items: [
-		{ // activation/désactivation du contrôle status opérateur
-            xtype: 'checkboxfield',
-            itemId: 'checkGen',
-            reference: 'checkGen',
-            bind: {
-                fieldLabel: 'Générer clé',
-            },
-            listeners:{
-                change: 'ClickCheckBox'
-            },
-            value: true
-        },{
-         // activation/désactivation du contrôle status opérateur
-         xtype: 'checkboxfield',
-         itemId: 'CheckAPP',
-         reference: 'CheckAPP',
-         bind: {
-             fieldLabel: 'Application',
-         },
-         listeners:{
-             change: 'AppCheckBox'
-         },
-         value: false
-        }
-        ]},
+                { // activation/désactivation du contrôle status opérateur
+                    xtype: 'checkboxfield',
+                    itemId: 'checkGen',
+                    reference: 'checkGen',
+                    bind: {
+                        fieldLabel: 'Générer clé',
+                    },
+                    listeners: {
+                        change: 'ClickCheckBox'
+                    },
+                    value: true
+                }, {
+                    // activation/désactivation du contrôle status opérateur
+                    xtype: 'checkboxfield',
+                    itemId: 'CheckAPP',
+                    reference: 'CheckAPP',
+                    bind: {
+                        fieldLabel: 'Application',
+                    },
+                    listeners: {
+                        change: 'AppCheckBox'
+                    },
+                    value: false
+                }
+            ]
+        },
         {
-			xtype: 'combobox',
-			itemId: 'RessourceList',
-			fieldLabel: 'Ressource',
-			valueField: 'rsc_id',
-			displayField: 'rsc_code',
-			editable: false,
-			store: {
-				type: 'apiforms'
-			},
-			listeners: {
-				select: 'onRscSelect'
-			}
-		},
+            xtype: 'combobox',
+            itemId: 'RessourceList',
+            fieldLabel: 'Ressource',
+            valueField: 'RSC_ID',
+            displayField: 'RSC_CODE',
+            editable: false,
+            store: {
+                type: 'apiforms'
+            }
+        },
 
         {
             xtype: 'container',
@@ -84,7 +82,7 @@ Ext.define('Thot.view.api.FormNewKey', {
                 {
                     xtype: 'textfield',
                     itemId: 'Code',
-                    emptyText: 'Saisissez un code ...', 
+                    emptyText: 'Saisissez un code ...',
                     allowBlank: false,
                     margin: '0 0 0 0',
                     align: 'left',
@@ -112,11 +110,11 @@ Ext.define('Thot.view.api.FormNewKey', {
                 {
                     xtype: 'button',
                     itemId: 'cancel',
-                    ui:'cancel',
+                    ui: 'cancel',
                     text: 'Annuler',
                     margin: '0 10 0 0',
                     tooltip: 'Annuler.',
-                    iconCls:'x-fa fa-times-circle fa-2x',
+                    iconCls: 'x-fa fa-times-circle fa-2x',
                     listeners: {
                         click: 'onCancelClick'
                     },
@@ -125,10 +123,10 @@ Ext.define('Thot.view.api.FormNewKey', {
                 {
                     xtype: 'button',
                     itemId: 'valid',
-                    ui:'succes',
+                    ui: 'succes',
                     text: 'OK',
                     tooltip: 'Valider la selection.',
-                    iconCls:'thot-icon-check-small',
+                    iconCls: 'thot-icon-check-small',
                     listeners: {
                         click: 'validSelect'
                     },
@@ -137,5 +135,5 @@ Ext.define('Thot.view.api.FormNewKey', {
             ]
         }
 
-	]
+    ]
 });

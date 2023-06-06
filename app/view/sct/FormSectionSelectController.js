@@ -24,33 +24,33 @@ Ext.define('Thot.view.sct.FormSectionSelectController', {
         var sCurrentSection = localStorage.getItem('currentSection');
 
         oSocietyStr.on({
-            load: function () {}
+            load: function () { }
         })
         /*
          * Ca reviendra plus tard
         oSiteStr.on({
-        	load: function(oStore) {
-        		oStore.insert(0, [
-        			{
-        				org_id: 0,
-        				sit_rang: 0,
-        				sit_code: '',
-        				org_libelle: 'Tout',
-        				org_description: ''
-        			}
-        		]);
-        	}
+            load: function(oStore) {
+                oStore.insert(0, [
+                    {
+                        org_id: 0,
+                        sit_rang: 0,
+                        sit_code: '',
+                        org_libelle: 'Tout',
+                        org_description: ''
+                    }
+                ]);
+            }
         })
         */
 
         oForm.currentSection = {
-            idsociete: 0,
-            idsite: 0,
-            idsection: 0,
+            idsociete: 1,
+            idsite: 2,
+            idsection: 3,
             label: {
-                society: '',
-                site: '',
-                section: ''
+                society: 'Atelier 1',
+                site: 'CHAP',
+                section: 'FV'
             }
         };
 

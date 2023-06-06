@@ -14,12 +14,12 @@ Ext.define('Thot.view.adm.FormCreateFPSController', {
                 Liste = [oForm.param.custom.fps_code, oForm.param.custom.rsc_code];
                 this.updateAriane(Liste);
                 this.onAfterRenderUSR();
-                mois = (new Date().getMonth()+1);
+                mois = (new Date().getMonth() + 1);
                 jour = new Date().getDate();
-                if(mois.toString().length != 2){
+                if (mois.toString().length != 2) {
                     mois = '0' + mois;
                 }
-                if(jour.toString().length != 2){
+                if (jour.toString().length != 2) {
                     jour = '0' + jour;
                 }
                 date = '' + jour + '/' + mois + '/' + new Date().getFullYear();
@@ -63,7 +63,7 @@ Ext.define('Thot.view.adm.FormCreateFPSController', {
 
 
 
-    updateAriane: function(Liste){
+    updateAriane: function (Liste) {
         var oForm = this.getView();
         var sAriane = '';
         var sArianeSep = ' <a class="thot-ariane-sep"></a> ';
@@ -76,19 +76,19 @@ Ext.define('Thot.view.adm.FormCreateFPSController', {
         oTest = oForm.query('#personneGrid')[0];
     },
 
-    onAfterRenderFPS: function(){
+    onAfterRenderFPS: function () {
         oForm = this.getView();
         oComboBoxFPG = oForm.query('#FpgComboBox')[0];
         oComboBoxFPG.getStore().load();
     },
 
-    onAfterRenderUSR: function(){
+    onAfterRenderUSR: function () {
         oForm = this.getView();
         oComboBoxUSR = oForm.query('#UserComboBox')[0];
         aFilter = [{
             type: 'id_fps',
             value: oForm.param.custom.fps_id // TODO: Fusionner le code machien avec le nom machine dans sql server
-        },{
+        }, {
             type: 'id_rsc',
             value: oForm.param.custom.rsc_id,
         }];
@@ -102,10 +102,10 @@ Ext.define('Thot.view.adm.FormCreateFPSController', {
         oComboBoxUSR.getStore().load();
     },
 
-    onAfterRenderEqt: function(){
+    onAfterRenderEqt: function () {
         oForm = this.getView();
         oComboBoxEQT = oForm.query('#EqtComboBox')[0];
-        aFilter =[{
+        aFilter = [{
             type: 'id_fps',
             value: oForm.param.custom.fps_id,
         }];
@@ -119,12 +119,12 @@ Ext.define('Thot.view.adm.FormCreateFPSController', {
         oComboBoxEQT.getStore().load();
     },
 
-    SupWindow: function(){
+    SupWindow: function () {
         this.getView().up('window').close();
     },
 
 
-    validDelFPS: function(){
+    validDelFPS: function () {
         oForm = this.getView();
         vFps_Id = oForm.param.custom.fps_id;
         Ext.Ajax.request({
@@ -135,23 +135,15 @@ Ext.define('Thot.view.adm.FormCreateFPSController', {
                 type: 'DELETE',
                 fps_id: vFps_Id,
             },
-            success: function () {},
-            failure: function () {},
+            success: function () { },
+            failure: function () { },
             callback: function (opt, success, oResponse) {
-                var oBack = Ext.decode(oResponse.responseText);
-                if (oBack.success) {
-                    var oWin = oForm.up('window');
-                    oWin.close();
-                } else {
-                    var oMsg = Thot.app.MessageInfo();
-                    oMsg.init(5000);
-                    oMsg.msg('error', oBack.errorMessage.message);
-                }
+                oForm.up('window').close();
             }
         });
     },
 
-    validDelUSR: function(){
+    validDelUSR: function () {
         oForm = this.getView();
         vUsr_Id = oForm.param.custom.usr_id
         vFps_Id = oForm.param.custom.fps_id;
@@ -166,23 +158,15 @@ Ext.define('Thot.view.adm.FormCreateFPSController', {
                 fps_id: vFps_Id,
                 rsc_id: vRsc_Id,
             },
-            success: function () {},
-            failure: function () {},
+            success: function () { },
+            failure: function () { },
             callback: function (opt, success, oResponse) {
-                var oBack = Ext.decode(oResponse.responseText);
-                if (oBack.success) {
-                    var oWin = oForm.up('window');
-                    oWin.close();
-                } else {
-                    var oMsg = Thot.app.MessageInfo();
-                    oMsg.init(5000);
-                    oMsg.msg('error', oBack.errorMessage.message);
-                }
+                oForm.up('window').close();
             }
         });
     },
 
-    validDelEQT: function(){
+    validDelEQT: function () {
         oForm = this.getView();
         vFps_Id = oForm.param.custom.fps_id;
         vRsc_Id = oForm.param.custom.rsc_id;
@@ -195,23 +179,15 @@ Ext.define('Thot.view.adm.FormCreateFPSController', {
                 fps_id: vFps_Id,
                 rsc_id: vRsc_Id,
             },
-            success: function () {},
-            failure: function () {},
+            success: function () { },
+            failure: function () { },
             callback: function (opt, success, oResponse) {
-                var oBack = Ext.decode(oResponse.responseText);
-                if (oBack.success) {
-                    var oWin = oForm.up('window');
-                    oWin.close();
-                } else {
-                    var oMsg = Thot.app.MessageInfo();
-                    oMsg.init(5000);
-                    oMsg.msg('error', oBack.errorMessage.message);
-                }
+                oForm.up('window').close();
             }
         });
     },
 
-    validSelectFPS: function(){
+    validSelectFPS: function () {
         oForm = this.getView();
         vFpg = oForm.query('#FpgComboBox')[0].getValue();
         vName = oForm.query('#FPSName')[0].getValue();
@@ -234,8 +210,8 @@ Ext.define('Thot.view.adm.FormCreateFPSController', {
                     action: 'VerifyPDF',
                     fichier: CheminVerify
                 },
-                success: function () {},
-                failure: function () {},
+                success: function () { },
+                failure: function () { },
                 callback: function (opt, success, oResponse) {
                     var oBack = Ext.decode(oResponse.responseText);
                     if (oBack.success) {
@@ -250,19 +226,10 @@ Ext.define('Thot.view.adm.FormCreateFPSController', {
                                 fps_code: vName,
                                 fps_chemin: vChemin,
                             },
-                            success: function () {},
-                            failure: function () {},
+                            success: function () { },
+                            failure: function () { },
                             callback: function (opt, success, oResponse) {
-                                var oBack = Ext.decode(oResponse.responseText);
-
-                                if (oBack.success) {
-                                    var oWin = oForm.up('window');
-                                    oWin.close();
-                                } else {
-                                    var oMsg = Thot.app.MessageInfo();
-                                    oMsg.init(5000);
-                                    oMsg.msg('error', oBack.errorMessage.message);
-                                }
+                                oForm.up('window').close();
                             }
                         });
                     } else {
@@ -275,13 +242,13 @@ Ext.define('Thot.view.adm.FormCreateFPSController', {
         }
     },
 
-    validSelectUSR: function(){
+    validSelectUSR: function () {
         oForm = this.getView();
         oUsr = oForm.query('#UserComboBox')[0];
         oDate = oForm.query('#datefieldNewUsr')[0];
         Liste = oDate.rawValue.split('/');
         vDate = Liste[2] + Liste[1] + Liste[0];
-        var vUsrId= oUsr.getValue();
+        var vUsrId = oUsr.getValue();
 
         if (vUsrId === null || vDate == 'NaN') {
             var Message = 'Information(s) Manquante(s)';
@@ -289,7 +256,7 @@ Ext.define('Thot.view.adm.FormCreateFPSController', {
         } else {
             vFps_Id = oForm.param.custom.fps_id;
             vRsc_Id = oForm.param.custom.rsc_id;
-    
+
             Ext.Ajax.request({
                 url: 'server/adm/Admin.php',
                 params: {
@@ -301,26 +268,17 @@ Ext.define('Thot.view.adm.FormCreateFPSController', {
                     date: vDate,
                     rsc_id: vRsc_Id,
                 },
-                success: function () {},
-                failure: function () {},
+                success: function () { },
+                failure: function () { },
                 callback: function (opt, success, oResponse) {
-                    var oBack = Ext.decode(oResponse.responseText);
-    
-                    if (oBack.success) {
-                        var oWin = oForm.up('window');
-                        oWin.close();
-                    } else {
-                        var oMsg = Thot.app.MessageInfo();
-                        oMsg.init(5000);
-                        oMsg.msg('error', oBack.errorMessage.message);
-                    }
+                    oForm.up('window').close();
                 }
             });
         }
 
     },
 
-    validSelectEQT: function(){
+    validSelectEQT: function () {
         oForm = this.getView();
         vRsc_Id = oForm.query('#EqtComboBox')[0].getValue();
         vFps_Id = oForm.param.custom.fps_id;
@@ -338,18 +296,10 @@ Ext.define('Thot.view.adm.FormCreateFPSController', {
                     fps_id: vFps_Id,
                     rsc_id: vRsc_Id,
                 },
-                success: function () {},
-                failure: function () {},
+                success: function () { },
+                failure: function () { },
                 callback: function (opt, success, oResponse) {
-                    var oBack = Ext.decode(oResponse.responseText);
-                    if (oBack.success) {
-                        var oWin = oForm.up('window');
-                        oWin.close();
-                    } else {
-                        var oMsg = Thot.app.MessageInfo();
-                        oMsg.init(5000);
-                        oMsg.msg('error', oBack.errorMessage.message);
-                    }
+                    oForm.up('window').close();
                 }
             });
         }

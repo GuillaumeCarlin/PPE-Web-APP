@@ -20,7 +20,7 @@ Ext.define("Thot.view.stat.CmpListEquipeController", {
             },
             {
                 type: "org",
-                value: Thot.app.getSection().idsection
+                value: 3
             }
         ];
 
@@ -60,16 +60,16 @@ Ext.define("Thot.view.stat.CmpListEquipeController", {
 
     onOperationClick: function (oGrid, oRecord, eOpts) {
         var oForm = this.getView();
-        var Image = oRecord.data.image;
-        oForm.query("#Nom")[0].setValue(oRecord.data.nom + " " + oRecord.data.prenom);
-        oForm.query("#Equipe")[0].setValue(oRecord.data.equipe);
-        oForm.query("#Poste")[0].setValue(oRecord.data.poste);
+        var Image = oRecord.data.Image;
+        oForm.query("#Nom")[0].setValue(oRecord.data.Nom + " " + oRecord.data.Prenom);
+        oForm.query("#Equipe")[0].setValue(oRecord.data.Equipe);
+        oForm.query("#Poste")[0].setValue(oRecord.data.Libelle);
         oForm.query("#Atelier")[0].setValue(oRecord.data.atelier);
-        oForm.query("#tempsexiger")[0].setValue(oRecord.data.tpsexigible);
-        oForm.query("#tempspointe")[0].setValue(oRecord.data.tpspointe);
+        oForm.query("#tempsexiger")[0].setValue(oRecord.data.TpsExigible);
+        oForm.query("#tempspointe")[0].setValue(oRecord.data.TpsPointe);
         oForm.query("#Img")[0].setSrc("resources/images/" + Image);
         //oForm.query('#Image')[0].setValue(oRecord.data.image);
-        var Liste = oRecord.data.date;
+        var Liste = oRecord.data.Date;
         var dateField = Liste[6] + Liste[7] + "/" + Liste[4] + Liste[5] + "/" + Liste[0] + Liste[1] + Liste[2] + Liste[3];
         oForm.query("#date")[0].setValue(dateField);
 
@@ -79,11 +79,11 @@ Ext.define("Thot.view.stat.CmpListEquipeController", {
         aFilter = [
             {
                 type: "identifiant",
-                value: oRecord.data.id
+                value: oRecord.data.Id
             },
             {
                 type: "date",
-                value: oRecord.data.date
+                value: oRecord.data.Date
             }
         ];
         oInfoPersonneSheet.getStore().setExtraParams({

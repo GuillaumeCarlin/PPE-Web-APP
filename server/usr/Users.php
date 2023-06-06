@@ -23,7 +23,7 @@ $aVariables[] = 'value';
 $aVariables[] = 'users';
 $aVariables[] = 'usr_verifiercoherence';
 
-require $oSession->ParentPath . "server/variablesEtFiltres.php";
+include_once "../variablesEtFiltres.php";
 $bDebug = false;
 $aDebugAction = [];
 
@@ -39,9 +39,13 @@ if ($bDebug) {
     error_log("_GET : " . var_export($_GET, true));
 }
 
+echo json_encode($oSession->AppBase);
 //---- Include de la classe de gestion des données ----
 //include($oSession->ParentPath . "server/Bdd.php");
-$Bdd = new GestBdd($oSession->AppBase);
+
+
+//$Bdd = new GestBdd($oSession->AppBase); 
+
 include "UsersQry.php";
 
 function sectionReplace($rsc_id, $org_id_src, $rle_id_src, $org_id)

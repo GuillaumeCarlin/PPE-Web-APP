@@ -11,153 +11,153 @@ Ext.define('Thot.view.stat.CmpListEquipe', {
     // listeners: {
     //     gridRefresh: 'onGridRefresh',
     // },
-    
-    
+
+
     layout: {
         type: 'vbox',
         align: 'stretch'
     },
     title: 'Relevés de temps individuels',
-    items:[
+    items: [
+        {
+            xtype: 'gridpanel',
+            flex: 1,
+            itemId: 'ListeUser',
+            reference: 'ListUser',
+            stateful: true,
+            stateId: 'listequipe-listeuser',
+            plugins: 'gridfilters',
+            features: [{
+                ftype: 'grouping',
+                startCollapsed: false,
+                hideGroupedHeader: false,
+                /* cacher la colonne du regroupement */
+                groupHeaderTpl: '{columnName}: {name} ({rows.length} Activité{[values.rows.length > 1 ? "s" : ""]})'
+            }],
+            layout: {
+                type: 'fit',
+                align: 'stretch'
+            },
+            store: {
+                type: 'statuserlist'
+            },
+            listeners: {
+                afterrender: 'onAfterRender',
+                //gridRefresh: 'onGridRefresh',
+                select: 'onOperationClick',
+                refresh: 'refresh'
+            },
+            viewConfig: {
+                preserveScrollOnRefresh: true,
+                loadMask: false,
+                emptyText: 'Aucun utilisateur trouvée',
+                getRowClass: function (record, rowIndex, rowParams, store) {
+                    var sCSS = "";
+                    sCSS = parseInt(record.get("Booleen")) == 0 ? "thot-grid-modified-entity" : sCSS;
+                    return sCSS;
+                },
+            },
+            columns: [
                 {
-                xtype: 'gridpanel',
-                flex: 1,
-                itemId: 'ListeUser',
-                reference: 'ListUser',
-                stateful: true,
-                stateId: 'listequipe-listeuser',
-                plugins: 'gridfilters',
-                features: [{
-                    ftype: 'grouping',
-                    startCollapsed: false,
-                    hideGroupedHeader: false,
-                    /* cacher la colonne du regroupement */
-                    groupHeaderTpl: '{columnName}: {name} ({rows.length} Activité{[values.rows.length > 1 ? "s" : ""]})'
-                }],
-                layout: {
-                    type: 'fit',
-                    align: 'stretch'
-                },
-                store: {
-                    type: 'statuserlist'
-                },
-                listeners: {
-                    afterrender: 'onAfterRender',
-                    //gridRefresh: 'onGridRefresh',
-                    select: 'onOperationClick',
-                    refresh: 'refresh'
-                },
-                viewConfig: {
-                    preserveScrollOnRefresh: true,
-                    loadMask: false,
-                    emptyText: 'Aucun utilisateur trouvée',
-                    getRowClass: function (record, rowIndex, rowParams, store) {
-                        var sCSS = "";
-                        sCSS = parseInt(record.get("booleen")) == 0 ? "thot-grid-modified-entity" : sCSS;
-                        return sCSS;
-                    },
-                },
-                columns: [
-                        {
-                            xtype: 'gridcolumn',
-                            dataIndex: 'nom',
-                            text: 'Nom',
-                            minWidth: 150,
-                            tooltip: 'Nom de la personne',
-                            renderer: function (sValue, oCell, oData) {
-                                var sReturn = "";
-                                var sLabel = '';
-                                sLabel = oData.get('nom') + ' ' + oData.get('prenom');
-                                sReturn += '<div class="thot-card-user"> <div class="img" style="background-image: url(\'resources/images/' + oData.get('image') + '\')"></div>';
-                                if (oData.get('booleen') == 0) {
-                                    sReturn += '<div class="content thot-bold-label" style="color: #d50000;">' + sLabel + '</div>';
-                                }else{
-                                    sReturn += '<div class="content thot-bold-label">' + sLabel + '</div></div>';
-                                }
-                                return sReturn;
-                            },
-                        },
-                        {
-                            xtype: 'gridcolumn',
-                            dataIndex: 'atelier',
-                            text: 'atelier',
-                            minWidth: 150,
-                            tooltip: 'Atelier de la personne',
-                        },
-                        {
-                            xtype: 'gridcolumn',
-                            dataIndex: 'equipe',
-                            groupable: true,
-                            text: 'Equipe',
-                            minWidth: 150,
-                            tooltip: 'Equipe de la personne',
-                        },
-                        {
-                            xtype: 'gridcolumn',
-                            dataIndex: 'tpsexigible',
-                            text: 'Temps exigible',
-                            minWidth: 150,
-                            tooltip: 'Temps que la personne doit réaliser',
-                            align: 'right',
-                        },
-                        {
-                            xtype: 'gridcolumn',
-                            dataIndex: 'tpspointe',
-                            text: 'Temps pointé',
-                            tooltip: 'Temps que la personne à réaliser',
-                            minWidth: 160,
-                            align: 'right',
-                        },
-                        {
-                            xtype: 'gridcolumn',
-                            dataIndex: 'ecartabsolue',
-                            text: 'Écart absolu',
-                            tooltip: 'Temps que la personne à réaliser',
-                            minWidth: 150,
-                            align: 'right',
-                        },
-                        {
-                            flex: 1,
-                            dataIndex: 'Bullet',
-                            xtype: 'widgetcolumn',
-                            widget: {
-                                xtype: 'sparklinebullet',
-                            },
-                            align: 'center',
+                    xtype: 'gridcolumn',
+                    dataIndex: 'nom',
+                    text: 'Nom',
+                    minWidth: 150,
+                    tooltip: 'Nom de la personne',
+                    renderer: function (sValue, oCell, oData) {
+                        var sReturn = "";
+                        var sLabel = '';
+                        sLabel = oData.get('nom') + ' ' + oData.get('prenom');
+                        sReturn += '<div class="thot-card-user"> <div class="img" style="background-image: url(\'resources/images/' + oData.get('Image') + '\')"></div>';
+                        if (oData.get('booleen') == 0) {
+                            sReturn += '<div class="content thot-bold-label" style="color: #d50000;">' + sLabel + '</div>';
+                        } else {
+                            sReturn += '<div class="content thot-bold-label">' + sLabel + '</div></div>';
                         }
-                    ]
-                }, 
-                {
-                    xtype: 'panel',
-                    title: 'Détail journée opérateur',
-                    layout: {
-                        type: 'hbox',
-                        align: 'stretch',
+                        return sReturn;
                     },
-                    height: 260,
-                    items:[{
-                        xtype: 'container', // mettre en panel pour afficher
-                        itemId: 'InformationPersonne',
-                        width: 300,
-                        defaults: {
-                            ui: 'thot-field-compact',
-                            value: ''
+                },
+                {
+                    xtype: 'gridcolumn',
+                    dataIndex: 'atelier',
+                    text: 'atelier',
+                    minWidth: 150,
+                    tooltip: 'Atelier de la personne',
+                },
+                {
+                    xtype: 'gridcolumn',
+                    dataIndex: 'Equipe',
+                    groupable: true,
+                    text: 'Equipe',
+                    minWidth: 150,
+                    tooltip: 'Equipe de la personne',
+                },
+                {
+                    xtype: 'gridcolumn',
+                    dataIndex: 'TpsExigible',
+                    text: 'Temps exigible',
+                    minWidth: 150,
+                    tooltip: 'Temps que la personne doit réaliser',
+                    align: 'right',
+                },
+                {
+                    xtype: 'gridcolumn',
+                    dataIndex: 'TpsPointe',
+                    text: 'Temps pointé',
+                    tooltip: 'Temps que la personne à réaliser',
+                    minWidth: 160,
+                    align: 'right',
+                },
+                {
+                    xtype: 'gridcolumn',
+                    dataIndex: 'EcartAbsolue',
+                    text: 'Écart absolu',
+                    tooltip: 'Temps que la personne à réaliser',
+                    minWidth: 150,
+                    align: 'right',
+                },
+                {
+                    flex: 1,
+                    dataIndex: 'Bullet',
+                    xtype: 'widgetcolumn',
+                    widget: {
+                        xtype: 'sparklinebullet',
+                    },
+                    align: 'center',
+                }
+            ]
+        },
+        {
+            xtype: 'panel',
+            title: 'Détail journée opérateur',
+            layout: {
+                type: 'hbox',
+                align: 'stretch',
+            },
+            height: 260,
+            items: [{
+                xtype: 'container', // mettre en panel pour afficher
+                itemId: 'InformationPersonne',
+                width: 300,
+                defaults: {
+                    ui: 'thot-field-compact',
+                    value: ''
+                },
+                items: [
+                    {
+                        xtype: 'container',
+                        layout: {
+                            type: 'hbox',
                         },
-                    items: [
-                        {
-                            xtype: 'container',
-                            layout:{
-                                type: 'hbox',
+                        items: [
+                            {
+                                xtype: 'displayfield',
+                                dataIndex: 'nom',
+                                fieldLabel: 'Nom',
+                                itemId: 'Nom',
+                                margin: '0 5 0 0'
                             },
-                            items: [
-                                {
-                                    xtype: 'displayfield',
-                                    dataIndex: 'nom',
-                                    fieldLabel: 'Nom',
-                                    itemId: 'Nom',
-                                    margin: '0 5 0 0'
-                                },
-                                {
+                            {
                                 xtype: 'image',
                                 itemId: 'Img',
                                 src: '',
@@ -198,12 +198,12 @@ Ext.define('Thot.view.stat.CmpListEquipe', {
                         fieldLabel: 'Date',
                         itemId: 'date',
                     }]
-                },
-                { // tabpanel pour affichage des données consolidées et des activités
-                    xtype: 'tabpanel',
-                    flex: 1,
-                    activeTab: 0,
-                    items: [
+            },
+            { // tabpanel pour affichage des données consolidées et des activités
+                xtype: 'tabpanel',
+                flex: 1,
+                activeTab: 0,
+                items: [
                     {
                         xtype: 'gridpanel',
                         title: 'Activité',
@@ -217,26 +217,26 @@ Ext.define('Thot.view.stat.CmpListEquipe', {
                         },
                         columns: [{
                             xtype: 'gridcolumn',
-                            dataIndex: 'org_libelle',
+                            dataIndex: 'ORG_LIBELLE',
                             text: 'Atelier',
                             width: 150,
                             tooltip: 'Tâche réalisée',
                         },
                         {
                             xtype: 'gridcolumn',
-                            dataIndex: 'eps_libelle',
+                            dataIndex: 'EPS_LIBELLE',
                             text: 'Equipe',
                             width: 125,
                             tooltip: 'Tâche réalisée',
                         },
                         {
                             xtype: 'gridcolumn',
-                            dataIndex: 'opn_id',
+                            dataIndex: 'OPN_ID',
                             text: 'Opération',
                             width: 150,
                             tooltip: 'Tâche réalisée',
                             renderer: function (_sValue, _oCell, oData) {
-                                var sReturn = oData.data.rsc_code;
+                                var sReturn = oData.data.RSC_CODE;
                                 console.log(oData.data);
                                 if (oData.data.ald_code == 'RGL') {
                                     sReturn +=
@@ -249,7 +249,7 @@ Ext.define('Thot.view.stat.CmpListEquipe', {
                         },
                         {
                             xtype: 'gridcolumn',
-                            dataIndex: 'odf_id',
+                            dataIndex: 'ODF_ID',
                             text: 'ODF',
                             width: 100,
                             tooltip: 'Tâche réalisée',
@@ -257,7 +257,7 @@ Ext.define('Thot.view.stat.CmpListEquipe', {
                         },
                         {
                             xtype: 'gridcolumn',
-                            dataIndex: 'pdt_libelle',
+                            dataIndex: 'PDT_LIBELLE',
                             text: 'Produit',
                             width: 150,
                         },
@@ -270,23 +270,23 @@ Ext.define('Thot.view.stat.CmpListEquipe', {
                         },
                         {
                             xtype: 'gridcolumn',
-                            dataIndex: 'rsc_code',
+                            dataIndex: 'RSC_CODE',
                             text: 'Machine',
                             width: 150,
                             tooltip: 'Tâche réalisée',
                         },
                         {
                             xtype: 'gridcolumn',
-                            dataIndex: 'datedebut',
+                            dataIndex: 'DateDebut',
                             text: 'Début',
                             width: 150,
                         },
                         {
                             xtype: 'gridcolumn',
-                            dataIndex: 'datefin',
+                            dataIndex: 'DateFin',
                             text: 'Fin',
                             width: 150,
-                        },                        {
+                        }, {
                             xtype: 'gridcolumn',
                             dataIndex: 'duree',
                             text: 'Durée',
@@ -308,21 +308,21 @@ Ext.define('Thot.view.stat.CmpListEquipe', {
                         },
                         columns: [{
                             xtype: 'gridcolumn',
-                            dataIndex: 'desig',
+                            dataIndex: 'Desig',
                             text: 'Tâche',
                             width: 150,
                             tooltip: 'Tâche réalisée',
                         },
                         {
                             xtype: 'gridcolumn',
-                            dataIndex: 'machine',
+                            dataIndex: 'Machine',
                             text: 'Machine',
                             tooltip: 'Machine utilisée',
                             width: 150,
                         },
                         {
                             xtype: 'gridcolumn',
-                            dataIndex: 'tempspointe',
+                            dataIndex: 'TempsPointe',
                             text: 'Temps Pointé',
                             tooltip: 'Durée de réalisation de la tâche',
                             align: 'right',
@@ -330,7 +330,7 @@ Ext.define('Thot.view.stat.CmpListEquipe', {
                         },
                         {
                             xtype: 'gridcolumn',
-                            dataIndex: 'tempsreglage',
+                            dataIndex: 'TempsReglage',
                             text: 'Temps Réglage',
                             tooltip: 'Temps passé aux réglage de la machine',
                             align: 'right',
@@ -338,7 +338,7 @@ Ext.define('Thot.view.stat.CmpListEquipe', {
                         },
                         {
                             xtype: 'gridcolumn',
-                            dataIndex: 'tempsreglageallouer',
+                            dataIndex: 'TempsReglageAllouer',
                             text: 'Temps Réglage Alloué',
                             tooltip: 'Temps alloué au réglage de la machine',
                             align: 'right',
@@ -346,7 +346,7 @@ Ext.define('Thot.view.stat.CmpListEquipe', {
                         },
                         {
                             xtype: 'gridcolumn',
-                            dataIndex: 'tempsmachine',
+                            dataIndex: 'TempsMachine',
                             text: 'Temps Machine',
                             tooltip: 'Durée d\'utilisation de la machine',
                             align: 'right',
@@ -354,24 +354,24 @@ Ext.define('Thot.view.stat.CmpListEquipe', {
                         },
                         {
                             xtype: 'gridcolumn',
-                            dataIndex: 'total',
+                            dataIndex: 'Total',
                             text: 'Quantité Total',
                             tooltip: 'Quantité Total',
                             align: 'right',
-                        },  
+                        },
                         {
                             xtype: 'gridcolumn',
                             dataIndex: 'bonne',
                             text: 'Quantité bonne',
                             tooltip: 'Quantité Produit',
                             align: 'right',
-                        },                        {
+                        }, {
                             xtype: 'gridcolumn',
-                            dataIndex: 'rebut',
+                            dataIndex: 'Rebut',
                             text: 'Quantité Rébut',
                             tooltip: 'Quantité rébut',
                             align: 'right',
-                        },                        {
+                        }, {
                             xtype: 'gridcolumn',
                             dataIndex: 'objectif',
                             text: 'Tps gamme objectif',
@@ -380,6 +380,6 @@ Ext.define('Thot.view.stat.CmpListEquipe', {
                     }
                 ]
             }
-        ]
-    }]
+            ]
+        }]
 });

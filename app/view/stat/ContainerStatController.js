@@ -18,10 +18,10 @@ Ext.define('Thot.view.stat.ContainerStatController', {
         aFilter = this._getFilter();
         aFilterA = this._getFilterAlerte();
 
-        aFilter.push({type: 'parametre', value: 'Manuel'})
+        aFilter.push({ type: 'parametre', value: 'Manuel' })
 
         var oForm = this.getView(),
-        oStatEquipe = oForm.query('#ListeEquipe')[0].query('#ListeEquipe')[0];
+            oStatEquipe = oForm.query('#ListeEquipe')[0].query('#ListeEquipe')[0];
         oStatPersonne = oForm.query('#ListeUser')[0].query('#ListeUser')[0];
 
         oAlerteC = oForm.query('#ListAlerte')[0].query('#ListeAlerteC')[0];
@@ -32,9 +32,9 @@ Ext.define('Thot.view.stat.ContainerStatController', {
 
         oAlerteC.fireEvent('refresh', aFilterA);
         oAlerteM.fireEvent('refresh', aFilterA);
-        
-        this.getView().query('#ListeUser')[0].query('#InformationPersonneSheetA')[0].getStore().loadData([],false);
-        this.getView().query('#ListeUser')[0].query('#InformationPersonneSheetD')[0].getStore().loadData([],false);
+
+        this.getView().query('#ListeUser')[0].query('#InformationPersonneSheetA')[0].getStore().loadData([], false);
+        this.getView().query('#ListeUser')[0].query('#InformationPersonneSheetD')[0].getStore().loadData([], false);
 
         oForm = this.getView().query('#ListeUser')[0];
         oForm.query('#Nom')[0].setValue('');
@@ -48,34 +48,34 @@ Ext.define('Thot.view.stat.ContainerStatController', {
     },
 
 
-    onClick: function(){
+    onClick: function () {
         aFilter = this._getFilter()
-        aFilter.push({type: 'parametre', value: 'Manuel'})
+        aFilter.push({ type: 'parametre', value: 'Manuel' })
 
         oStatEquipe = this.getView().query('#ListeEquipe')[0].query('#ListeEquipe')[0],
-        oStatEquipe.fireEvent('refresh', aFilter);
+            oStatEquipe.fireEvent('refresh', aFilter);
 
         oStatPersonne = this.getView().query('#ListeUser')[0].query('#ListeUser')[0],
-        oStatPersonne.fireEvent('refresh', aFilter);
-        },
+            oStatPersonne.fireEvent('refresh', aFilter);
+    },
 
 
-    onApplyClick: function(){
+    onApplyClick: function () {
         aFilter = this._getFilter()
-        aFilter.push({type: 'parametre', value: 'Manuel'})
-        
+        aFilter.push({ type: 'parametre', value: 'Manuel' })
+
         oStatEquipe = this.getView().query('#ListeEquipe')[0].query('#ListeEquipe')[0],
-        oStatEquipe.fireEvent('refresh', aFilter);
+            oStatEquipe.fireEvent('refresh', aFilter);
 
         oStatPersonne = this.getView().query('#ListeUser')[0].query('#ListeUser')[0],
-        oStatPersonne.fireEvent('refresh', aFilter);
+            oStatPersonne.fireEvent('refresh', aFilter);
     },
 
 
     onDateSelect: function () {
 
         aFilter = this._getFilter()
-        aFilter.push({type: 'parametre', value: 'Manuel'})
+        aFilter.push({ type: 'parametre', value: 'Manuel' })
 
         oStatEquipe = this.getView().query('#ListeEquipe')[0].query('#ListeEquipe')[0];
         oStatEquipe.fireEvent('refresh', aFilter);
@@ -86,8 +86,8 @@ Ext.define('Thot.view.stat.ContainerStatController', {
         oStatActivite = this.getView().query('#ListeUser')[0].query('#InformationPersonneSheetA')[0];
         oStatActiviteD = this.getView().query('#ListeUser')[0].query('#InformationPersonneSheetD')[0];
 
-        oStatActivite.getStore().loadData([],false);
-        oStatActiviteD.getStore().loadData([],false);
+        oStatActivite.getStore().loadData([], false);
+        oStatActiviteD.getStore().loadData([], false);
 
         oForm = this.getView().query('#ListeUser')[0];
         oForm.query('#Nom')[0].setValue('');
@@ -105,10 +105,10 @@ Ext.define('Thot.view.stat.ContainerStatController', {
         var aFilter = this._getFilterAlerte();
 
         oAlerteM = this.getView().query('#ListAlerte')[0].query('#ListeAlerteM')[0],
-        oAlerteM.fireEvent('refresh', aFilter);
+            oAlerteM.fireEvent('refresh', aFilter);
 
         oAlerteC = this.getView().query('#ListAlerte')[0].query('#ListeAlerteC')[0],
-        oAlerteC.fireEvent('refresh', aFilter);
+            oAlerteC.fireEvent('refresh', aFilter);
     },
 
 
@@ -121,13 +121,14 @@ Ext.define('Thot.view.stat.ContainerStatController', {
                 action: 'getToleranceParam',
             },
             async: 'false',
-            success: function () {},
-            failure: function () {},
+            success: function () { },
+            failure: function () { },
             callback: function (opt, success, oResponse) {
                 var oBack = Ext.decode(oResponse.responseText);
                 if (oBack.success) {
-                    oForm.query('#toleranceMax')[0].setValue(oBack.liste[0].tolerancemax);
-                    oForm.query('#toleranceMin')[0].setValue(oBack.liste[0].tolerancemin);                    
+                    console.log(oBack.liste[0].ToleranceMax);
+                    oForm.query('#toleranceMax')[0].setValue(oBack.liste[0].ToleranceMax);
+                    oForm.query('#toleranceMin')[0].setValue(oBack.liste[0].ToleranceMin);
                 } else {
                     var oMsg = Thot.app.MessageInfo();
                     oMsg.init(5000);
@@ -137,7 +138,7 @@ Ext.define('Thot.view.stat.ContainerStatController', {
         });
     },
 
-    _getDate: function(){
+    _getDate: function () {
         oForm = this.getView();
         Ext.Ajax.request({
             url: 'server/stat/Statistique.php',
@@ -146,10 +147,10 @@ Ext.define('Thot.view.stat.ContainerStatController', {
                 action: 'getDate',
             },
             async: 'false',
-            success: function () {},
-            failure: function () {},
+            success: function () { },
+            failure: function () { },
             callback: function (opt, success, oResponse) {
-                var oBack = Ext.decode(oResponse.responseText);   
+                var oBack = Ext.decode(oResponse.responseText);
                 if (oBack.success) {
                     var DateTest = oBack.liste[0].date.toString()
                     var DateInitialiser = DateTest[6] + DateTest[7] + '/' + DateTest[4] + DateTest[5] + '/' + DateTest[0] + DateTest[1] + DateTest[2] + DateTest[3];
@@ -167,7 +168,7 @@ Ext.define('Thot.view.stat.ContainerStatController', {
     },
 
 
-    _getFilter: function() {
+    _getFilter: function () {
         var oForm = this.getView();
         Liste = oForm.query('#datefield')[0].rawValue.split('/');
         var vDate = Liste[2] + Liste[1] + Liste[0];
@@ -178,17 +179,17 @@ Ext.define('Thot.view.stat.ContainerStatController', {
 
         var aFilter = [{
             type: 'date',
-            value: vDate 
-        },{
+            value: vDate
+        }, {
             type: 'ToleranceMax',
             value: vToleranceMax
-        },{
+        }, {
             type: 'ToleranceMin',
             value: vToleranceMin
-        },{
+        }, {
             type: 'ShowDelete',
             value: vShowDelete
-        },{
+        }, {
             type: 'org',
             value: vSection
         }]
@@ -196,7 +197,7 @@ Ext.define('Thot.view.stat.ContainerStatController', {
     },
 
 
-    _getFilterAlerte: function(){
+    _getFilterAlerte: function () {
         var oForm = this.getView();
         Liste = oForm.query('#DateFieldReglage')[0].rawValue.split('/');
         var vDate = Liste[2] + Liste[1] + Liste[0];
@@ -204,8 +205,8 @@ Ext.define('Thot.view.stat.ContainerStatController', {
 
         var aFilter = [{
             type: 'date',
-            value: vDate 
-        },{
+            value: vDate
+        }, {
             type: 'org',
             value: vSection
         }]

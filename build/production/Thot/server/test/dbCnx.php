@@ -2,10 +2,10 @@
 
 $aDb = [
 	'typebase'=> 'MsSql',
-	'nombase'=> 'BD_AUTH_PRF',
-	'host'=>'SVW2K8R2SQL1\DEV',
-	'username'=>'gmpi',
-	'passe'=>'eJxTCnAwNS8yLFYCAAsvAlc='
+	'nombase'=> 'BD_THOT_THT',
+	'host'=>'10.30.103.67',
+	'username'=>'sa',
+	'passe'=>'123456789+aze'
 ];
 
 include_once 'Bdd.php';

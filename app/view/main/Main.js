@@ -39,26 +39,26 @@ Ext.define('Thot.view.main.Main', {
             overflowHandler: 'scroller'
         },
         items: [{ // DEV: hvt 2020-04-29 20:17:02 ajout d'un bouton dans la barre d'onglets
-                xtype: 'tbfill'
-            },
-            {
-                xtype: 'button',
-                disabled: false,
-                itemId: 'btnappinfo',
-                reference: 'btnappinfo',
-                /**
-                 * indication de la version de l'application
-                 * le numéro de version et le tooltip sont mis à jour par le controlleur
-                 */
-                ui: 'thot-header',
+            xtype: 'tbfill'
+        },
+        {
+            xtype: 'button',
+            disabled: false,
+            itemId: 'btnappinfo',
+            reference: 'btnappinfo',
+            /**
+             * indication de la version de l'application
+             * le numéro de version et le tooltip sont mis à jour par le controlleur
+             */
+            ui: 'thot-header',
+            text: '',
+            tooltip: {
                 text: '',
-                tooltip: {
-                    text: '',
-                    autoHide: false,
-                    closable: true,
-                    align: 'tr-bl'
-                },
-            }
+                autoHide: false,
+                closable: true,
+                align: 'tr-bl'
+            },
+        }
         ]
     },
     responsiveConfig: {
@@ -103,118 +103,118 @@ Ext.define('Thot.view.main.Main', {
         itemId: 'maintoolbar',
         ui: 'thot-apptoolbar',
         items: [{
-                xtype: 'hidden',
-                itemId: 'sectionId'
+            xtype: 'hidden',
+            itemId: 'sectionId'
+        },
+        {
+            itemId: 'sectionBtn',
+            ui: 'thot-header',
+            iconCls: 'x-fa fa-industry',
+            tooltip: {
+                text: Thot.Labels.actions.selectWorkshop.tooltip,
+                align: 'tl-bl'
             },
-            {
-                itemId: 'sectionBtn',
-                ui: 'thot-header',
-                iconCls: 'x-fa fa-industry',
-                tooltip: {
-                    text: Thot.Labels.actions.selectWorkshop.tooltip,
-                    align: 'tl-bl'
-                },
-                handler: 'onSectionClic'
+            handler: 'onSectionClic'
+        },
+        {
+            xtype: 'displayfield',
+            itemId: 'sectionLabel',
+            fieldCls: 'thot-label-headerbar',
+            value: ''
+        },
+        {
+            itemId: 'infoSectionBtn',
+            ui: 'thot-header',
+            tooltip: {
+                text: Thot.Labels.actions.listWorkshop.tooltip,
+                align: 'tl-bl'
             },
-            {
-                xtype: 'displayfield',
-                itemId: 'sectionLabel',
-                fieldCls: 'thot-label-headerbar',
-                value: ''
+            iconCls: 'x-fa fa-list-alt',
+            visible: false,
+            handler: 'onInfoSectionClic'
+        },
+        {
+            xtype: 'tbseparator'
+        },
+        {
+            itemId: 'newnote',
+            ui: 'thot-header',
+            tooltip: {
+                text: Thot.Labels.actions.newNote.tooltip,
+                align: 'tl-bl'
             },
-            {
-                itemId: 'infoSectionBtn',
-                ui: 'thot-header',
-                tooltip: {
-                    text: Thot.Labels.actions.listWorkshop.tooltip,
-                    align: 'tl-bl'
-                },
-                iconCls: 'x-fa fa-list-alt',
-                visible: false,
-                handler: 'onInfoSectionClic'
-            },
-            {
-                xtype: 'tbseparator'
-            },
-            {
-                itemId: 'newnote',
-                ui: 'thot-header',
-                tooltip: {
-                    text: Thot.Labels.actions.newNote.tooltip,
-                    align: 'tl-bl'
-                },
-                iconCls: 'x-fa fa-comment',
-                handler: 'onNewNoteClick'
-            },
+            iconCls: 'x-fa fa-comment',
+            handler: 'onNewNoteClick'
+        },
             '->',
-            {
-                itemId: 'usericon',
-                ui: 'thot-header',
-                iconCls: 'x-fa fa-user-circle',
-                hidden: true
+        {
+            itemId: 'usericon',
+            ui: 'thot-header',
+            iconCls: 'x-fa fa-user-circle',
+            hidden: true
+        },
+        {
+            xtype: 'displayfield',
+            itemId: 'username',
+            fieldCls: 'thot-label-headerbar',
+            value: ''
+        },
+        {
+            itemId: 'authBtn',
+            ui: 'thot-header',
+            tooltip: {
+                text: Thot.Labels.actions.login.tooltip,
+                align: 'tr-br'
             },
-            {
-                xtype: 'displayfield',
-                itemId: 'username',
-                fieldCls: 'thot-label-headerbar',
-                value: ''
+            iconCls: 'x-fa fa-sign-in',
+            handler: 'onAuthClick'
+        },
+        {
+            itemId: 'logoutBtn',
+            ui: 'thot-header',
+            tooltip: {
+                text: Thot.Labels.actions.logout.tooltip,
+                align: 'tr-br'
             },
-            {
-                itemId: 'authBtn',
-                ui: 'thot-header',
-                tooltip: {
-                    text: Thot.Labels.actions.login.tooltip,
-                    align: 'tr-br'
-                },
-                iconCls: 'x-fa fa-sign-in',
-                handler: 'onAuthClick'
+            iconCls: 'x-fa fa-sign-out',
+            hidden: true,
+            handler: 'onLogoutClick'
+        },
+        {
+            xtype: 'tbseparator'
+        },
+        {
+            itemId: 'helpBtn',
+            ui: 'thot-header',
+            tooltip: {
+                text: Thot.Labels.actions.help.tooltip,
+                align: 'tr-br'
             },
-            {
-                itemId: 'logoutBtn',
-                ui: 'thot-header',
-                tooltip: {
-                    text: Thot.Labels.actions.logout.tooltip,
-                    align: 'tr-br'
-                },
-                iconCls: 'x-fa fa-sign-out',
-                hidden: true,
-                handler: 'onLogoutClick'
+            href: 'http://fakepath/Thot/documentation/',
+            iconCls: 'x-fa fa-question-circle'
+        },
+        {
+            itemId: 'fullscreenBtn',
+            id: 'fullscreenBtn',
+            ui: 'thot-header',
+            tooltip: {
+                text: Thot.Labels.actions.fullscreen.tooltip,
+                align: 'tr-br'
             },
-            {
-                xtype: 'tbseparator'
+            iconCls: 'x-fa fa-window-maximize',
+            handler: 'onFullscreenClick'
+        },
+        {
+            itemId: 'wssignal',
+            id: 'wssignal', // pour être retrouvé avec Ext.getCmp()
+            ui: 'thot-header',
+            tooltip: {
+                text: Thot.Labels.actions.checkWSS.tooltip,
+                align: 'tr-br'
             },
-            {
-                itemId: 'helpBtn',
-                ui: 'thot-header',
-                tooltip: {
-                    text: Thot.Labels.actions.help.tooltip,
-                    align: 'tr-br'
-                },
-                href: 'http://fakepath/Thot/documentation/',
-                iconCls: 'x-fa fa-question-circle'
-            },
-            {
-                itemId: 'fullscreenBtn',
-                id: 'fullscreenBtn',
-                ui: 'thot-header',
-                tooltip: {
-                    text: Thot.Labels.actions.fullscreen.tooltip,
-                    align: 'tr-br'
-                },
-                iconCls: 'x-fa fa-window-maximize',
-                handler: 'onFullscreenClick'
-            },
-            {
-                itemId: 'wssignal',
-                id: 'wssignal', // pour être retrouvé avec Ext.getCmp()
-                ui: 'thot-header',
-                tooltip: {
-                    text: Thot.Labels.actions.checkWSS.tooltip,
-                    align: 'tr-br'
-                },
-                iconCls: 'x-fa fa-signal',
-                handler: 'webSocketsCnx'
-            }
+            iconCls: 'x-fa fa-signal',
+            handler: 'webSocketsCnx'
+        }
         ]
     },
     activeTab: 'actTab',
@@ -312,9 +312,9 @@ Ext.define('Thot.view.main.Main', {
             disabled: false,
             iconCls: 'x-fa fa-line-chart',
             items: [{
-                    xtype: 'containerstat',
-                    flex: 1
-                }]
+                xtype: 'containerstat',
+                flex: 1
+            }]
         },
         { // Page API
             title: Thot.Labels.labels.api.text,
@@ -326,9 +326,9 @@ Ext.define('Thot.view.main.Main', {
             disabled: false,
             iconCls: 'x-fa fa-wifi',
             items: [{
-                    xtype: 'containerapi',
-                    flex: 1
-                }]
+                xtype: 'containerapi',
+                flex: 1
+            }]
         },
 
         // {
@@ -422,7 +422,6 @@ Ext.define('Thot.view.main.Main', {
                 text: Thot.Labels.labels.parameters.tooltip,
                 align: 'l-r'
             },
-            disabled: true,
             iconCls: 'x-fa fa-cogs',
             items: [{
                 xtype: 'appadmin',
@@ -436,7 +435,6 @@ Ext.define('Thot.view.main.Main', {
                 text: Thot.Labels.labels.config.tooltip,
                 align: 'l-r'
             },
-            disabled: true, // true en production, accessible par l'administrateur
             iconCls: 'x-fa fa-sliders',
             items: [{
                 xtype: 'configapp',

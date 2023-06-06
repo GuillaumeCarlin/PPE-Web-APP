@@ -60,7 +60,7 @@ Ext.define('Thot.view.adm.CmpAdminController', {
         var oSectionWstnGrd = oForm.query('#sectionWstnGrd')[0];
 
         oUsersGrd.refresh();
-        
+
         if (oSectionGrd.getSelection().length > 0) {
             oSectionUsersGrd.refresh();
         }
@@ -189,8 +189,8 @@ Ext.define('Thot.view.adm.CmpAdminController', {
                 rsc_id: oEvent.record.get('usr_id'),
                 login: oEvent.value,
             },
-            success: function () {},
-            failure: function () {},
+            success: function () { },
+            failure: function () { },
             callback: function (_opt, _success, oResponse) {
                 var oBack = Ext.decode(oResponse.responseText);
 
@@ -342,8 +342,8 @@ Ext.define('Thot.view.adm.CmpAdminController', {
                         rle_id: oRecord.get('rle_id'),
                         main: oRecord.get('rca_estprincipal'),
                     },
-                    success: function () {},
-                    failure: function () {},
+                    success: function () { },
+                    failure: function () { },
                     callback: function (_opt, _success, oResponse) {
                         var oBack = Ext.decode(oResponse.responseText);
 
@@ -433,11 +433,11 @@ Ext.define('Thot.view.adm.CmpAdminController', {
             // oUserToSectionBtn.setTooltip('Affecter ' + oUserGrd.getSelection().length + ' opérateur' + (oUserGrd.getSelection().length > 1 ? 's' : '') + ' à la section ' + oUserSectionGrd.getSelection()[0].get('sab_libelle'));
             oUserToSectionBtn.setText(
                 'Affecter ' +
-                    oUserGrd.getSelection().length +
-                    ' opérateur' +
-                    (oUserGrd.getSelection().length > 1 ? 's' : '') +
-                    ' à la section ' +
-                    oUserSectionGrd.getSelection()[0].get('sab_libelle'),
+                oUserGrd.getSelection().length +
+                ' opérateur' +
+                (oUserGrd.getSelection().length > 1 ? 's' : '') +
+                ' à la section ' +
+                oUserSectionGrd.getSelection()[0].get('sab_libelle'),
             );
         } else {
             oUserToSectionBtn.setDisabled(true);
@@ -636,8 +636,8 @@ Ext.define('Thot.view.adm.CmpAdminController', {
         Ext.Ajax.request({
             url: 'server/usr/Users.php',
             params: oParams,
-            success: function () {},
-            failure: function () {},
+            success: function () { },
+            failure: function () { },
             callback: function (_opt, _success, oResponse) {
                 var oBack = Ext.decode(oResponse.responseText);
                 var oUsersGrd = oForm.query('#usersGrd')[0];
@@ -684,8 +684,8 @@ Ext.define('Thot.view.adm.CmpAdminController', {
                 rsc_id: oGridStore.data.items[rowIndex].data.usr_id, // identifiant de l'opérateur à mettre à jour
                 usr_verifiercoherence: checked | 0,
             },
-            success: function () {},
-            failure: function () {},
+            success: function () { },
+            failure: function () { },
             callback: function (_opt, _success, oResponse) {
                 var oBack = Ext.decode(oResponse.responseText);
 
@@ -778,8 +778,8 @@ Ext.define('Thot.view.adm.CmpAdminController', {
                 eqe_id: oUserTeamCbo.getValue(),
                 ctt_id: oUserContractCbo.getValue(),
             },
-            success: function () {},
-            failure: function () {},
+            success: function () { },
+            failure: function () { },
             callback: function (_opt, _success, oResponse) {
                 var oBack = Ext.decode(oResponse.responseText);
 
@@ -848,8 +848,8 @@ Ext.define('Thot.view.adm.CmpAdminController', {
                 rle_id: oRecord.get('rle_id'),
                 main: oRecord.get('rca_estprincipal'),
             },
-            success: function () {},
-            failure: function () {},
+            success: function () { },
+            failure: function () { },
             callback: function (_opt, _success, oResponse) {
                 var oBack = Ext.decode(oResponse.responseText);
 
@@ -905,11 +905,11 @@ Ext.define('Thot.view.adm.CmpAdminController', {
             oWstnToSectionBtn.setDisabled(false);
             oWstnToSectionBtn.setText(
                 'Affecter ' +
-                    oWstnGrd.getSelection().length +
-                    ' équipement' +
-                    (oWstnGrd.getSelection().length > 1 ? 's' : '') +
-                    ' à la section ' +
-                    oWstnSectionGrd.getSelection()[0].get('sab_libelle'),
+                oWstnGrd.getSelection().length +
+                ' équipement' +
+                (oWstnGrd.getSelection().length > 1 ? 's' : '') +
+                ' à la section ' +
+                oWstnSectionGrd.getSelection()[0].get('sab_libelle'),
             );
         } else {
             oWstnToSectionBtn.setDisabled(true);
@@ -1081,8 +1081,8 @@ Ext.define('Thot.view.adm.CmpAdminController', {
                 rsc_id: oRecord.get('rsc_id'),
                 org_id_src: oRecord.get('sab_id'),
             },
-            success: function () {},
-            failure: function () {},
+            success: function () { },
+            failure: function () { },
             callback: function (_opt, _success, oResponse) {
                 var oBack = Ext.decode(oResponse.responseText);
 
@@ -1327,8 +1327,8 @@ Ext.define('Thot.view.adm.CmpAdminController', {
         Ext.Ajax.request({
             url: 'server/wst/WorkStn.php',
             params: oParams,
-            success: function () {},
-            failure: function () {},
+            success: function () { },
+            failure: function () { },
             callback: function (_opt, _success, oResponse) {
                 var oBack = Ext.decode(oResponse.responseText);
                 var oWorkStnGrd = oForm.query('#workStnGrd')[0];
@@ -1376,19 +1376,19 @@ Ext.define('Thot.view.adm.CmpAdminController', {
         });
     },
 
-/** ---------------------------- Controller de la page FPS ---------------------------- */
+    /** ---------------------------- Controller de la page FPS ---------------------------- */
 
     /**
      * @author Carlin Guillaume
      * @date 28/03/2023
      * @description Permet de rafraichir uniquement le tableau des FPS et de vider les tableaux des équipements et des signataires
      */
-    GridFpsRefresh: function(){
+    GridFpsRefresh: function () {
         oForm = this.getView();
         GridFps = oForm.query('#fpsGrid')[0];
         GridFps.getStore().reload();
-        oForm.query('#eqpGrid')[0].getStore().loadData([],false);
-        oForm.query('#personneGrid')[0].getStore().loadData([],false);
+        oForm.query('#eqpGrid')[0].getStore().loadData([], false);
+        oForm.query('#personneGrid')[0].getStore().loadData([], false);
 
         var oBoutonUserAjout = oForm.query('#btnUserAjout')[0];
         oBoutonUserAjout.setDisabled(true);
@@ -1407,11 +1407,11 @@ Ext.define('Thot.view.adm.CmpAdminController', {
      * @date 28/03/2023
      * @description Permet de rafraichir uniquement le tableau des équipements et de vider le tableau des signataires
      */
-    GridEqtRefresh: function() {
+    GridEqtRefresh: function () {
         oForm = this.getView();
         GridFps = oForm.query('#eqpGrid')[0];
         GridFps.getStore().reload();
-        oForm.query('#personneGrid')[0].getStore().loadData([],false);
+        oForm.query('#personneGrid')[0].getStore().loadData([], false);
 
         var oBoutonUserAjout = oForm.query('#btnUserAjout')[0];
         oBoutonUserAjout.setDisabled(true);
@@ -1421,12 +1421,12 @@ Ext.define('Thot.view.adm.CmpAdminController', {
         oBoutonSupprimer.setDisabled(true);
     },
 
-        /**
-     * @author Carlin Guillaume
-     * @date 28/03/2023
-     * @description Permet de rafraichir uniquement le tableau des signataires
-     */
-    GridUsrRefresh: function(){
+    /**
+ * @author Carlin Guillaume
+ * @date 28/03/2023
+ * @description Permet de rafraichir uniquement le tableau des signataires
+ */
+    GridUsrRefresh: function () {
         oForm = this.getView();
         GridUsr = oForm.query('#personneGrid')[0];
         GridUsr.getStore().reload();
@@ -1434,40 +1434,39 @@ Ext.define('Thot.view.adm.CmpAdminController', {
         oBoutonUserSup.setDisabled(true);
     },
 
-    
+
     /**
      * @author Carlin Guillaume
      * @date 28/03/2023
      * @description Load le tableau des équipements + le PDF + Ajuste les différents boutons lorsque l'on sélectionne une FPS
      */
-    onFPSSelect: function(oGrid, oRecord, eOpts){
+    onFPSSelect: function (oGrid, oRecord, eOpts) {
         var oForm = this.getView();
         oEquipementSheet = oForm.query('#eqpGrid')[0];
 
         aFilter = [{
             type: 'id_fps',
-            value: oRecord.data.fps_id,
+            value: oRecord.data.FPS_ID,
         }];
 
         oEquipementSheet.getStore().setExtraParams({
-        storefilters: {
-            specfilter: aFilter
-        }
+            storefilters: {
+                specfilter: aFilter
+            }
         });
-        oForm.query('#personneGrid')[0].getStore().loadData([],false);
+        oForm.query('#personneGrid')[0].getStore().loadData([], false);
         oEquipementSheet.getStore().reload();
 
         oPanelPDF = oForm.query('#pdfview')[0];
-        nom = oRecord.data.fps_code;
-        Chemin = oRecord.data.fps_chemin;
+        nom = oRecord.data.FPS_CODE;
+        // Chemin = oRecord.data.FPS_CHEMIN;
+
+        Chemin = "../../resources/pdf/PDF.pdf";
 
         while (Chemin.indexOf('/') !== -1) {
             Chemin = Chemin.replace('/', '\\');
         }
-        
-        while (Chemin.indexOf(' ') !== -1) {
-            Chemin = Chemin.replace(' ', '%20');
-        }
+        console.log(Chemin)
 
         html = '<iframe src="' + Chemin + '" width="100%" height="100%"></iframe>'
         oPanelPDF.setHtml(html);
@@ -1494,15 +1493,15 @@ Ext.define('Thot.view.adm.CmpAdminController', {
      * @date 28/03/2023
      * @description Load le tableau des users + Ajuste les différents boutons lorsque l'on sélectionne un équipement
      */
-    onFPSEqtSelect: function(oGrid, oRecord, eOpts){
+    onFPSEqtSelect: function (oGrid, oRecord, eOpts) {
         var oForm = this.getView();
         oPersonneSheet = oForm.query('#personneGrid')[0];
         aFilter = [{
             type: 'id_fps',
-            value: oRecord.data.fps_id,
-        },{
+            value: oRecord.data.FPS_ID,
+        }, {
             type: 'id_rsc',
-            value: oRecord.data.rsc_id,
+            value: oRecord.data.RSC_ID,
         }];
         oPersonneSheet.getStore().setExtraParams({
             storefilters: {
@@ -1518,16 +1517,16 @@ Ext.define('Thot.view.adm.CmpAdminController', {
         oBoutonUserAjouter.setDisabled(false);
 
         var oBoutonUserSupprimer = oForm.query('#btnUserSupprimer')[0];
-        oBoutonUserSupprimer.setDisabled(true);  
+        oBoutonUserSupprimer.setDisabled(true);
     },
 
-    
+
     /**
      * @author Carlin Guillaume
      * @date 28/03/2023
      * @description Permet d'activer le bouton de suppression lorsqu'un Signataire est sélectionné'
      */
-    onFPSUserSelect: function(oGrid, oRecord, eOpts){
+    onFPSUserSelect: function (oGrid, oRecord, eOpts) {
         oForm = this.getView();
         oBoutonSupprimer = oForm.query('#btnUserSupprimer')[0];
 
@@ -1539,7 +1538,7 @@ Ext.define('Thot.view.adm.CmpAdminController', {
      * @date 28/03/2023
      * @description Permet de crée le formulaire d'ajout d'une FPS
      */
-    NewFPS: function(){
+    NewFPS: function () {
         var oForm = this.getView();
 
         oWin = Thot.app.openWidget('createfps', {
@@ -1558,8 +1557,8 @@ Ext.define('Thot.view.adm.CmpAdminController', {
         oWin.on({
             destroy: function () {
                 oForm.query('#fpsGrid')[0].fireEvent('Refresh');
-        },
-    });
+            },
+        });
     },
 
     /**
@@ -1567,11 +1566,11 @@ Ext.define('Thot.view.adm.CmpAdminController', {
      * @date 28/03/2023
      * @description Permet de crée le formulaire de suppression d'une FPS
      */
-    DelFPS: function(){
+    DelFPS: function () {
         var oMe = this;
         var oForm = oMe.getView();
-        var FPS_ID = oForm.query('#fpsGrid')[0].getSelectionModel().selected.items[0].get('fps_id');
-        var FPS_code = oForm.query('#fpsGrid')[0].getSelectionModel().selected.items[0].get('fps_code');
+        var FPS_ID = oForm.query('#fpsGrid')[0].getSelectionModel().selected.items[0].get('FPS_ID');
+        var FPS_code = oForm.query('#fpsGrid')[0].getSelectionModel().selected.items[0].get('FPS_CODE');
 
         oWin = Thot.app.openWidget('createfps', {
             title: 'Supprimer FPS',
@@ -1592,8 +1591,8 @@ Ext.define('Thot.view.adm.CmpAdminController', {
         oWin.on({
             destroy: function () {
                 oForm.query('#fpsGrid')[0].fireEvent('Refresh');
-        },
-    });
+            },
+        });
 
     },
 
@@ -1603,11 +1602,11 @@ Ext.define('Thot.view.adm.CmpAdminController', {
      * @date 28/03/2023
      * @description Permet de crée le formulaire d'ajout d'un équipement
      */
-    NewEqt: function(){
+    NewEqt: function () {
         var oMe = this;
         var oForm = oMe.getView();
-        var FPS_ID = oForm.query('#fpsGrid')[0].getSelectionModel().selected.items[0].get('fps_id');
-        var FPS_code = oForm.query('#fpsGrid')[0].getSelectionModel().selected.items[0].get('fps_code');
+        var FPS_ID = oForm.query('#fpsGrid')[0].getSelectionModel().selected.items[0].get('FPS_ID');
+        var FPS_code = oForm.query('#fpsGrid')[0].getSelectionModel().selected.items[0].get('FPS_CODE');
 
         oWin = Thot.app.openWidget('createfps', {
             title: 'Nouvelle équipement',
@@ -1637,13 +1636,13 @@ Ext.define('Thot.view.adm.CmpAdminController', {
      * @date 28/03/2023
      * @description Permet de crée le formulaire de suppression d'un équipement
      */
-    DelEqt: function(){
+    DelEqt: function () {
         var oMe = this;
         var oForm = oMe.getView();
-        var RSC_ID = oForm.query('#eqpGrid')[0].getSelectionModel().selected.items[0].get('rsc_id');
-        var FPS_ID = oForm.query('#eqpGrid')[0].getSelectionModel().selected.items[0].get('fps_id');
-        var RSC_CODE = oForm.query('#eqpGrid')[0].getSelectionModel().selected.items[0].get('rsc_code');
-        var FPS_code = oForm.query('#fpsGrid')[0].getSelectionModel().selected.items[0].get('fps_code');
+        var RSC_ID = oForm.query('#eqpGrid')[0].getSelectionModel().selected.items[0].get('RSC_ID');
+        var FPS_ID = oForm.query('#eqpGrid')[0].getSelectionModel().selected.items[0].get('FPS_ID');
+        var RSC_CODE = oForm.query('#eqpGrid')[0].getSelectionModel().selected.items[0].get('RSC_CODE');
+        var FPS_code = oForm.query('#fpsGrid')[0].getSelectionModel().selected.items[0].get('FPS_CODE');
 
         oWin = Thot.app.openWidget('createfps', {
             title: 'Supprimer équipement',
@@ -1675,13 +1674,13 @@ Ext.define('Thot.view.adm.CmpAdminController', {
      * @date 28/03/2023
      * @description Permet de crée le formulaire d'ajout d'un signataire
      */
-    NewUsr: function(){
+    NewUsr: function () {
         var oMe = this;
         var oForm = oMe.getView();
-        var RSC_ID = oForm.query('#eqpGrid')[0].getSelectionModel().selected.items[0].get('rsc_id');
-        var FPS_ID = oForm.query('#eqpGrid')[0].getSelectionModel().selected.items[0].get('fps_id');
-        var RSC_CODE = oForm.query('#eqpGrid')[0].getSelectionModel().selected.items[0].get('rsc_code');
-        var FPS_code = oForm.query('#fpsGrid')[0].getSelectionModel().selected.items[0].get('fps_code');
+        var RSC_ID = oForm.query('#eqpGrid')[0].getSelectionModel().selected.items[0].get('RSC_ID');
+        var FPS_ID = oForm.query('#eqpGrid')[0].getSelectionModel().selected.items[0].get('FPS_ID');
+        var RSC_CODE = oForm.query('#eqpGrid')[0].getSelectionModel().selected.items[0].get('RSC_CODE');
+        var FPS_code = oForm.query('#fpsGrid')[0].getSelectionModel().selected.items[0].get('FPS_CODE');
 
         oWin = Thot.app.openWidget('createfps', {
             title: 'Nouveau signataire',
@@ -1713,16 +1712,16 @@ Ext.define('Thot.view.adm.CmpAdminController', {
      * @date 28/03/2023
      * @description Permet de crée le formulaire de suppression d'un signataire
      */
-    DelUser: function(){
+    DelUser: function () {
         var oMe = this;
         var oForm = oMe.getView();
-        var RSC_ID = oForm.query('#eqpGrid')[0].getSelectionModel().selected.items[0].get('rsc_id');
-        var FPS_ID = oForm.query('#eqpGrid')[0].getSelectionModel().selected.items[0].get('fps_id');
-        var RSC_CODE = oForm.query('#eqpGrid')[0].getSelectionModel().selected.items[0].get('rsc_code');
-        var FPS_code = oForm.query('#fpsGrid')[0].getSelectionModel().selected.items[0].get('fps_code');
+        var RSC_ID = oForm.query('#eqpGrid')[0].getSelectionModel().selected.items[0].get('RSC_ID');
+        var FPS_ID = oForm.query('#eqpGrid')[0].getSelectionModel().selected.items[0].get('FPS_ID');
+        var RSC_CODE = oForm.query('#eqpGrid')[0].getSelectionModel().selected.items[0].get('RSC_CODE');
+        var FPS_code = oForm.query('#fpsGrid')[0].getSelectionModel().selected.items[0].get('FPS_CODE');
 
-        var Usr_Id = oForm.query('#personneGrid')[0].getSelectionModel().selected.items[0].get('usr_id');
-        var Usr_Nom = oForm.query('#personneGrid')[0].getSelectionModel().selected.items[0].get('nom');
+        var Usr_Id = oForm.query('#personneGrid')[0].getSelectionModel().selected.items[0].get('USR_ID');
+        var Usr_Nom = oForm.query('#personneGrid')[0].getSelectionModel().selected.items[0].get('NOM');
 
         oWin = Thot.app.openWidget('createfps', {
             title: 'Supprimer signataire',

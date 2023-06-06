@@ -5,7 +5,7 @@ Ext.define("Thot.view.api.FormNewKeyController", {
     onAfterRender: function () {
         var oForm = this.getView();
         oForm.query("#RessourceList")[0].getStore().load();
-        // var oWin = oForm.up("window");
+        oWin = oForm.up("window");
     },
 
     ClickCheckBox: function () {
@@ -27,12 +27,12 @@ Ext.define("Thot.view.api.FormNewKeyController", {
                 }
             ];
             oCombo.setExtraParams({
-               storefilters: {
-                   specfilter: aFilter
-               }
-           });
-           oCombo.reload();
-        }else{
+                storefilters: {
+                    specfilter: aFilter
+                }
+            });
+            oCombo.reload();
+        } else {
             aFilter = [{
                 type: 'App',
                 value: 0
@@ -55,7 +55,7 @@ Ext.define("Thot.view.api.FormNewKeyController", {
         var Boolapp;
         var IdRessource;
         while (flag) {
-            if (oForm.query("#RessourceList")[0].getStore().getData().items[i].get("rsc_id") == oForm.query("#RessourceList")[0].getValue()) {
+            if (oForm.query("#RessourceList")[0].getStore().getData().items[i].get("RSC_ID") == oForm.query("#RessourceList")[0].getValue()) {
                 flag = false;
                 Data = oForm.query("#RessourceList")[0].getStore().getData().items[i];
             } else {
@@ -68,7 +68,7 @@ Ext.define("Thot.view.api.FormNewKeyController", {
         //     Key = oForm.query("#Code")[0].getValue();
         // }
 
-        if (Data.get("rst_id") == 5) {
+        if (Data.get("RST_ID") == 5) {
             Boolapp = 1;
         } else {
             Boolapp = 0;
@@ -82,13 +82,13 @@ Ext.define("Thot.view.api.FormNewKeyController", {
                 boolapp: Boolapp,
                 rsc_id: IdRessource
             },
-            success: function () {},
-            failure: function () {},
+            success: function () { },
+            failure: function () { },
             callback: function (opt, success, oResponse) {
                 var oBack = Ext.decode(oResponse.responseText);
                 if (oBack.success) {
-                    if (oBack["liste"][0]["reussis"] == "true") {
-                        // oWin.close();
+                    if (oBack["liste"][0]["Reussis"] == "true") {
+                        oForm.up("window").close();
                     } else {
                         oForm.query("#ErrorField")[0].setValue(oBack["liste"][0]["erreurcode"] + oBack["liste"][0]["erreur"]);
                     }

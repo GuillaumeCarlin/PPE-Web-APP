@@ -1,6 +1,6 @@
 <?php
 
-include_once '..\commun\SessionClass.php';
+//include_once '..\commun\SessionClass.php';
 
 //------------------------------------------------------------------
 // Appel‚ par le module AJAX
@@ -10,26 +10,33 @@ $aVariables = array();
 $aVariables[] = 'org_id';
 $aVariables[] = 'sab_id';
 
-require($oSession->ParentPath . "server/variablesEtFiltres.php");
-$bDebug = false;
-$sDebugAction = '';
+include_once '../variablesEtFiltres.php';
 
-if ($sDebugAction !== '') {
-	if ($action !== $sDebugAction) {
-		$bDebug = false;
-	}
+
+$CnxDb = new PDO('sqlsrv:Server=10.30.103.67;Database=BD_THOT_THT', 'sa', '123456789+aze');
+$CnxDb->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+function TestQry($Requete, $CnxDb){
+    $oResult = $CnxDb->prepare($Requete); 
+    $oResult->execute(); 
+    $aListe = $oResult->fetchAll(PDO::FETCH_ASSOC);
+    return $aListe;
 }
 
-if ($bDebug) {
-	error_log("========================" . basename(__FILE__) . ' : ' . $action . "=====================");
-	error_log("_POST : " . var_export($_POST, true));
-	error_log("_GET : " . var_export($_GET, true));
+
+if (isset($_GET['action'])) {
+    $action = $_GET['action'];
+}elseif (isset($_POST['action'])) {
+    $action = $_POST['action'];
 }
+
 
 //---- Include de la classe de gestion des données ----
 //include($oSession->ParentPath . "server/Bdd.php");
 
-class Societe extends GestBdd {
+class Societe {
+
+	public function __construct()
+    {}
 
 	function loadSection($sQuery, $iIdSite, $iIdParent = null, $aCurrentSel = null) {
 		$sParentFilter = "null";
@@ -38,7 +45,7 @@ class Societe extends GestBdd {
 			$sParentFilter = $iIdParent;
 		}
 
-		$aSections = $this->QryToArray(sprintf($sQuery, $iIdSite, $sParentFilter));
+		$aSections = TestQry(sprintf($sQuery, $iIdSite, $sParentFilter), $CnxDb);
 
 		foreach ($aSections as $iInd => $aSection) {
 			$aSections[$iInd]['checked'] = false;
@@ -63,18 +70,19 @@ class Societe extends GestBdd {
 
 }
 
-$Bdd = new Societe($oSession->AppBase);
+$Soc = new Societe();
 include("SocieteQry.php");
 
 //---- Execution de la requête correspondant à l'action ----
 switch ($action) {
 	case 'LstSociete':
-		$aListe = $Bdd->QryToArray($aLists['society']);
+		$aListe = TestQry($aLists['society'], $CnxDb);
 		$bSucces = (count($aListe) > 0);
 		break;
 
 	case 'LstSite':
-		$aListe = $Bdd->QryToArray(sprintf($aLists['site'], $aSpecFilter['org_id']));
+		$Requete = $aLists['site'];
+		$aListe = TestQry($Requete, $CnxDb);
 		$bSucces = true;
 		break;
 
@@ -86,10 +94,10 @@ switch ($action) {
 		}
 		
 		if (isset($aSpecFilter['sab_id'])) {
-			$sFilter = '@SAB_ID_STRING='.$Bdd->FormatSql($aSpecFilter['sab_id'],'C');
+			$sFilter = '@SAB_ID_STRING='.$aSpecFilter['sab_id'];
 		}
-		
-		$aListe = $Bdd->QryToArray(sprintf($aLists['section'], $sFilter));
+		$Requete = sprintf($aLists['section'], $sFilter);
+		$aListe = TestQry($Requete, $CnxDb);
 		$bSucces = true;
 		break;
 
@@ -101,14 +109,14 @@ switch ($action) {
 				$aCurrentSel = explode(',', $aSpecFilter['checkcurr']);
 			}
 
-			$aListe = $Bdd->loadSection($aLists['sectiontv'], $aSpecFilter['org_id'], null, $aCurrentSel);
+			$aListe = $Soc->loadSection($aLists['sectiontv'], $aSpecFilter['org_id'], null, $aCurrentSel);
 			$bSucces = true;
 		}
 
 		break;
 
 	case 'InfoSection':
-		$aListe = $Bdd->QryToArray(sprintf($aInfos['section'], $Bdd->FormatSql($sab_id, 'C')));
+		$aListe = TestQry(sprintf($aInfos['section']));
 		$bSucces = true;
 		break;
 }

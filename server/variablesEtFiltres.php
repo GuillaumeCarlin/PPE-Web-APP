@@ -1,5 +1,5 @@
 <?php
-
+$Test = "VariableEtFiltre";
 
 //---- Déclaration des variables générales
 $aVariables[] = "action";

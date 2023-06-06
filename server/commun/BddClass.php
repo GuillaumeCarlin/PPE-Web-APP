@@ -85,10 +85,11 @@ class GestBdd
                 $ParamSqlServer = true;
                 //---- Nouvelle connexion MsSql (avec PDO)
                 switch (PHP_OS) {
+                    case 'AlmaLinux':
                     case 'Linux':
                         //error_log(var_export($this->PrmBase,true));
                         $this->CnxDb = new pdo(
-                            'dblib:host=' . $this->PrmBase["host"] . ';dbname=' . $this->PrmBase["nombase"],
+                            'sqlsrv:Server=' . $this->PrmBase["host"] . ';Database=' . $this->PrmBase["nombase"],
                             $this->PrmBase["username"],
                             $this->PrmBase["passe"]
                         );
@@ -984,6 +985,7 @@ class GestBdd
                         $sTypeCol = 'native_type';
 
                         switch (PHP_OS) {
+                            case 'AlmaLinux':
                             case 'Linux':
                                 break;
                             default:
